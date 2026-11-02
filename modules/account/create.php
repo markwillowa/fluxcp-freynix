@@ -18,10 +18,10 @@ if (count($_POST)) {
 		$username  = $params->get('username');
 		$password  = $params->get('password');
 		$confirm   = $params->get('confirm_password');
-		$email     = trim($params->get('email_address'));
-		$email2    = trim($params->get('email_address2'));
+		$email     = trim((string)($params->get('email_address') ?: $params->get('email')));
+		$email2    = trim((string)($params->get('email_address2') ?: $params->get('email2') ?: $params->get('confirm_email') ?: $email));
 		$gender    = $params->get('gender');
-		$birthdate = $params->get('birthdate_date');
+		$birthdate = $params->get('birthdate_date') ?: $params->get('birthdate');
 		$code      = $params->get('security_code');
 		
 		if (!($server = Flux::getServerGroupByName($serverGroupName))) {
