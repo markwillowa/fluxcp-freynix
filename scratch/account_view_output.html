@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Experience classic Ragnarok Online on Freynix! High-rate 1000x progression, 99/70 pre-renewal, competitive PvP, and epic War of Emperium battles.">
+	<meta name="keywords" content="Ragnarok Online, Freynix RO, Pre-Renewal, High Rate, PvP, WoE, MVP hunting">
+	<meta name="author" content="Freynix RO Team">
+
+	
+	<title>Viewing My Account &mdash; Freynix Ragnarok Online</title>
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+	<!-- Google Fonts: Cinzel (Fantasy), Outfit (Clean Modern Body), Rajdhani (Headings & Stats) -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
+	<!-- Core Stylesheets (with auto cache-busting) -->
+		<link rel="stylesheet" href="/themes/default/css/flux.css" type="text/css" media="screen" charset="utf-8" />
+	<link rel="stylesheet" href="/themes/default/css/flux/unitip.css" type="text/css" media="screen" charset="utf-8" />
+	<link rel="stylesheet" href="/themes/freynix/css/freynix.css?v=1793584510" type="text/css" media="screen" charset="utf-8" />
+	<link rel="stylesheet" href="/themes/freynix/css/flux-compat.css?v=1793584510" type="text/css" media="screen" charset="utf-8" />
+	<link rel="stylesheet" href="/themes/freynix/css/responsive.css?v=1793583126" type="text/css" media="screen" charset="utf-8" />
+
+	
+	<!-- Scripts -->
+	<script type="text/javascript" src="/themes/default/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="/themes/default/js/flux.datefields.js"></script>
+	<script type="text/javascript" src="/themes/default/js/flux.unitip.js"></script>
+	<script type="text/javascript" src="/themes/freynix/js/freynix.js?v=1793583127"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			// Donation currency calculator
+			$('.money-input').keyup(function() {
+				var creditValue = parseInt($(this).val() / 1, 10);
+				if (isNaN(creditValue))
+					$('.credit-input').val('?');
+				else
+					$('.credit-input').val(creditValue);
+			}).keyup();
+
+			$('.credit-input').keyup(function() {
+				var moneyValue = parseFloat($(this).val() * 1);
+				if (isNaN(moneyValue))
+					$('.money-input').val('?');
+				else
+					$('.money-input').val(moneyValue.toFixed(2));
+			}).keyup();
+
+			if (typeof processDateFields === 'function') {
+				processDateFields();
+			}
+		});
+
+		function reload(){
+			window.location.href = '/?module=account&action=view';
+		}
+
+		function updatePreferredServer(sel){
+			var preferred = sel.options[sel.selectedIndex].value;
+			document.preferred_server_form.preferred_server.value = preferred;
+			document.preferred_server_form.submit();
+		}
+
+		function updatePreferredTheme(sel){
+			var preferred = sel.options[sel.selectedIndex].value;
+			document.preferred_theme_form.preferred_theme.value = preferred;
+			document.preferred_theme_form.submit();
+		}
+
+		function updatePreferredLanguage(sel){
+			var preferred = sel.options[sel.selectedIndex].value;
+			var expires = new Date();
+			expires.setTime(expires.getTime() + (365*24*60*60*1000));
+			document.cookie = 'language=' + preferred + ';expires=' + expires.toUTCString();
+			reload();
+		}
+
+		var spinner = new Image();
+		spinner.src = '/themes/freynix/img/spinner.gif';
+
+		function refreshSecurityCode(imgSelector){
+			$(imgSelector).attr('src', spinner.src);
+			var clean = false;
+			var image = new Image();
+			image.src = "/?module=captcha"+(clean ? '?nocache=' : '&nocache=')+Math.random();
+			$(imgSelector).attr('src', image.src);
+		}
+	</script>
+</head>
+<body class="page-inner page-account">
+
+	<!-- Maintenance Alert Banner (when enabled) -->
+	
+	<!-- Navigation Bar -->
+	<header class="freynix-header scrolled">
+	<div class="freynix-container">
+		<div class="header-content">
+			<!-- Freynix Logo & Branding -->
+			<a href="/" class="brand-logo-wrap" title="Freynix Ragnarok Online">
+				<img src="/themes/freynix/img/logo.png" alt="FREYNIX RO" class="brand-logo-img" />
+				<div class="brand-text">
+					<span class="brand-title">FREYNIX</span>
+					<span class="brand-slogan">ECLIPSE REALM</span>
+				</div>
+			</a>
+
+			<!-- CMS-Driven Navigation Menu -->
+			<nav>
+				<ul class="nav-menu">
+																									<li class="nav-item">
+								<a href="/?module=main" class="nav-link" >
+									<span>Home</span>
+																	</a>
+															</li>
+																				<li class="nav-item">
+								<a href="/?module=main&action=downloads" class="nav-link" >
+									<span>Downloads</span>
+																	</a>
+															</li>
+																				<li class="nav-item has-dropdown">
+								<a href="/?module=ranking&action=character" class="nav-link" >
+									<span>Rankings</span>
+																			<span class="nav-caret">&#9662;</span>
+																	</a>
+																	<ul class="nav-dropdown">
+																					<li class="dropdown-item">
+												<a href="/?module=ranking&action=character" >
+													Character Ranking												</a>
+											</li>
+																					<li class="dropdown-item">
+												<a href="/?module=ranking&action=guild" >
+													Guild Ranking												</a>
+											</li>
+																					<li class="dropdown-item">
+												<a href="/?module=ranking&action=mvp" >
+													MVP Ranking												</a>
+											</li>
+																					<li class="dropdown-item">
+												<a href="/?module=ranking&action=zeny" >
+													Zeny Ranking												</a>
+											</li>
+																			</ul>
+															</li>
+																				<li class="nav-item has-dropdown">
+								<a href="/?module=woe" class="nav-link" >
+									<span>WoE</span>
+																			<span class="nav-caret">&#9662;</span>
+																	</a>
+																	<ul class="nav-dropdown">
+																					<li class="dropdown-item">
+												<a href="/?module=woe" >
+													WoE Timetable												</a>
+											</li>
+																					<li class="dropdown-item">
+												<a href="/?module=castle" >
+													Castle Ownership												</a>
+											</li>
+																			</ul>
+															</li>
+																				<li class="nav-item has-dropdown">
+								<a href="/?module=server&action=info" class="nav-link" >
+									<span>Information</span>
+																			<span class="nav-caret">&#9662;</span>
+																	</a>
+																	<ul class="nav-dropdown">
+																					<li class="dropdown-item">
+												<a href="/?module=server&action=info" >
+													Server Info												</a>
+											</li>
+																					<li class="dropdown-item">
+												<a href="/?module=news" >
+													Announcements &amp; News												</a>
+											</li>
+																					<li class="dropdown-item">
+												<a href="/?module=server&action=status" >
+													Server Status												</a>
+											</li>
+																					<li class="dropdown-item">
+												<a href="/?module=item" >
+													Item Database												</a>
+											</li>
+																					<li class="dropdown-item">
+												<a href="/?module=monster" >
+													Monster Database												</a>
+											</li>
+																					<li class="dropdown-item">
+												<a href="/?module=character&action=online" >
+													Who&#039;s Online												</a>
+											</li>
+																					<li class="dropdown-item">
+												<a href="https://discord.gg/" >
+													Discord Community												</a>
+											</li>
+																			</ul>
+															</li>
+																				<li class="nav-item has-dropdown">
+								<a href="/?module=donate" class="nav-link" >
+									<span>Donations</span>
+																			<span class="nav-caret">&#9662;</span>
+																	</a>
+																	<ul class="nav-dropdown">
+																					<li class="dropdown-item">
+												<a href="/?module=donate" >
+													Make a Donation												</a>
+											</li>
+																					<li class="dropdown-item">
+												<a href="/?module=purchase" >
+													Donation Shop												</a>
+											</li>
+																			</ul>
+															</li>
+											
+										<!-- Logged In User Account Dropdown -->
+					<li class="nav-item has-dropdown">
+						<a href="/?module=account&action=view" class="user-account-pill">
+							<span class="user-pill-avatar">&#128100;</span>
+							<span class="user-pill-name">malda009</span>
+							<span class="nav-caret">&#9662;</span>
+						</a>
+						<ul class="nav-dropdown" style="right: 0; left: auto; min-width: 240px;">
+							<li class="dropdown-item" style="padding: 10px 16px; border-bottom: 1px solid var(--border-subtle); color: var(--color-gold); font-size: 0.85rem;">
+								Balance: <strong>0</strong> Credits
+							</li>
+							<li class="dropdown-item"><a href="/?module=account&action=view">Player Dashboard</a></li>
+							<li class="dropdown-item"><a href="/?module=account&action=changepass">Change Password</a></li>
+							<li class="dropdown-item"><a href="/?module=account&action=changemail">Change E-mail</a></li>
+							<li class="dropdown-item"><a href="/?module=servicedesk">Support Tickets</a></li>
+							<li class="dropdown-item"><a href="/?module=history&action=cplogin">Login History</a></li>
+
+							<!-- Role-aware Admin Panel Links for Authorized Staff -->
+															<li class="dropdown-item" style="padding: 8px 16px; border-top: 1px solid var(--border-subtle); color: var(--color-gold); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.08em;">
+									ADMINISTRATION
+								</li>
+								<li class="dropdown-item"><a href="/?module=homepage" style="color: var(--color-gold);">&#9881; Homepage CMS</a></li>
+								<li class="dropdown-item"><a href="/?module=news&action=manage">&#128227; Manage News</a></li>
+								<li class="dropdown-item"><a href="/?module=pages">&#128196; Manage Pages</a></li>
+								<li class="dropdown-item"><a href="/?module=navigation">&#128506; Manage Nav</a></li>
+								<li class="dropdown-item"><a href="/?module=downloads&action=manage">&#128190; Manage Downloads</a></li>
+							
+							<li class="dropdown-item" style="border-top: 1px solid var(--border-subtle); margin-top: 4px;">
+								<a href="/?module=account&action=logout" onclick="return confirm('Are you sure you want to logout?')" style="color: #ff6b81;">Logout</a>
+							</li>
+						</ul>
+					</li>
+									</ul>
+			</nav>
+
+			<!-- Action Buttons (Guest Login / Register & Socials) -->
+			<div class="header-actions">
+				<a href="https://discord.gg/freynix" target="_blank" rel="noopener" class="header-discord-icon-btn" title="Join Discord Community">
+					<svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.929 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.893.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+					<span>Discord</span>
+				</a>
+								<a href="https://facebook.com/FreynixRO" target="_blank" rel="noopener" class="header-facebook-icon-btn" title="Official Facebook Page">
+					<svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+					<span>Facebook</span>
+				</a>
+				
+									<a href="/?module=account&action=logout" onclick="return confirm('Are you sure you want to logout?')" class="freynix-btn btn-secondary btn-sm" style="color: #ff6b81; border-color: rgba(255, 107, 129, 0.4);">Logout</a>
+				
+				<!-- Mobile Navigation Hamburger Toggle -->
+				<button type="button" class="mobile-nav-toggle" aria-label="Toggle navigation drawer" aria-expanded="false">
+					<svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+				</button>
+			</div>
+		</div>
+	</div>
+</header>
+
+		<!-- Inner Page Header & Breadcrumb -->
+	<header class="inner-page-header">
+		<div class="freynix-container">
+			<h1 class="inner-page-title">Viewing My Account</h1>
+			<div class="inner-breadcrumb">
+				<a href="/">Home</a>
+				<span>/</span>
+				<span>Account</span>
+								<span>/</span>
+				<span style="color: var(--color-gold);">View</span>
+							</div>
+		</div>
+	</header>
+
+	<!-- Inner Page Container & Layout -->
+	<div class="freynix-container">
+				<div class="inner-layout-grid">
+						<!-- Inner Sidebar -->
+			<aside class="freynix-sidebar">
+				
+<!-- User / Account Card -->
+<div class="sidebar-widget">
+	<h3 class="widget-title">
+		<span style="color: var(--color-gold);">&#128100;</span>
+		<span>Player Account</span>
+	</h3>
+
+			<div style="margin-bottom: 14px;">
+			<div style="font-size: 0.78rem; color: var(--color-muted); text-transform: uppercase; font-family: var(--font-heading); letter-spacing: 0.08em;">Logged in as</div>
+			<div style="font-size: 1.15rem; font-weight: 700; color: var(--color-gold); font-family: var(--font-fantasy);">malda009</div>
+			<div style="font-size: 0.85rem; color: var(--color-violet); margin-top: 4px;">
+				Balance: <strong>0</strong> Credits
+			</div>
+		</div>
+
+		<ul class="sidebar-menu">
+			<li><a href="/?module=account&action=view" class="active">Player Dashboard</a></li>
+			<li><a href="/?module=account&action=changepass">Change Password</a></li>
+			<li><a href="/?module=account&action=changemail">Change E-mail</a></li>
+			<li><a href="/?module=servicedesk">Support Desk</a></li>
+			<li><a href="/?module=donate">Donate for Credits</a></li>
+			<li><a href="/?module=purchase">Donation Shop</a></li>
+			<li><a href="/?module=account&action=logout" onclick="return confirm('Are you sure you want to logout?')" style="color: #ff6b81;">Sign Out</a></li>
+		</ul>
+	</div>
+
+<!-- Admin Menu (Role-Aware) -->
+<div class="sidebar-widget" style="border-color: var(--border-gold);">
+	<h3 class="widget-title" style="color: var(--color-gold);">
+		<span>&#9881;</span>
+		<span>Staff Controls</span>
+	</h3>
+	<ul class="sidebar-menu">
+		<li><a href="/?module=homepage" style="color: var(--color-gold); font-weight: 700;">&#9881; Homepage CMS</a></li>
+				<li>
+			<a href="/?module=servicedesk&action=staffindex" class="">
+				Service Desk			</a>
+		</li>
+				<li>
+			<a href="/?module=pages" class="">
+				Pages			</a>
+		</li>
+				<li>
+			<a href="/?module=news&action=manage" class="">
+				News			</a>
+		</li>
+				<li>
+			<a href="/?module=downloads&action=manage" class="">
+				 Downloads			</a>
+		</li>
+				<li>
+			<a href="/?module=navigation" class="">
+				 Navigation			</a>
+		</li>
+				<li>
+			<a href="/?module=homepage" class="">
+				 Homepage CMS			</a>
+		</li>
+				<li>
+			<a href="/?module=settings" class="">
+				 Global Settings			</a>
+		</li>
+				<li>
+			<a href="/?module=account" class="">
+				Account			</a>
+		</li>
+				<li>
+			<a href="/?module=character" class="">
+				Character			</a>
+		</li>
+				<li>
+			<a href="/?module=cplog" class="">
+				CP Logs			</a>
+		</li>
+				<li>
+			<a href="/?module=pages" class="">
+				Pages			</a>
+		</li>
+				<li>
+			<a href="/?module=news&action=manage" class="">
+				News			</a>
+		</li>
+				<li>
+			<a href="/?module=guild" class="">
+				Guilds			</a>
+		</li>
+				<li>
+			<a href="/?module=ipban" class="">
+				IP Ban List			</a>
+		</li>
+				<li>
+			<a href="/?module=logdata" class="">
+				rA Logs			</a>
+		</li>
+				<li>
+			<a href="/?module=install&action=reinstall" class="">
+				Re-Install			</a>
+		</li>
+				<li>
+			<a href="/?module=mail" class="">
+				Send Mail			</a>
+		</li>
+				<li>
+			<a href="/?module=webcommands" class="">
+				Web Commands			</a>
+		</li>
+			</ul>
+</div>
+
+<!-- Server Quick Stats Widget -->
+<div class="sidebar-widget">
+	<h3 class="widget-title">
+		<span style="color: var(--color-violet);">&#128220;</span>
+		<span>Server Info</span>
+	</h3>
+	<div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.88rem;">
+		<div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px;">
+			<span style="color: var(--color-muted);">Server Mode</span>
+			<span style="font-weight: 700; color: #fff;">Pre-Renewal</span>
+		</div>
+		<div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px;">
+			<span style="color: var(--color-muted);">Max Level</span>
+			<span style="font-weight: 700; color: var(--color-gold);">99 / 70</span>
+		</div>
+		<div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px;">
+			<span style="color: var(--color-muted);">EXP Rates</span>
+			<span style="font-weight: 700; color: var(--color-violet);">1000x / 1000x</span>
+		</div>
+		<div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px;">
+			<span style="color: var(--color-muted);">Selected MVP Drop</span>
+			<span style="font-weight: 700; color: #ff6b81;">1%</span>
+		</div>
+		<div style="display: flex; justify-content: space-between; padding-top: 4px;">
+			<span style="color: var(--color-muted);">Server Time</span>
+			<span style="font-family: var(--font-heading); color: #fff;">01:56 UTC</span>
+		</div>
+	</div>
+</div>
+
+<!-- Community Discord Widget -->
+<div class="sidebar-widget" style="border-color: #5865F2;">
+	<h3 class="widget-title" style="color: #7289da;">
+		<span>&#128172;</span>
+		<span>Discord Community</span>
+	</h3>
+	<p style="font-size: 0.85rem; color: var(--color-muted); margin-bottom: 14px;">
+		Connect with guild leaders, organize party raids, and get live server announcements.
+	</p>
+	<a href="https://discord.gg/freynix" target="_blank" rel="noopener" class="freynix-btn btn-secondary btn-sm" style="width: 100%; border-color: rgba(88, 101, 242, 0.6); color: #B59FFF;">
+		Join Discord
+	</a>
+</div>
+			</aside>
+			
+			<!-- Inner Main Content Panel -->
+			<main class="main-content-panel">
+				
+				<!-- Flash Messages -->
+				
+				<!-- Submenu -->
+				<div id="submenu">
+	<span style="font-family: var(--font-heading); color: var(--gold-antique); font-weight: 700; margin-right: 6px;">SECTION:</span>
+			<a href="/?module=account" class="sub-menu-item">
+			List Accounts		</a>
+			<a href="/?module=account&action=view" class="sub-menu-item current-sub-menu">
+			View Account		</a>
+			<a href="/?module=account&action=changepass" class="sub-menu-item">
+			Change Password		</a>
+			<a href="/?module=account&action=changemail" class="sub-menu-item">
+			Change E-mail		</a>
+			<a href="/?module=account&action=changesex" class="sub-menu-item">
+			Change Gender		</a>
+			<a href="/?module=account&action=transfer" class="sub-menu-item">
+			Transfer Credits		</a>
+			<a href="/?module=account&action=xferlog" class="sub-menu-item">
+			Credit Transfer History		</a>
+			<a href="/?module=account&action=cart" class="sub-menu-item">
+			Go to Shopping Cart		</a>
+	</div>
+
+				<!-- Pagemenu -->
+				<div id="pagemenu">
+	<span style="font-family: var(--font-heading); color: var(--color-violet); font-weight: 700; margin-right: 6px;">
+		Viewing My Account:	</span>
+			<a href="/?module=account&action=edit&id=2000000" class="page-menu-item">
+			Modify Account		</a>
+	</div>
+
+				<!-- Credit balance -->
+				
+	
+<div style="margin-bottom: 28px;">
+	<div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px;">
+		<div>
+			<div class="news-badge gold" style="display: inline-block; margin-bottom: 8px;">PLAYER COMMAND CENTER</div>
+			<h1 style="font-size: 2.2rem; color: #fff; margin-bottom: 4px;">
+				ACCOUNT: <span style="color: var(--color-gold);">malda009</span>
+			</h1>
+			<p style="color: var(--color-muted); font-size: 0.95rem;">
+				Manage your characters, security settings, storage vault, and donation balance.
+			</p>
+		</div>
+
+		<!-- Quick Actions Bar -->
+		<div style="display: flex; gap: 10px; flex-wrap: wrap;">
+			<a href="/?module=account&action=changepass" class="freynix-btn btn-secondary btn-sm">
+				<span>&#128274; Password</span>
+			</a>
+			<a href="/?module=account&action=changemail" class="freynix-btn btn-secondary btn-sm">
+				<span>&#9993; E-mail</span>
+			</a>
+						<a href="/?module=servicedesk" class="freynix-btn btn-violet btn-sm">
+				<span>&#127915; Support Tickets</span>
+			</a>
+		</div>
+	</div>
+</div>
+
+
+	<div class="notice">
+		<span>⚠️</span>
+		<span><strong>Security Notice:</strong> No secondary PIN Code set on this account. Log in via the game client to configure your secondary pincode!</span>
+	</div>
+
+<!-- Top Metrics Cards -->
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 18px; margin-bottom: 30px;">
+	<!-- Card 1: Balance -->
+	<div class="freynix-card card-gold" style="padding: 20px;">
+		<span class="stat-label">Donation Credits</span>
+		<div class="stat-value gold" style="font-size: 2rem; margin: 6px 0;">
+			0		</div>
+		<span class="stat-sub">Available for Item Shop</span>
+	</div>
+
+	<!-- Card 2: Total Characters -->
+	<div class="freynix-card" style="padding: 20px;">
+		<span class="stat-label">Active Characters</span>
+		<div class="stat-value violet" style="font-size: 2rem; margin: 6px 0;">
+			0		</div>
+		<span class="stat-sub">Across All Server Realms</span>
+	</div>
+
+	<!-- Card 3: Combined Wealth -->
+	<div class="freynix-card" style="padding: 20px;">
+		<span class="stat-label">Combined Zeny</span>
+		<div class="stat-value" style="font-size: 2rem; margin: 6px 0; color: #fff;">
+			0		</div>
+		<span class="stat-sub">Zeny across all characters</span>
+	</div>
+
+	<!-- Card 4: Account Standing -->
+	<div class="freynix-card" style="padding: 20px;">
+		<span class="stat-label">Account Status</span>
+		<div style="margin: 8px 0;">
+							<span class="account-state state-normal">Good Standing</span>
+					</div>
+		<span class="stat-sub">Total Logins: 0</span>
+	</div>
+</div>
+
+<!-- ========================================================================
+     CHARACTER ROSTER
+     ======================================================================== -->
+<div class="freynix-card" style="margin-bottom: 30px;">
+	<div class="card-header-styled">
+		<h3 class="card-title-styled">CHARACTER ROSTER</h3>
+	</div>
+
+						<h4 style="font-size: 1.15rem; color: var(--color-gold); margin-bottom: 14px; font-family: var(--font-fantasy);">
+				Realm: Freynix			</h4>
+
+							<div style="text-align: center; padding: 24px; color: var(--color-muted); font-size: 0.9rem;">
+					No characters created on this realm yet. Log in to the game client to create your first adventurer!
+				</div>
+						</div>
+
+<!-- ========================================================================
+     ACCOUNT INFORMATION & SECURITY DETAILS
+     ======================================================================== -->
+<div class="account-info-grid">
+	<!-- Left Card: Account Credentials -->
+	<div class="freynix-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
+		<div class="card-header-styled" style="padding: 16px 20px; border-bottom: 1px solid var(--border-subtle); margin-bottom: 0;">
+			<h3 class="card-title-styled" style="font-size: 1.05rem;">ACCOUNT CREDENTIALS</h3>
+		</div>
+		<div style="flex: 1; display: flex; flex-direction: column;">
+			<table class="account-detail-table" style="width: 100%; height: 100%;">
+				<tr>
+					<th>Account ID:</th>
+					<td>
+						<span style="font-weight: 700; color: #fff; font-family: var(--font-heading); font-size: 1.05rem;">
+							#2000000						</span>
+					</td>
+				</tr>
+				<tr>
+					<th>Registered E-mail:</th>
+					<td>
+						<div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+							<span style="color: #fff; word-break: break-all;">markwillowlaldave@gmail.com</span>
+															<a href="/?module=account&action=changemail" class="freynix-btn btn-secondary btn-sm" style="padding: 3px 8px; font-size: 0.72rem; line-height: 1;">
+									Change
+								</a>
+													</div>
+					</td>
+				</tr>
+				<tr>
+					<th>Gender:</th>
+					<td>
+													<span class="news-badge" style="font-size: 0.78rem; padding: 3px 10px;">&#9794; Male</span>
+											</td>
+				</tr>
+				<tr>
+					<th>Security PIN:</th>
+					<td>
+																					<span class="status-server-state offline" style="font-size: 0.82rem;"><span class="status-dot offline"></span> Not Set</span>
+																		</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<!-- Right Card: Activity & Timestamps -->
+	<div class="freynix-card" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
+		<div class="card-header-styled" style="padding: 16px 20px; border-bottom: 1px solid var(--border-subtle); margin-bottom: 0;">
+			<h3 class="card-title-styled" style="font-size: 1.05rem;">ACTIVITY &amp; TIMESTAMPS</h3>
+		</div>
+		<div style="flex: 1; display: flex; flex-direction: column;">
+			<table class="account-detail-table" style="width: 100%; height: 100%;">
+				<tr>
+					<th>Registration Date:</th>
+					<td>
+						<span style="color: #fff; font-size: 0.9rem;">
+							2026-11-02 01:56						</span>
+					</td>
+				</tr>
+				<tr>
+					<th>Last In-Game Login:</th>
+					<td>
+						<span style="color: #fff; font-size: 0.9rem;">
+							Never logged in						</span>
+					</td>
+				</tr>
+				<tr>
+					<th>Last Known IP:</th>
+					<td>
+						<span style="font-family: monospace; color: var(--color-gold); font-size: 0.92rem; font-weight: 600;">
+							None						</span>
+					</td>
+				</tr>
+				<tr>
+					<th>Support Tickets:</th>
+					<td>
+						<a href="/?module=servicedesk" class="freynix-btn btn-secondary btn-sm" style="padding: 4px 10px; font-size: 0.75rem; text-decoration: none;">
+							<span>View Support Desk &rarr;</span>
+						</a>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+				</main><!-- /.main-content-panel -->
+		</div><!-- /.inner-layout-grid -->
+	</div><!-- /.freynix-container -->
+	
+	<!-- Global Freynix Eclipse Realm Footer -->
+	<footer class="freynix-footer">
+		<div class="freynix-container">
+			<div class="footer-top">
+				<!-- Brand Column -->
+				<div class="footer-col">
+					<div class="brand-logo-wrap" style="margin-bottom: 14px;">
+						<img src="/themes/freynix/img/logo.png" alt="FREYNIX RO" class="brand-logo-img" />
+						<div class="brand-text">
+							<span class="brand-title">FREYNIX</span>
+							<span class="brand-slogan">FORGE YOUR FREEDOM.</span>
+						</div>
+					</div>
+					<p class="footer-brand-desc">
+						Experience classic Ragnarok Online on Freynix! High-rate 1000x progression, 99/70 pre-renewal, competitive PvP, and epic War of Emperium battles.					</p>
+					<!-- Social Action Buttons -->
+					<div style="display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap;">
+													<a href="https://discord.gg/freynix" target="_blank" rel="noopener" class="freynix-btn btn-secondary btn-sm">
+								<span>Discord</span>
+							</a>
+																			<a href="https://facebook.com/FreynixRO" target="_blank" rel="noopener" class="freynix-btn btn-secondary btn-sm">
+								<span>Facebook</span>
+							</a>
+																	</div>
+				</div>
+
+				<!-- Dynamic Navigation Links -->
+				<div class="footer-col">
+					<h4 class="footer-col-title">Navigation</h4>
+					<ul class="footer-links">
+																													<li>
+									<a href="/?module=main" >
+										Home Portal									</a>
+								</li>
+																							<li>
+									<a href="/?module=account&amp;action=create" >
+										Create Account									</a>
+								</li>
+																							<li>
+									<a href="/?module=news" >
+										Server Announcements									</a>
+								</li>
+																							<li>
+									<a href="/?module=main&amp;action=downloads" >
+										Download Client									</a>
+								</li>
+																							<li>
+									<a href="/?module=ranking&amp;action=character" >
+										Character Leaderboard									</a>
+								</li>
+																							<li>
+									<a href="/?module=woe" >
+										War of Emperium									</a>
+								</li>
+																							<li>
+									<a href="/?module=service&amp;action=tos" >
+										Terms of Service									</a>
+								</li>
+																							<li>
+									<a href="/?module=servicedesk" >
+										Support Desk									</a>
+								</li>
+																		</ul>
+				</div>
+
+				<!-- Support & Information -->
+				<div class="footer-col">
+					<h4 class="footer-col-title">Support &amp; Realm</h4>
+					<ul class="footer-links">
+						<li><a href="/?module=servicedesk">Service Desk</a></li>
+						<li><a href="/?module=server&action=info">Server Specifications</a></li>
+						<li><a href="/?module=server&action=status">Live Server Status</a></li>
+						<li><a href="/?module=donate">Donations &amp; Support</a></li>
+						<li><a href="/?module=purchase">Donation Item Shop</a></li>
+						<li><a href="/?module=pages&action=content&path=rules">Server Rules</a></li>
+					</ul>
+				</div>
+
+				<!-- Quick Server Specs -->
+				<div class="footer-col">
+					<h4 class="footer-col-title">Realm Specs</h4>
+					<ul class="footer-links" style="font-size: 0.85rem; color: var(--color-muted);">
+						<li><strong>Rates:</strong> 1000x / 1000x</li>
+						<li><strong>Max Level:</strong> 99 / 70</li>
+						<li><strong>Mode:</strong> Pre-Renewal</li>
+						<li><strong>Card Drops:</strong> 1% MVP / Mini-Boss</li>
+						<li><strong>Protection:</strong> Gepard Shield</li>
+						<li><strong>Main City:</strong> Prontera Hub</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- Footer Bottom Bar -->
+			<div class="footer-bottom">
+				<div>
+					&copy; 2026 <strong>FREYNIX RAGNAROK ONLINE</strong> &mdash; All Rights Reserved.
+				</div>
+				<div style="font-size: 0.78rem;">
+					FREYNIX is an independent game server. Ragnarok Online and all associated assets are property of Gravity Co., Ltd. and Lee Myoungjin.				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Back to Top Button / Helpers -->
+	<script type="text/javascript">
+		// Auto-dismiss flash messages after 6s
+		setTimeout(function(){
+			$('.message, .notice').fadeOut(600);
+		}, 6000);
+	</script>
+</body>
+</html>

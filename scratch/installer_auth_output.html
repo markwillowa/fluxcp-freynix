@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" type="image/x-icon" href="./favicon.ico" />
+	<title>FluxCP &bull; Realm Setup &amp; Installation Wizard</title>
+
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Outfit:wght@300;400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+
+	<style type="text/css">
+		:root {
+			--color-midnight: #0B1020;
+			--color-arcane:   #242044;
+			--color-violet:   #9D80E8;
+			--color-gold:     #D6AD66;
+			--color-card:     #171C31;
+			--color-text:     #F4F0FF;
+			--color-muted:    #A6ACC5;
+			--border-subtle:  rgba(166, 172, 197, 0.14);
+			--border-card:    rgba(157, 128, 232, 0.22);
+			--border-gold:    rgba(214, 173, 102, 0.40);
+			--radius-md:      12px;
+			--radius-sm:      6px;
+			--shadow-card:    0 12px 36px rgba(0, 0, 0, 0.55);
+		}
+
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			background-color: var(--color-midnight);
+			background-image: 
+				radial-gradient(ellipse 80% 50% at 50% -20%, rgba(157, 128, 232, 0.18), transparent 70%),
+				radial-gradient(circle at 10% 20%, rgba(36, 32, 68, 0.6), transparent 40%),
+				linear-gradient(180deg, #070A14 0%, #0B1020 100%);
+			background-attachment: fixed;
+			color: var(--color-text);
+			font-family: 'Outfit', sans-serif;
+			font-size: 15px;
+			line-height: 1.6;
+			min-height: 100vh;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.installer-header-bar {
+			background: rgba(11, 16, 32, 0.95);
+			border-bottom: 1px solid var(--border-card);
+			padding: 18px 0;
+			backdrop-filter: blur(12px);
+			position: sticky;
+			top: 0;
+			z-index: 100;
+		}
+
+		.installer-container {
+			max-width: 1100px;
+			margin: 0 auto;
+			padding: 0 24px;
+			width: 100%;
+		}
+
+		.installer-brand {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			gap: 16px;
+		}
+
+		.installer-logo-wrap {
+			display: flex;
+			align-items: center;
+			gap: 14px;
+			text-decoration: none;
+		}
+
+		.installer-logo-img {
+			width: 44px;
+			height: 44px;
+			border-radius: 8px;
+			border: 1px solid var(--border-gold);
+			box-shadow: 0 0 16px rgba(214, 173, 102, 0.25);
+		}
+
+		.installer-title-text {
+			font-family: 'Cinzel', serif;
+			font-size: 1.35rem;
+			font-weight: 800;
+			letter-spacing: 0.08em;
+			color: #fff;
+			text-transform: uppercase;
+		}
+
+		.installer-subtitle-text {
+			display: block;
+			font-family: 'Rajdhani', sans-serif;
+			font-size: 0.78rem;
+			font-weight: 700;
+			color: var(--color-gold);
+			letter-spacing: 0.15em;
+			text-transform: uppercase;
+		}
+
+		.installer-steps-bar {
+			display: flex;
+			gap: 8px;
+			flex-wrap: wrap;
+		}
+
+		.step-pill {
+			padding: 6px 14px;
+			border-radius: var(--radius-sm);
+			font-size: 0.8rem;
+			font-weight: 700;
+			font-family: 'Rajdhani', sans-serif;
+			letter-spacing: 0.06em;
+			text-transform: uppercase;
+			border: 1px solid var(--border-subtle);
+			background: rgba(36, 32, 68, 0.4);
+			color: var(--color-muted);
+		}
+
+		.step-pill.active {
+			background: var(--color-arcane);
+			border-color: var(--color-gold);
+			color: var(--color-gold);
+			box-shadow: 0 0 12px rgba(214, 173, 102, 0.2);
+		}
+
+		.step-pill.done {
+			border-color: var(--color-violet);
+			color: var(--color-violet);
+		}
+
+		.installer-main {
+			flex: 1;
+			padding: 40px 0 60px 0;
+		}
+
+		.installer-card {
+			background: var(--color-card);
+			border: 1px solid var(--border-card);
+			border-radius: var(--radius-md);
+			padding: 32px;
+			box-shadow: var(--shadow-card);
+			margin-bottom: 28px;
+		}
+
+		.installer-card.card-gold {
+			border-color: var(--border-gold);
+			box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6), 0 0 20px rgba(214, 173, 102, 0.1);
+		}
+
+		.card-header-styled {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			border-left: 3px solid var(--color-gold);
+			padding-left: 14px;
+			margin-bottom: 22px;
+		}
+
+		.card-title-styled {
+			font-family: 'Cinzel', serif;
+			font-size: 1.25rem;
+			font-weight: 700;
+			letter-spacing: 0.04em;
+			color: #fff;
+			text-transform: uppercase;
+		}
+
+		/* Form Inputs & Controls */
+		input[type="text"],
+		input[type="password"],
+		input[type="email"],
+		input[type="url"],
+		input[type="number"],
+		textarea,
+		select {
+			width: 100%;
+			background: #0E1324;
+			border: 1px solid var(--border-card);
+			border-radius: var(--radius-sm);
+			color: var(--color-text);
+			font-family: 'Outfit', sans-serif;
+			font-size: 0.95rem;
+			padding: 10px 14px;
+			outline: none;
+			transition: all 0.2s ease;
+		}
+
+		input:focus,
+		textarea:focus,
+		select:focus {
+			border-color: var(--color-gold);
+			background: #12182E;
+			box-shadow: 0 0 10px rgba(214, 173, 102, 0.25);
+		}
+
+		label {
+			display: block;
+			font-family: 'Rajdhani', sans-serif;
+			font-size: 0.85rem;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 0.06em;
+			color: var(--color-gold);
+			margin-bottom: 6px;
+		}
+
+		.form-grid-2 {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 20px;
+		}
+
+		.form-grid-3 {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			gap: 20px;
+		}
+
+		@media (max-width: 768px) {
+			.form-grid-2,
+			.form-grid-3 {
+				grid-template-columns: 1fr;
+			}
+		}
+
+		/* Action Buttons */
+		.btn-gold {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			gap: 8px;
+			background: linear-gradient(135deg, #e4c17e 0%, #D6AD66 50%, #b88d44 100%);
+			color: #0B1020;
+			border: 1px solid #ffd480;
+			border-radius: var(--radius-sm);
+			padding: 12px 24px;
+			font-family: 'Rajdhani', sans-serif;
+			font-size: 0.98rem;
+			font-weight: 800;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			cursor: pointer;
+			text-decoration: none;
+			transition: all 0.25s ease;
+			box-shadow: 0 4px 15px rgba(214, 173, 102, 0.35);
+		}
+
+		.btn-gold:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 6px 20px rgba(214, 173, 102, 0.5);
+			color: #000;
+		}
+
+		.btn-secondary {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			gap: 8px;
+			background: rgba(36, 32, 68, 0.6);
+			color: var(--color-text);
+			border: 1px solid var(--border-card);
+			border-radius: var(--radius-sm);
+			padding: 10px 20px;
+			font-family: 'Rajdhani', sans-serif;
+			font-size: 0.92rem;
+			font-weight: 700;
+			letter-spacing: 0.06em;
+			text-transform: uppercase;
+			cursor: pointer;
+			text-decoration: none;
+			transition: all 0.2s ease;
+		}
+
+		.btn-secondary:hover {
+			background: var(--color-arcane);
+			border-color: var(--color-violet);
+			color: #fff;
+		}
+
+		/* Tables */
+		.installer-table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-bottom: 20px;
+			border-radius: var(--radius-sm);
+			overflow: hidden;
+		}
+
+		.installer-table th {
+			background: #12172A;
+			color: var(--color-gold);
+			font-family: 'Rajdhani', sans-serif;
+			font-size: 0.85rem;
+			font-weight: 700;
+			letter-spacing: 0.06em;
+			text-transform: uppercase;
+			padding: 12px 16px;
+			border-bottom: 1px solid var(--border-subtle);
+			text-align: left;
+		}
+
+		.installer-table td {
+			padding: 12px 16px;
+			background: rgba(23, 28, 49, 0.5);
+			border-bottom: 1px solid var(--border-subtle);
+			font-size: 0.92rem;
+		}
+
+		.installer-table tr:hover td {
+			background: rgba(36, 32, 68, 0.4);
+		}
+
+		/* Badges & Alerts */
+		.badge-success {
+			display: inline-flex;
+			align-items: center;
+			gap: 6px;
+			padding: 4px 10px;
+			border-radius: 20px;
+			background: rgba(46, 204, 113, 0.18);
+			color: #2ecc71;
+			border: 1px solid rgba(46, 204, 113, 0.4);
+			font-size: 0.8rem;
+			font-weight: 700;
+		}
+
+		.badge-danger {
+			display: inline-flex;
+			align-items: center;
+			gap: 6px;
+			padding: 4px 10px;
+			border-radius: 20px;
+			background: rgba(231, 76, 60, 0.18);
+			color: #e74c3c;
+			border: 1px solid rgba(231, 76, 60, 0.4);
+			font-size: 0.8rem;
+			font-weight: 700;
+		}
+
+		.alert-banner {
+			padding: 14px 18px;
+			border-radius: var(--radius-sm);
+			margin-bottom: 24px;
+			display: flex;
+			align-items: center;
+			gap: 12px;
+		}
+
+		.alert-banner.success {
+			background: rgba(46, 204, 113, 0.12);
+			border: 1px solid rgba(46, 204, 113, 0.35);
+			color: #2ecc71;
+		}
+
+		.alert-banner.danger {
+			background: rgba(231, 76, 60, 0.12);
+			border: 1px solid rgba(231, 76, 60, 0.35);
+			color: #e74c3c;
+		}
+	</style>
+</head>
+<body>
+	<header class="installer-header-bar">
+		<div class="installer-container">
+			<div class="installer-brand">
+				<div class="installer-logo-wrap">
+					<img src="/themes/installer/rathena-001.png" alt="FluxCP" class="installer-logo-img" />
+					<div>
+						<span class="installer-title-text">FLUXCP REALM WIZARD</span>
+						<span class="installer-subtitle-text">Eclipse Realm V2 &bull; Setup &amp; Configuration</span>
+					</div>
+				</div>
+
+				<div class="installer-steps-bar">
+					<span class="step-pill done">1. System Check</span>
+					<span class="step-pill done">2. Schemas</span>
+					<span class="step-pill active">3. Realm &amp; Info Setup</span>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main class="installer-main">
+		<div class="installer-container">
+			
+			
+	<!-- ========================================================================
+	     AUTHENTICATED INSTALLER STATE
+	     ======================================================================== -->
+
+	<!-- Top Navigation Actions -->
+	<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 14px;">
+		<div>
+			<h2 style="font-family: 'Cinzel', serif; font-size: 1.6rem; color: #fff;">
+				REALM CONFIGURATION WIZARD
+			</h2>
+			<p style="color: var(--color-muted); font-size: 0.92rem;">
+				Configure your MySQL database connection (<code>config/servers.php</code>), verify schemas, and customize server branding before launching the website.
+			</p>
+		</div>
+		<div style="display: flex; gap: 10px;">
+			<a href="/?module=main" target="_blank" class="btn-secondary">
+				<span>&#128065; Preview Main Page</span>
+			</a>
+			<a href="/?module=install&logout=1" onclick="return confirm('Exit and lock installer?')" class="btn-secondary" style="border-color: rgba(231, 76, 60, 0.4); color: #ff6b81;">
+				<span>Lock / Logout</span>
+			</a>
+		</div>
+	</div>
+
+	<!-- Section 0: MySQL Database Connection & config/servers.php -->
+	<div class="installer-card" style="border-color: var(--border-violet); margin-bottom: 28px;">
+		<div class="card-header-styled" style="border-color: var(--color-violet);">
+			<h3 class="card-title-styled" style="color: var(--color-violet);">&#128187; MYSQL DATABASE CREDENTIALS (CONFIG/SERVERS.PHP)</h3>
+		</div>
+		<p style="color: var(--color-muted); font-size: 0.9rem; margin-bottom: 20px;">
+			Configure the MySQL database login parameters used by FluxCP. Updating these fields tests the MySQL connection and automatically writes the configuration into <code>config/servers.php</code>.
+		</p>
+
+		<form action="/?module=install" method="post">
+			<input type="hidden" name="save_mysql_config" value="1" />
+
+			<div class="form-grid-3" style="margin-bottom: 18px;">
+				<div>
+					<label for="mysql_host">MySQL Hostname * (e.g. 127.0.0.1 or localhost)</label>
+					<input type="text" name="mysql_host" id="mysql_host" value="127.0.0.1" required />
+				</div>
+				<div>
+					<label for="mysql_port">MySQL Port (Default: 3306)</label>
+					<input type="number" name="mysql_port" id="mysql_port" value="3306" />
+				</div>
+				<div>
+					<label for="mysql_db">MySQL Database Name * (e.g. freynix or ragnarok)</label>
+					<input type="text" name="mysql_db" id="mysql_db" value="freynix" required />
+				</div>
+			</div>
+
+			<div class="form-grid-3" style="margin-bottom: 20px;">
+				<div>
+					<label for="mysql_user">MySQL Username * (e.g. admin or root)</label>
+					<input type="text" name="mysql_user" id="mysql_user" value="admin" required />
+				</div>
+				<div>
+					<label for="mysql_pass">MySQL Password</label>
+					<input type="password" name="mysql_pass" id="mysql_pass" value="Maki0913$" placeholder="Enter MySQL password..." />
+				</div>
+				<div>
+					<label for="mysql_server_name">Server Group Name in config/servers.php</label>
+					<input type="text" name="mysql_server_name" id="mysql_server_name" value="Freynix Ragnarok Online" required />
+				</div>
+			</div>
+
+			<div style="display: flex; justify-content: flex-end;">
+				<button type="submit" class="btn-secondary" style="border-color: var(--border-gold); color: var(--color-gold); font-weight: 700;">
+					<span>&#128190; Test &amp; Update MySQL Connection in config/servers.php &rarr;</span>
+				</button>
+			</div>
+		</form>
+	</div>
+
+	<!-- Section 1: Database Schemas -->
+		<div class="alert-banner success" style="margin-bottom: 28px;">
+		<span>&#10003;</span>
+		<span><strong>Database Ready:</strong> All FluxCP core database schemas and custom CMS tables are verified and up to date!</span>
+	</div>
+	
+	<!-- ========================================================================
+	     Section 2: Comprehensive Server & Website Information Configuration
+	     ======================================================================== -->
+	<form action="/?module=install" method="post">
+		<input type="hidden" name="save_server_config" value="1" />
+
+		<!-- 1. Server Identity & Branding -->
+		<div class="installer-card card-gold">
+			<div class="card-header-styled">
+				<h3 class="card-title-styled">&#127984; SERVER BRAND &amp; IDENTITY</h3>
+			</div>
+			<p style="color: var(--color-muted); font-size: 0.9rem; margin-bottom: 20px;">
+				Set your custom server name, slogan, description, and branding. These values appear dynamically across all navigation menus, hero banners, page titles, and footers.
+			</p>
+
+			<div class="form-grid-2" style="margin-bottom: 20px;">
+				<div>
+					<label for="server_name">Server Name * (e.g. "Freynix RO", "Aegis Ragnarok Online")</label>
+					<input type="text" name="server_name" id="server_name" value="Freynix Ragnarok Online" required />
+				</div>
+				<div>
+					<label for="site_slogan">Brand Slogan / Tagline * (e.g. "YOUR REALM. YOUR FREEDOM.")</label>
+					<input type="text" name="site_slogan" id="site_slogan" value="YOUR REALM. YOUR FREEDOM." required />
+				</div>
+			</div>
+
+			<div style="margin-bottom: 20px;">
+				<label for="site_logo_url">Custom Logo Image URL (Optional - leave empty for theme default)</label>
+				<input type="text" name="site_logo_url" id="site_logo_url" value="" placeholder="e.g. https://your-domain.com/img/my-custom-logo.png" />
+			</div>
+
+			<div class="form-grid-2">
+				<div>
+					<label for="site_description">Server Meta Description (Search Engine Snippet)</label>
+					<textarea name="site_description" id="site_description" rows="3">An elite pre-renewal Ragnarok Online private server featuring high-rate progression, legendary MVP hunting, guild castle sieges, and pure competitive freedom.</textarea>
+				</div>
+				<div>
+					<label for="site_keywords">SEO Search Keywords (Comma separated)</label>
+					<textarea name="site_keywords" id="site_keywords" rows="3">ragnarok online, private server, pre-renewal, rathena, high rate, woe, pvp, ro server</textarea>
+				</div>
+			</div>
+		</div>
+
+		<!-- 2. Gameplay Specs & Experience Rates -->
+		<div class="installer-card">
+			<div class="card-header-styled">
+				<h3 class="card-title-styled">&#9876; GAMEPLAY MECHANICS &amp; RATES</h3>
+			</div>
+			<p style="color: var(--color-muted); font-size: 0.9rem; margin-bottom: 20px;">
+				Configure the floating statistics cards, server info encyclopedia, and rates widgets displayed across your website.
+			</p>
+
+			<div class="form-grid-3" style="margin-bottom: 20px;">
+				<div>
+					<label for="hp_status_rates_text">EXP Rates Display (e.g. "1000x / 1000x")</label>
+					<input type="text" name="hp_status_rates_text" id="hp_status_rates_text" value="1000x / 1000x" />
+					<input type="hidden" name="rates_text" value="1000x / 1000x" />
+				</div>
+				<div>
+					<label for="drop_rates">Drop Rates Display (e.g. "50x Normal / 1% MVP")</label>
+					<input type="text" name="drop_rates" id="drop_rates" value="50x Normal / 1% MVP" />
+				</div>
+				<div>
+					<label for="hp_status_mode_text">Server Mode / Architecture</label>
+					<input type="text" name="hp_status_mode_text" id="hp_status_mode_text" value="Pre-Renewal" />
+					<input type="hidden" name="server_mode" value="Pre-Renewal" />
+				</div>
+			</div>
+
+			<div class="form-grid-3">
+				<div>
+					<label for="hp_status_base_level">Max Base Level (e.g. "99")</label>
+					<input type="number" name="hp_status_base_level" id="hp_status_base_level" value="99" />
+					<input type="hidden" name="max_base_level" value="99" />
+				</div>
+				<div>
+					<label for="hp_status_job_level">Max Job Level (e.g. "70")</label>
+					<input type="number" name="hp_status_job_level" id="hp_status_job_level" value="70" />
+					<input type="hidden" name="max_job_level" value="70" />
+				</div>
+				<div>
+					<label for="main_city">Main City Hub</label>
+					<input type="text" name="main_city" id="main_city" value="Prontera Capital" />
+				</div>
+			</div>
+
+			<div style="margin-top: 20px;">
+				<label for="woe_schedule">War of Emperium Schedule</label>
+				<input type="text" name="woe_schedule" id="woe_schedule" value="Wed &amp; Sat 20:00 - 22:00 ST" />
+			</div>
+		</div>
+
+		<!-- 3. Cinematic Hero Section Banner -->
+		<div class="installer-card">
+			<div class="card-header-styled">
+				<h3 class="card-title-styled">&#127756; HOMEPAGE HERO SECTION</h3>
+			</div>
+			<p style="color: var(--color-muted); font-size: 0.9rem; margin-bottom: 20px;">
+				Customize the main headline, introduction, and call-to-action buttons on the homepage hero area.
+			</p>
+
+			<div class="form-grid-2" style="margin-bottom: 20px;">
+				<div>
+					<label for="hero_headline">Hero Headline Title</label>
+					<input type="text" name="hero_headline" id="hero_headline" value="Your Realm. Your Freedom." />
+				</div>
+				<div>
+					<label for="hero_subtitle">Hero Subtitle Badge</label>
+					<input type="text" name="hero_subtitle" id="hero_subtitle" value="HIGH-RATE &amp;bull; PRE-RENEWAL &amp;bull; COMPETITIVE PVP &amp;bull; GUILD CASTLES" />
+				</div>
+			</div>
+
+			<div style="margin-bottom: 20px;">
+				<label for="hero_description">Hero Introduction Text</label>
+				<textarea name="hero_description" id="hero_description" rows="3">Experience classic Ragnarok Online reinvented. Master instant trans jobs, hunt legendary MVPs, siege guild castles, and carve your own legend in an unforgiving, player-driven economy.</textarea>
+			</div>
+
+			<div class="form-grid-2">
+				<div>
+					<label for="hero_cta_primary_text">Primary CTA Button (Text &amp; Link)</label>
+					<div style="display: flex; gap: 8px;">
+						<input type="text" name="hero_cta_primary_text" id="hero_cta_primary_text" value="Play Now" placeholder="Button Text" style="flex: 1;" />
+						<input type="text" name="hero_cta_primary_link" id="hero_cta_primary_link" value="/?module=account&amp;action=create" placeholder="Link / URL" style="flex: 1.5;" />
+					</div>
+				</div>
+				<div>
+					<label for="hero_cta_secondary_text">Secondary CTA Button (Text &amp; Link)</label>
+					<div style="display: flex; gap: 8px;">
+						<input type="text" name="hero_cta_secondary_text" id="hero_cta_secondary_text" value="Explore Realm" placeholder="Button Text" style="flex: 1;" />
+						<input type="text" name="hero_cta_secondary_link" id="hero_cta_secondary_link" value="/?module=server&amp;action=info" placeholder="Link / URL" style="flex: 1.5;" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 4. Game Client Downloads -->
+		<div class="installer-card">
+			<div class="card-header-styled">
+				<h3 class="card-title-styled">&#128190; CLIENT DOWNLOAD PACKAGES</h3>
+			</div>
+			<p style="color: var(--color-muted); font-size: 0.9rem; margin-bottom: 20px;">
+				Set the download mirror links for both Full and Lite installers shown on the homepage and downloads section.
+			</p>
+
+			<div class="form-grid-2" style="margin-bottom: 20px;">
+				<div>
+					<label for="download_full_name">Full Game Client Name</label>
+					<input type="text" name="download_full_name" id="download_full_name" value="Full Client Package (v2.0)" />
+				</div>
+				<div>
+					<label for="download_full_url">Full Client Download Mirror Link</label>
+					<input type="url" name="download_full_url" id="download_full_url" value="https://drive.google.com/" />
+				</div>
+			</div>
+
+			<div class="form-grid-2">
+				<div>
+					<label for="download_lite_name">Lite / Small Client Patch Name</label>
+					<input type="text" name="download_lite_name" id="download_lite_name" value="Lite Patch Installer" />
+				</div>
+				<div>
+					<label for="download_lite_url">Lite Client Download Mirror Link</label>
+					<input type="url" name="download_lite_url" id="download_lite_url" value="https://mega.nz/" />
+				</div>
+			</div>
+		</div>
+
+		<!-- 5. Community & Social Links -->
+		<div class="installer-card">
+			<div class="card-header-styled">
+				<h3 class="card-title-styled">&#128172; COMMUNITY &amp; SUPPORT CHANNELS</h3>
+			</div>
+			<p style="color: var(--color-muted); font-size: 0.9rem; margin-bottom: 20px;">
+				Connect your official Discord server, social media channels, and support contact email.
+			</p>
+
+			<div class="form-grid-2" style="margin-bottom: 20px;">
+				<div>
+					<label for="discord_url">Discord Server Invite URL *</label>
+					<input type="url" name="discord_url" id="discord_url" value="https://discord.gg/" required />
+					<input type="hidden" name="hp_discord_url" value="https://discord.gg/" />
+				</div>
+				<div>
+					<label for="contact_email">Support / Contact Email Address</label>
+					<input type="email" name="contact_email" id="contact_email" value="support@example.com" />
+					<input type="hidden" name="support_email" value="support@example.com" />
+				</div>
+			</div>
+
+			<div class="form-grid-2">
+				<div>
+					<label for="facebook_url">Facebook Page URL (Optional)</label>
+					<input type="url" name="facebook_url" id="facebook_url" value="" placeholder="https://facebook.com/your-server" />
+					<input type="hidden" name="hp_facebook_url" value="" />
+				</div>
+				<div>
+					<label for="youtube_url">YouTube Channel URL (Optional)</label>
+					<input type="url" name="youtube_url" id="youtube_url" value="" placeholder="https://youtube.com/@your-server" />
+				</div>
+			</div>
+		</div>
+
+		<!-- 6. Footer Disclaimer & Copyright -->
+		<div class="installer-card">
+			<div class="card-header-styled">
+				<h3 class="card-title-styled">&#128220; FOOTER &amp; LEGAL DISCLAIMER</h3>
+			</div>
+
+			<div style="margin-bottom: 20px;">
+				<label for="footer_text">Custom Footer Disclaimer / Copyright Notice</label>
+				<textarea name="footer_text" id="footer_text" rows="3">This is an independent Ragnarok Online server. Ragnarok Online and all associated character designs, music, artwork, and trademarks are property of Gravity Co., Ltd. and Lee Myoungjin.</textarea>
+				<input type="hidden" name="footer_disclaimer" value="" />
+			</div>
+		</div>
+
+		<!-- Final Submit Launch Banner -->
+		<div style="background: rgba(36, 32, 68, 0.7); border: 2px solid var(--border-gold); border-radius: var(--radius-md); padding: 28px; text-align: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); margin-top: 30px;">
+			<h3 style="font-family: 'Cinzel', serif; font-size: 1.4rem; color: #fff; margin-bottom: 8px;">
+				READY TO LAUNCH YOUR REALM?
+			</h3>
+			<p style="color: var(--color-muted); font-size: 0.95rem; max-width: 600px; margin: 0 auto 20px auto;">
+				Clicking the button below will save all server settings to your database, initialize default navigation and announcement records, and launch the website with your customized information.
+			</p>
+
+			<div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+				<button type="submit" class="btn-gold" style="font-size: 1.1rem; padding: 14px 36px;">
+					<span>&#9889; Save Configuration &amp; Launch Website &rarr;</span>
+				</button>
+			</div>
+		</div>
+	</form>
+		</div><!-- /.installer-container -->
+	</main><!-- /.installer-main -->
+
+	<footer style="border-top: 1px solid var(--border-subtle); padding: 24px 0; text-align: center; color: var(--color-muted); font-size: 0.85rem; background: rgba(11, 16, 32, 0.9);">
+		<div class="installer-container">
+			<div>
+				&copy; 2026 <strong>Flux Control Panel</strong> &bull; Eclipse Realm Theme V2 &bull; Ragnarok Online Private Server System
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

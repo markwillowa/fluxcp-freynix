@@ -1,0 +1,1613 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html><head>
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-25VQYCGE3Q"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-25VQYCGE3Q');
+	</script>
+	
+<title>RateMyServer.Net - RO Database & Server Reviews</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="Latest Ragnarok Pre-re and Renewal databases.  iRO / kRO item database, monster database, skill database, guides, maps, instances, npcs and creation database.  Read and write reviews on RO Private Servers.  Play with our skill simulator.  Download BGM Remixes and RO tools.">
+<meta name="keywords" content="Ragnarok, online, RO, private server, vps, database, guide, job, quest, headgear quest, monster drops, item information, skill description, creation guides, mob on map, ro instance, mob, skill simulator, skill planner, high rate, mid rate, low rate, super high rate, server, ro map location, ro mp3, download, ragnarok tools, ragnarok online, mmorpg, rpg">
+<meta name="viewport" content="width=device-width">
+<meta name="copyright" content="RateMyServer.Net 2005-2026">
+<meta name="author" content="YC">
+<link rel='stylesheet' type='text/css' href='https://ratemyserver.net/ratemyserver.css?new=2023-09-27a'>
+<link rel='stylesheet' type='text/css' href='https://ratemyserver.net/ratemyserver_mobile_new.css?new=2025-11-25ad'>
+<link rel='stylesheet' type='text/css' href='https://ratemyserver.net/index_flyout_menu.css?new=2024-03-05c'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="shortcut icon" href="favicon.ico">
+
+<link rel='canonical' href="https://ratemyserver.net/" />
+	<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+	<script>
+	  var googletag = googletag || {};
+	  googletag.cmd = googletag.cmd || [];
+	</script>
+	<script>
+	  googletag.cmd.push(function() {
+		googletag.defineSlot('/1024493/RMS-728x90-Main', [728, 90], 'div-gpt-ad-1535829750929-0').addService(googletag.pubads());
+		googletag.defineSlot('/1024493/RMS-728x90', [728, 90], 'div-gpt-ad-1535830186786-0').addService(googletag.pubads());
+		googletag.defineSlot('/1024493/RMS-468x60', [468, 60], 'div-gpt-ad-1535831787419-0').addService(googletag.pubads());
+		googletag.defineSlot('/1024493/RMS-468x60-d2edff', [468, 60], 'div-gpt-ad-1535831908816-0').addService(googletag.pubads());
+		googletag.defineSlot('/1024493/RMS-300x250-NewAdUnit', [300, 250], 'div-gpt-ad-1535831971302-0').addService(googletag.pubads());
+		googletag.defineSlot('/1024493/RMS-300x250-d2edff', [300, 250], 'div-gpt-ad-1535832163246-0').addService(googletag.pubads());
+		googletag.enableServices();
+	  });
+	</script>
+	<script data-ad-client="ca-pub-8545002715011591" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script></head>
+
+<body class="index"><a href="https://ratemyserver.net/cdn-cgi/content?id=ZisND5Q9X6NRg8Ke9vGhuYfVhIt3vcDCh1WYxIIQ2IE-1793576752.9120522-1.2.1.1-g5Xp9sB._1OdFwqUHEVczpM5coE6biH5Yw_Mn0gFIMCZlxL5KV.EgRPlAe3sdEDG" aria-hidden="true" rel="nofollow noopener" style="display: none !important; visibility: hidden !important"></a>
+<SCRIPT LANGUAGE="JavaScript" SRC="https://ratemyserver.net/ratemyserver.js?d=20251125a" > </SCRIPT>
+<script type='text/javascript'>function Go(){return}</script>
+<noscript>Your browser does not support script</noscript>
+<!-- meta name="viewport" content="width=device-width, initial-scale=0.7" -->
+
+<div id="top_navbar">
+	<div class="top_navbar_container"> 
+		<a href="index.php"><i class="fa fa-home fa-lg" style="font-size: 1.6em;"></i></a>
+		<div class="top_dropdown">
+			<button class="top_dropbtn"  onClick="ini_menu()"><i class="fa fa-user-circle-o fa-lg"></i>
+				<i class="fa fa-caret-down"></i>
+			</button>
+			<div class="top_dropdown-content">
+				<a href='https://ratemyserver.net/index.php?page=login' class='link'>Login</a>
+		<a href='https://ratemyserver.net/index.php?page=registration' class='link'>Register</a>
+		<a href='https://ratemyserver.net/forgetpass.php' class='link'>Lost Password?</a>			</div>
+		</div>
+		<div class="top_dropdown">
+			<button class="top_dropbtn"  onClick="ini_menu()">Servers
+				<i class="fa fa-caret-down"></i>
+			</button>
+			<div class="top_dropdown-content">
+				<div id='top_dropdown_server'>
+					<div><a href="index.php?page=listserver&rate=low&order_type=default_high" class='db'>Low Rate</a></div>
+					<div><a href="index.php?page=more_latest_review"  class='db'>Latest Reviews</a></div>
+					
+					<div><a href="index.php?page=listserver&rate=mid&order_type=default_high" class='db'>Mid Rate</a></div>
+					<div><a href="index.php?page=listserver&s_cat=-1&rate=all&order_type=date_New"  class='db'>New Servers</a></div>
+					
+					<div><a href="index.php?page=listserver&rate=high&order_type=default_high" class='db'>High Rate</a></div>
+					<div><a href="index.php?page=listserver&rate=all&order_type=default_high" class='db'>All Servers</a></div>
+					
+					<div><a href="index.php?page=listserver&rate=superhigh&order_type=default_high" class='db'>Super High Rate</a></div>
+					<div><a href="index.php?page=serversearch" class='db'>Search</a></div>
+				</div>
+			</div>
+		</div>
+		<div class="top_dropdown">
+			<button class="top_dropbtn" onClick="ini_menu()">Databases 
+				<i class="fa fa-caret-down"></i>
+			</button>
+			<div class="top_dropdown-content" style='margin-left: -155px;'>
+				<div id='top_dropdown_db'>
+					<div class='db' style='border-left: 1px solid #ccc;'>Items</div>
+						<div><a href="index.php?page=item_db" class='db'>Pre-Re</a></div>
+						<div><a href="index.php?page=re_item_db" class='db'>Renewal</a></div>
+						<div class='top_dropdown_db_bigcell vcenter' style='background-color:#ddd'>
+							<!--input type='text' class='rms_input' name='iname' placeholder='Item Search..' maxlength=30 style='width: 80px;'-->
+						</div>
+						
+					<div class='db' style='border-left: 1px solid #ccc;'>Monsters</div>
+						<div><a href="index.php?page=mob_db" class='db'>Pre-Re</a></div>
+						<div><a href="index.php?page=re_mob_db" class='db'>Renewal</a></div>
+						<div class='top_dropdown_db_bigcell vcenter' style='background-color:#ddd'>
+							<!--input type='text' class='rms_input' name='mob_name' placeholder='Monster Search..' maxlength=30 style='width: 80px;'-->
+						</div>
+						
+					<div class='db' style='border-left: 1px solid #ccc;'>World</div>
+						<div><a href="index.php?page=map_db" class='db'>Maps</a></div>
+						<div><a href="index.php?page=nsw_npc_search" class='db'>NPCs</a></div>
+						<div><a href="index.php?page=nsw_shop_search" class='db'>Shops</a></div>
+						<div style='background-color:#ddd'></div>
+						
+					<div class='db' style='border-left: 1px solid #ccc;'>Character</div> 
+						<div><a href="index.php?page=skill_db_class" class='db'>Skills</a></div>
+						<div><a href="skill_sim.php" class='db' style='white-space: nowrap;'>Skill Sim</a></div>
+						<div><a href="index.php?page=misc_db_list" class='db'>Tables</a></div>
+						<div><a href="https://ro-character-simulator.ratemyserver.net/" class='db' style='white-space: nowrap;'>Char Sim</a></div>
+					<div class='db' style='border-left: 1px solid #ccc;'></div>
+						<div><a href="quest_db.php" class='db'>Quests</a></div>
+						<div><a href="index.php?page=creation_db" class='db'>Creation</a></div>
+						<div class='top_dropdown_db_bigcell'><a href="calc_main.php" class='db'>Calculators</a></div>
+					</div>
+			</div>
+		</div>
+		<div class="top_dropdown" style="float: right;">
+			<button class="top_dropbtn" onClick="ini_menu()" style="font-size: 1em"><i class="fa fa-comments fa-lg" style="color: #fff"></i></button>
+			<div class="top_dropdown-content" style="position: absolute; right: 0;">
+				<a href="https://forum.ratemyserver.net/" target='_blank' class='link'>Forum</a>
+				<a href="https://discord.gg/ATfY8rHzX2" target='_blank' class='link'>Discord</a>
+				<a href="privacy_policy.php#pp_contact" class='link'>Contact Us</a>
+				<a href="advertise.php"  class='link'>Advertise</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<SCRIPT LANGUAGE='JavaScript'>
+
+var first = true; // do nothing on first click
+
+function ini_menu(){
+
+	ele_arr = document.getElementsByClassName("top_dropdown-content");
+
+	for (var i=0; i < ele_arr.length; i++){
+		 
+		 if(ele_arr[i].style.display == '' && !first){
+			ele_arr[i].style.display = 'none';
+		 }else{
+			ele_arr[i].style.display = '';
+		 }
+	}
+	first = false;
+
+}
+
+
+</script>
+<!-- tooltip addon tooltip must be on one line to work -->
+<center><div id="dhtmltooltip"></div></center>
+
+<div class="wrapper">
+
+	<div id="LR_container">
+		<div id="L1_container"><a href='https://bestgamingserver.com/' target='_blank' rel='nofollow'><img src='https://ratemyserver.net/banner/L1_bestgameserver_2026-10.gif' class='slot_LR1_img'></a></div>
+		<div id="R1_container"><a href='https://play-aoy.com/' target='_blank' rel='nofollow'><img src='https://ratemyserver.net/banner/R1-2026-10b_Age_of_Ymir.gif' class='slot_LR1_img'></a></div>
+	</div>
+
+	<a href='https://ratemyserver.net'><div class="logo"></div></a>
+
+<div class="srchbar">
+	<div id="srchbar-link">
+		<ul>
+			<li> &nbsp;&nbsp;&nbsp;  <a href = 'https://ratemyserver.net' class='indexA' style="margin: 0px 5px;">Home</a></li>
+			<li><a href = 'https://ratemyserver.net/index.php?page=registration' title = 'join to review servers or add your server to our listings' class='indexA' style='margin: 0px 5px;'>Join Now</a>		
+			</li>
+			<li><a href = "http://forum.ratemyserver.net/" target = '_blank' title = 'visit our forums' class='indexA' style='margin: 0px 5px;'>Forum</a></li>
+		</ul>
+	</div>
+	<div id="srchbar-srch">
+				<SCRIPT LANGUAGE="JavaScript">
+			qsb_index_url = "index.php?page=";
+	
+			qsb_item_page = "item_db";
+			qsb_mob_page = "mob_db";
+
+			qsb_re_item_page = "re_item_db";
+			qsb_re_mob_page = "re_mob_db";
+		
+			qsb_btn_class = "srchbar-btn";
+			qsb_re_btn_class = "srchbar-btn_re";
+
+			function qsb_chg_srch(obj){
+				if(obj.checked){	// checking
+					document.getElementById("qsb_srch_btn_item").className = qsb_re_btn_class;
+					document.getElementById("qsb_srch_link_item").href = qsb_index_url + qsb_re_item_page;
+					document.getElementById("qsb_srch_form_item").action = qsb_index_url + qsb_re_item_page;
+					document.getElementById("sqb_srch_page_item").value = qsb_re_item_page;
+
+					document.getElementById("qsb_srch_btn_mob").className = qsb_re_btn_class;
+					document.getElementById("qsb_srch_link_mob").href = qsb_index_url + qsb_re_mob_page;
+					document.getElementById("qsb_srch_form_mob").action = qsb_index_url + qsb_re_mob_page;
+					document.getElementById("sqb_srch_page_mob").value = qsb_re_mob_page;
+				}else{	// unchecking
+					document.getElementById("qsb_srch_btn_item").className = qsb_btn_class;
+					document.getElementById("qsb_srch_link_item").href = qsb_index_url + qsb_item_page;
+					document.getElementById("qsb_srch_form_item").action = qsb_index_url + qsb_item_page;
+					document.getElementById("sqb_srch_page_item").value = qsb_item_page;
+
+					document.getElementById("qsb_srch_btn_mob").className = qsb_btn_class;
+					document.getElementById("qsb_srch_link_mob").href = qsb_index_url + qsb_mob_page;
+					document.getElementById("qsb_srch_form_mob").action = qsb_index_url + qsb_mob_page;
+					document.getElementById("sqb_srch_page_mob").value = qsb_mob_page;
+				}
+				return true;
+			}
+		</SCRIPT>
+
+		<div id="srchbar-opt">
+			<span style="line-height: 26px;">Renewal <input type='checkbox' name='qs_page' value='0' style="vertical-align: -2px"  Onclick="return qsb_chg_srch(this);"></span>
+		</div>
+		<div id="qsb_srch_btn_item" class="srchbar-btn">
+			<span style="line-height: 26px;"><a href="index.php?page=item_db" id="qsb_srch_link_item" class="whnbu" title="advanced item search">Item</a></span>
+		</div>
+		<div id="qsb_srch_box_item">
+			<form name='isearch_form' method='GET' action="index.php?page=item_db"  id="qsb_srch_form_item" style= "margin: 0px; padding: 0px;">
+			<input class = 'bartxtbox' type='text' name='iname' maxlength='30' style="width: 95px">
+			<input type = 'hidden' id="sqb_srch_page_item" name = 'page' value = 'item_db'> 
+			<input type = 'hidden' name = 'quick' value = '1'> 
+			<input type = 'hidden' name = 'isearch' value = 'Search'> 
+			</form>
+		</div>
+		
+		<div id="qsb_srch_btn_mob" class="srchbar-btn">
+			<span style="line-height: 26px;"><a href = "index.php?page=mob_db" id="qsb_srch_link_mob" class="whnbu" title="advanced mob search">Monster</a></span>
+		</div>
+		<div id="qsb_srch_box_mob">
+			<form name='mob_search_form' method='GET' action="index.php?page=mob_db" id="qsb_srch_form_mob" style= "margin: 0px; padding: 0px;">
+				<input class = 'bartxtbox' type='text' name='mob_name' maxlength='30' style="width: 95px">
+				<input type = 'hidden' id="sqb_srch_page_mob" name = 'page' value = 'mob_db'>
+				<input type = 'hidden' name = 'quick' value = '1'> 
+				<input type = 'hidden' name = 'f' value = '1'>
+				<input type = 'hidden' name = 'mob_search' value = 'Search'>
+			</form>
+		</div>
+		
+		<div id="qsb_srch_skill">
+			<div class="srchbar-btn" style="position:absolute; left:745px; top:13px;">
+				<span style="line-height: 26px;"><a href = "index.php?page=skill_db_class" class="whnbu"  title="list skill by class">Skill</a></span>
+			</div>
+			<div style="position:absolute; left:825px; top:13px;">
+				<form name='sk_search_form' method='GET' action="index.php?page=skill_db" style= "margin: 0px; padding: 0px;">
+					<input class = 'bartxtbox' type='text' name='sk_name' maxlength='30' size = 15 style='margin:0;'>
+					<input type = 'hidden' name = 'page' value = 'skill_db'>
+					<input type = 'hidden' name = 'sk_search' value = 'Search'>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="contentwrap">
+
+	<div class="sidebar-left">
+	
+		<div class="serverlisting-BL">
+			<div class="bl-ct">
+				<a href="https://ratemyserver.net/index.php?page=listserver&rate=low&order_type=default_high&page_num=1" class="sb" 
+				title="View the list of low rate RO servers (25x or lower)">Low Rate</a>
+				<br>
+				<a href="https://ratemyserver.net/index.php?page=listserver&rate=mid&order_type=default_high&page_num=1" class="sb" 
+				title="View the list of mid rate RO servers (26x to 150x)">Mid Rate</a>
+				<br>
+				<a href="https://ratemyserver.net/index.php?page=listserver&rate=high&order_type=default_high&page_num=1" class="sb" 
+				title="View the list of high rate RO servers (151x to 10000x)">High Rate</a>
+				<br>
+				<a href="https://ratemyserver.net/index.php?page=listserver&rate=superhigh&order_type=default_high&page_num=1" class="sb"  
+				title="View the list of super high rate RO servers (higher than 10000x)">Super High Rate</a>
+				<br><br>
+
+				<a href="https://ratemyserver.net/index.php?page=listserver&rate=all&order_type=date_New&page_num=1"  class="sb"
+				title="View the list of newly created RO servers">New Servers</a> 
+				<br>
+				<a href="https://ratemyserver.net/index.php?page=listserver&rate=all&order_type=default_high&page_num=1" class="sb" 
+				title="View the entire list of RO servers">List All</a>
+				<br>
+				<a href="https://ratemyserver.net/index.php?page=serversearch" class="sb" 
+				 title="Search a RO server that suits your playing style">Search</a>
+			</div>
+		</div>
+		<div class="database-BL">
+			<div style="padding-top: 100px; margin: 0 0 0 15px;">
+				<script type="text/javascript">
+	function jsh_over(obj){
+		obj.className = " iehover ";
+	}
+	function jsh_out(obj){
+		obj.className = "";
+	}
+
+	function jshw_over(obj){
+		obj.className = " iehover ";
+		obj.getElementsByTagName("a")[0].style.color = "#fff";
+	}
+	function jshw_out(obj){
+		obj.className = "";
+		obj.getElementsByTagName("a")[0].style.color = "#00568a";
+	}
+</script>
+
+<div id="flyout">
+        <ul>
+            <li>
+				<img src="images/marrow.png" border = 0>
+				<a href="index.php?page=item_db" class="sb"  title="Click here to search for an item, or use the menu below to select a sub-category.">Item Search</a>
+			</li>
+			<li style='cursor: default' onMouseOver='jsh_over(this);' onMouseOut='jsh_out(this);'>
+				<img src="images/sarrow.png" border = 0 class='expand_lv1'>
+				<span class='flyout_nolink'>Equipments</span>
+				<ul>
+					<li style="background-image:url('images/sarrow.png'); background-repeat: no-repeat; background-position: center right;" onMouseOver='jshw_over(this);' onMouseOut='jshw_out(this);'> 
+						<a href = "index.php?page=item_db&item_type=5"> - Weapons</a><!-- IE Sees Spaces --><ul>
+                           <li>
+								<a href="index.php?page=item_db&item_type=5&item_class=1">- Daggers</a>
+							</li>
+							 <li>
+								<a href="index.php?page=item_db&item_type=5&item_class=2">- 1-handed Swords</a>
+							</li>
+							 <li>
+								<a href="index.php?page=item_db&item_type=5&item_class=3">- 2-handed Swords</a>
+							</li>
+							 <li>
+								<a href="index.php?page=item_db&item_type=5&item_class=4">- 1-handed Spears</a>
+							</li>
+							 <li>
+								<a href="index.php?page=item_db&item_type=5&item_class=5">- 2-handed Spears</a>
+							</li>
+							 <li>
+								<a href="index.php?page=item_db&item_type=5&item_class=6">- 1-handed Axes</a>
+							</li>
+							 <li>
+								<a href="index.php?page=item_db&item_type=5&item_class=7">- 2-handed Axes</a>
+							</li>
+							 <li>
+								<a href="index.php?page=item_db&item_type=5&item_class=8">- Maces</a>
+							</li>
+							 <li>
+								<a href="index.php?page=item_db&item_type=5&item_class=10">- 1-handed Staffs</a>
+							</li>
+							 <li>
+								<a href="index.php?page=item_db&item_type=5&item_class=23">- 2-handed Staffs</a>
+							</li>
+							<li>
+								<a href="index.php?page=item_db&item_type=5&item_class=11">- Bows</a>
+							</li>
+							<li>
+								<a href="index.php?page=item_db&item_type=5&item_class=12">- Knuckles</a>
+							</li>
+							<li>
+								<a href="index.php?page=item_db&item_type=5&item_class=13">- Musical Instruments</a>
+							</li> 
+							<li>
+								<a href="index.php?page=item_db&item_type=5&item_class=14">- Whips</a>
+							</li>
+							<li>
+								<a href="index.php?page=item_db&item_type=5&item_class=15">- Books</a>
+							</li>
+							<li>
+								<a href="index.php?page=item_db&item_type=5&item_class=16">- Katars</a>
+							</li>
+							<li>
+								<a href="index.php?page=item_db&item_type=5&item_class=22">- Fuuma Shurikens</a>
+							</li>
+							<li>
+								<a href="index.php?page=item_db&item_type=5&item_class=101">- Guns &raquo;</a> 
+							</li> 
+							<li>
+								<a class='flyout_sub' href="index.php?page=item_db&item_type=5&item_class=17"> &nbsp;&nbsp; - Revolvers</a>
+							</li>
+							<li>
+								<a class='flyout_sub' href="index.php?page=item_db&item_type=5&item_class=18"> &nbsp;&nbsp; - Rifles</a>
+							</li>
+							<li>
+								<a class='flyout_sub' href="index.php?page=item_db&item_type=5&item_class=19">&nbsp;&nbsp; - Gatling Guns</a>
+							</li>
+							<li>
+								<a class='flyout_sub' href="index.php?page=item_db&item_type=5&item_class=20">&nbsp;&nbsp; - Shotguns</a>
+							</li> 
+							<li>
+								<a class='flyout_sub' href="index.php?page=item_db&item_type=5&item_class=21">&nbsp;&nbsp; - Grenade Launchers</a>
+							</li>							
+                        </ul>
+					</li>
+					<li style="background-image:url('images/sarrow.png'); background-repeat: no-repeat; background-position: center right;" onMouseOver='jshw_over(this);' onMouseOut='jshw_out(this);'>
+						<a href = "index.php?page=item_db&item_type=4"> - Armors</a><!-- IE --><ul>
+                            <li>
+								<a href="index.php?page=item_db&item_type=4&item_class=16">- Armors</a>
+							</li>
+							<li>
+								<a href="index.php?page=item_db&item_type=4&item_class=32">- Shields</a>
+							</li>
+							<li>
+								<a href="index.php?page=item_db&item_type=4&item_class=4">- Garments</a>
+							</li>
+							<li>
+								<a href="index.php?page=item_db&item_type=4&item_class=64">- Footgears</a>
+							</li>
+							<li>
+								<a href="index.php?page=item_db&item_type=4&item_class=136">- Accessories</a>
+							</li>
+							<li>
+								<a href="index.php?page=item_db&item_type=4&item_class=201">- Headgears &raquo;</a>
+							</li>
+							<li>
+								<a class='flyout_sub' href="index.php?page=item_db&item_type=4&item_class=256">&nbsp;&nbsp; - Upper Head</a>
+							</li>
+							<li>
+								<a class='flyout_sub' href="index.php?page=item_db&item_type=4&item_class=512">&nbsp;&nbsp; - Middle Head</a>
+							</li>
+							<li>
+								<a class='flyout_sub' href="index.php?page=item_db&item_type=4&item_class=1">&nbsp;&nbsp; - Lower Head</a>
+							</li>
+							<li>
+								<a class='flyout_sub' href="index.php?page=item_db&item_type=4&item_class=768">&nbsp;&nbsp; - Upper & Middle</a>
+							</li>
+							<li>
+								<a class='flyout_sub' href="index.php?page=item_db&item_type=4&item_class=513">&nbsp;&nbsp; - Middle & Lower</a>
+							</li>
+							<li>
+								<a class='flyout_sub' href="index.php?page=item_db&item_type=4&item_class=257">&nbsp;&nbsp; - Upper & Lower</a>
+							</li>
+							<li>
+								<a class='flyout_sub' href="index.php?page=item_db&item_type=4&item_class=769">&nbsp;&nbsp; - U, M & L</a>
+							</li>
+							<li>
+								<a href="index.php?page=item_db&item_type=4&item_class=202">- Costume Headgears</a>
+							</li>
+                        </ul>
+					</li>
+					<li style="background-image:url('images/sarrow.png'); background-repeat: no-repeat; background-position: center right;" onMouseOver='jshw_over(this);' onMouseOut='jshw_out(this);'> 
+						<a href = "index.php?page=item_db&item_type=6"> - Cards</a><!-- IE --><ul>
+                            <li>
+								<a href="index.php?page=item_db&item_type=6&item_class=769">- On Headgear</a>
+							</li>
+							<li>
+								<a href="index.php?page=item_db&item_type=6&item_class=16">- On Armor</a>
+							</li>
+							<li>
+								<a href="index.php?page=item_db&item_type=6&item_class=2">- On Weapon</a>
+							</li>
+							<li>
+								<a href="index.php?page=item_db&item_type=6&item_class=32">- On Shield</a>
+							</li>
+							<li>
+								<a href="index.php?page=item_db&item_type=6&item_class=4">- On Garment</a>
+							</li>
+							<li>
+								<a href="index.php?page=item_db&item_type=6&item_class=64">- On Footgear</a>
+							</li>
+							<li>
+								<a href="index.php?page=item_db&item_type=6&item_class=136">- On Accessory</a>
+							</li>
+						</ul>
+					</li>
+					<li style="background-image:url('images/sarrow.png'); background-repeat: no-repeat; background-position: center right;" onMouseOver='jshw_over(this);' onMouseOut='jshw_out(this);'>
+						<a href = "index.php?page=item_db&item_type=10"> - Ammunitions</a><!-- IE --><ul>
+                            <li>
+								<a href="index.php?page=item_db&item_type=10&item_class=1">- Arrows</a>
+							</li>
+							<li>
+								<a href="index.php?page=item_db&item_type=10&item_class=3">- Bullets</a>
+							</li>
+							<!--li>
+								<a href="index.php?page=item_db&item_type=10&item_class=4">- Shells</a>
+							</li-->
+							<li>
+								<a href="index.php?page=item_db&item_type=10&item_class=5">- Grenades</a>
+							</li>
+							<li>
+								<a href="index.php?page=item_db&item_type=10&item_class=6">- Shurikens</a>
+							</li>
+							<li>
+								<a href="index.php?page=item_db&item_type=10&item_class=7">- Kunais</a>
+							</li>
+							<li>
+								<a href="index.php?page=item_db&item_type=10&item_class=8">- Cannon Balls</a>
+							</li>
+							<li>
+								<a href="index.php?page=item_db&item_type=10&item_class=9">- Throw Weapons</a>
+							</li>
+							<li>
+								<a href="index.php?page=item_db&item_type=10&item_class=2">- Throwing Daggers</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			<li style='cursor: default' onMouseOver='jsh_over(this);' onMouseOut='jsh_out(this);'>
+				<img src="images/sarrow.png" border = 0 class='expand_lv1'>
+				<span class='flyout_nolink'>Other Items</span>
+				<ul>
+					<li onMouseOver='jshw_over(this);' onMouseOut='jshw_out(this);'>
+						<a href = "index.php?page=item_db&item_type=0"> - Healing Item</a>
+					</li>
+					<li onMouseOver='jshw_over(this);' onMouseOut='jshw_out(this);'>
+						<a href = "index.php?page=item_db&item_type=2"> - Usable Item</a>
+					</li>
+					<li onMouseOver='jshw_over(this);' onMouseOut='jshw_out(this);'>
+						<a href = "index.php?page=item_db&item_type=7"> - Monster Egg</a>
+					</li>
+					<li onMouseOver='jshw_over(this);' onMouseOut='jshw_out(this);'>
+						<a href = "index.php?page=item_db&item_type=8"> - Pet Armor</a>
+					</li>
+					<li onMouseOver='jshw_over(this);' onMouseOut='jshw_out(this);'>
+						<a href = "index.php?page=item_db&item_type=91"> - Taming Item</a>
+					</li>	
+					<li onMouseOver='jshw_over(this);' onMouseOut='jshw_out(this);'>
+						<a href = "index.php?page=item_db&item_type=11"> - Delayed-Consumable</a>
+					</li>					
+					<li onMouseOver='jshw_over(this);' onMouseOut='jshw_out(this);'>
+						<a href = "index.php?page=item_db&item_type=18"> - Cash Shop Item</a>
+					</li>
+					<li onMouseOver='jshw_over(this);' onMouseOut='jshw_out(this);'>
+						<a href = "index.php?page=item_db&item_type=3"> - Miscellaneous</a>
+					</li>
+				</ul>
+			</li>
+            <li>
+				<img src="images/marrow.png" border = 0>
+				<a href = "index.php?page=mob_db" class="sb" title="Click here to use the monster search page.">Monster Search</a>
+			</li>
+            <li>
+				<img src="images/marrow.png" border = 0>
+				<a href = "index.php?page=re_item_db" class="sb" title="Ragnarok Renewal Item Database.">Re-Item Search</a>
+			</li>
+			<li style='cursor: default' onMouseOver='jsh_over(this);' onMouseOut='jsh_out(this);'>
+				<img src="images/sarrow.png" border = 0 class='expand_lv1'>
+				<span class='flyout_nolink'>Re-Equipments</span>
+				<ul>
+					<li style="background-image:url('images/sarrow.png'); background-repeat: no-repeat; background-position: center right;" onMouseOver='jshw_over(this);' onMouseOut='jshw_out(this);'>
+						<a href = "index.php?page=re_item_db&item_type=5"> - Weapons</a><!-- IE Sees Spaces --><ul>
+                           <li>
+								<a href="index.php?page=re_item_db&item_type=5&item_class=1">- Daggers</a>
+							</li>
+							 <li>
+								<a href="index.php?page=re_item_db&item_type=5&item_class=2">- 1-handed Swords</a>
+							</li>
+							 <li>
+								<a href="index.php?page=re_item_db&item_type=5&item_class=3">- 2-handed Swords</a>
+							</li>
+							 <li>
+								<a href="index.php?page=re_item_db&item_type=5&item_class=4">- 1-handed Spears</a>
+							</li>
+							 <li>
+								<a href="index.php?page=re_item_db&item_type=5&item_class=5">- 2-handed Spears</a>
+							</li>
+							 <li>
+								<a href="index.php?page=re_item_db&item_type=5&item_class=6">- 1-handed Axes</a>
+							</li>
+							 <li>
+								<a href="index.php?page=re_item_db&item_type=5&item_class=7">- 2-handed Axes</a>
+							</li>
+							 <li>
+								<a href="index.php?page=re_item_db&item_type=5&item_class=8">- Maces</a>
+							</li>
+							 <li>
+								<a href="index.php?page=re_item_db&item_type=5&item_class=10">- 1-handed Staffs</a>
+							</li>
+							 <li>
+								<a href="index.php?page=re_item_db&item_type=5&item_class=23">- 2-handed Staffs</a>
+							</li>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=5&item_class=11">- Bows</a>
+							</li>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=5&item_class=12">- Knuckles</a>
+							</li>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=5&item_class=13">- Musical Instruments</a>
+							</li> 
+							<li>
+								<a href="index.php?page=re_item_db&item_type=5&item_class=14">- Whips</a>
+							</li>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=5&item_class=15">- Books</a>
+							</li>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=5&item_class=16">- Katars</a>
+							</li>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=5&item_class=22">- Fuuma Shurikens</a>
+							</li>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=5&item_class=101">- Guns &raquo;</a> 
+							</li> 
+							<li>
+								<a class='flyout_sub' href="index.php?page=re_item_db&item_type=5&item_class=17"> &nbsp;&nbsp; - Revolvers</a>
+							</li>
+							<li>
+								<a class='flyout_sub' href="index.php?page=re_item_db&item_type=5&item_class=18"> &nbsp;&nbsp; - Rifles</a>
+							</li>
+							<li>
+								<a class='flyout_sub' href="index.php?page=re_item_db&item_type=5&item_class=19">&nbsp;&nbsp; - Gatling Guns</a>
+							</li>
+							<li>
+								<a class='flyout_sub' href="index.php?page=re_item_db&item_type=5&item_class=20">&nbsp;&nbsp; - Shotguns</a>
+							</li> 
+							<li>
+								<a class='flyout_sub' href="index.php?page=re_item_db&item_type=5&item_class=21">&nbsp;&nbsp; - Grenade Launchers</a>
+							</li>							
+                        </ul>
+					</li>
+					<li style="background-image:url('images/sarrow.png'); background-repeat: no-repeat; background-position: center right;" onMouseOver='jshw_over(this);' onMouseOut='jshw_out(this);'>
+						<a href = "index.php?page=re_item_db&item_type=4"> - Armors</a><!-- IE --><ul>
+                            <li>
+								<a href="index.php?page=re_item_db&item_type=4&item_class=16">- Armors</a>
+							</li>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=4&item_class=32">- Shields</a>
+							</li>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=4&item_class=4">- Garments</a>
+							</li>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=4&item_class=64">- Footgears</a>
+							</li>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=4&item_class=136">- Accessories</a>
+							</li>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=4&item_class=201">- Headgears &raquo;</a>
+							</li>
+							<li>
+								<a class='flyout_sub' href="index.php?page=re_item_db&item_type=4&item_class=256">&nbsp;&nbsp; - Upper Head</a>
+							</li>
+							<li>
+								<a class='flyout_sub' href="index.php?page=re_item_db&item_type=4&item_class=512">&nbsp;&nbsp; - Middle Head</a>
+							</li>
+							<li>
+								<a class='flyout_sub' href="index.php?page=re_item_db&item_type=4&item_class=1">&nbsp;&nbsp; - Lower Head</a>
+							</li>
+							<li>
+								<a class='flyout_sub' href="index.php?page=re_item_db&item_type=4&item_class=768">&nbsp;&nbsp; - Upper & Middle</a>
+							</li>
+							<li>
+								<a class='flyout_sub' href="index.php?page=re_item_db&item_type=4&item_class=513">&nbsp;&nbsp; - Middle & Lower</a>
+							</li>
+							<li>
+								<a class='flyout_sub' href="index.php?page=re_item_db&item_type=4&item_class=257">&nbsp;&nbsp; - Upper & Lower</a>
+							</li>
+							<li>
+								<a class='flyout_sub' href="index.php?page=re_item_db&item_type=4&item_class=769">&nbsp;&nbsp; - U, M & L</a>
+							</li>
+                        </ul>
+					</li>
+					<li style="background-image:url('images/sarrow.png'); background-repeat: no-repeat; background-position: center right;" onMouseOver='jshw_over(this);' onMouseOut='jshw_out(this);'>
+						<a href = "index.php?page=re_item_db&item_type=6"> - Cards</a><!-- IE --><ul>
+                            <li>
+								<a href="index.php?page=re_item_db&item_type=6&item_class=769">- On Headgear</a>
+							</li>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=6&item_class=16">- On Armor</a>
+							</li>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=6&item_class=2">- On Weapon</a>
+							</li>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=6&item_class=32">- On Shield</a>
+							</li>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=6&item_class=4">- On Garment</a>
+							</li>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=6&item_class=64">- On Footgear</a>
+							</li>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=6&item_class=136">- On Accessory</a>
+							</li>
+						</ul>
+					</li>
+					<li style="background-image:url('images/sarrow.png'); background-repeat: no-repeat; background-position: center right;" onMouseOver='jshw_over(this);' onMouseOut='jshw_out(this);'>
+						<a href = "index.php?page=re_item_db&item_type=10"> - Ammunitions</a><!-- IE --><ul>
+                            <li>
+								<a href="index.php?page=re_item_db&item_type=10&item_class=1">- Arrows</a>
+							</li>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=10&item_class=3">- Bullets</a>
+							</li>
+							<!--li>
+								<a href="index.php?page=item_db&item_type=10&item_class=4">- Shells</a>
+							</li-->
+							<li>
+								<a href="index.php?page=re_item_db&item_type=10&item_class=5">- Grenades</a>
+							</li>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=10&item_class=6">- Shurikens</a>
+							</li>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=10&item_class=7">- Kunais</a>
+							</li>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=10&item_class=8">- Cannon Balls</a>
+							</li>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=10&item_class=9">- Throw Weapons</a>
+							</li>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=10&item_class=2">- Throwing Daggers</a>
+							</li>
+						</ul>
+					</li>
+					<li style="background-image:url('images/sarrow.png'); background-repeat: no-repeat; background-position: center right;" onMouseOver='jshw_over(this);' onMouseOut='jshw_out(this);'>
+						<a href = "index.php?page=re_item_db&item_type=12"> - Shadow Gears</a><!-- IE --><ul>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=12&item_class=131072">- Weapons</a>
+							</li>
+                            <li>
+								<a href="index.php?page=re_item_db&item_type=12&item_class=65536">- Armors</a>
+							</li>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=12&item_class=262144">- Shields</a>
+							</li>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=12&item_class=524288">- Footgears</a>
+							</li>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=12&item_class=1048576">- Earring</a>
+							</li>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=12&item_class=2097152">- Pendant</a>
+							</li>
+							<!--li>
+								<a href="index.php?page=re_item_db&item_type=12&item_class=3145728">- Accessories</a>
+							</li-->
+                        </ul>
+					</li>
+					<li style="background-image:url('images/sarrow.png'); background-repeat: no-repeat; background-position: center right;" onMouseOver='jshw_over(this);' onMouseOut='jshw_out(this);'>
+						<a href = "index.php?page=re_item_db&item_type=4&item_class=301"> - Costumes</a><!-- IE --><ul>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=4&item_class=8192">- Garments</a>
+							</li>
+							<li>
+								<a href="index.php?page=re_item_db&item_type=4&item_class=202">- Headgears &raquo;</a>
+							</li>
+							<li>
+								<a class='flyout_sub' href="index.php?page=re_item_db&item_type=4&item_class=1024">&nbsp;&nbsp; - Upper Head</a>
+							</li>
+							<li>
+								<a class='flyout_sub' href="index.php?page=re_item_db&item_type=4&item_class=2048">&nbsp;&nbsp; - Middle Head</a>
+							</li>
+							<li>
+								<a class='flyout_sub' href="index.php?page=re_item_db&item_type=4&item_class=4096">&nbsp;&nbsp; - Lower Head</a>
+							</li>
+							<li>
+								<a class='flyout_sub' href="index.php?page=re_item_db&item_type=4&item_class=3072">&nbsp;&nbsp; - Upper & Middle</a>
+							</li>
+							<li>
+								<a class='flyout_sub' href="index.php?page=re_item_db&item_type=4&item_class=6144">&nbsp;&nbsp; - Middle & Lower</a>
+							</li>
+							<li>
+								<a class='flyout_sub' href="index.php?page=re_item_db&item_type=4&item_class=5120">&nbsp;&nbsp; - Upper & Lower</a>
+							</li>
+							<li>
+								<a class='flyout_sub' href="index.php?page=re_item_db&item_type=4&item_class=7168">&nbsp;&nbsp; - U, M & L</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			<li style='cursor: default' onMouseOver='jsh_over(this);' onMouseOut='jsh_out(this);'>
+				<img src="images/sarrow.png" border = 0 class='expand_lv1'>
+				<span class='flyout_nolink'>Other Re-Items</span>
+				<ul>
+					<li onMouseOver='jshw_over(this);' onMouseOut='jshw_out(this);'>
+						<a href = "index.php?page=re_item_db&item_type=0"> - Healing Item</a>
+					</li>
+					<li onMouseOver='jshw_over(this);' onMouseOut='jshw_out(this);'>
+						<a href = "index.php?page=re_item_db&item_type=2"> - Usable Item</a>
+					</li>
+					<li onMouseOver='jshw_over(this);' onMouseOut='jshw_out(this);'>
+						<a href = "index.php?page=re_item_db&item_type=7"> - Monster Egg</a>
+					</li>
+					<li onMouseOver='jshw_over(this);' onMouseOut='jshw_out(this);'>
+						<a href = "index.php?page=re_item_db&item_type=8"> - Pet Armor</a>
+					</li>
+					<li onMouseOver='jshw_over(this);' onMouseOut='jshw_out(this);'>
+						<a href = "index.php?page=re_item_db&item_type=91"> - Taming Item</a>
+					</li>	
+					<li onMouseOver='jshw_over(this);' onMouseOut='jshw_out(this);'>
+						<a href = "index.php?page=re_item_db&item_type=11"> - Delayed-Consumable</a>
+					</li>					
+					<li onMouseOver='jshw_over(this);' onMouseOut='jshw_out(this);'>
+						<a href = "index.php?page=re_item_db&item_type=18"> - Cash Shop Item</a>
+					</li>
+					<li onMouseOver='jshw_over(this);' onMouseOut='jshw_out(this);'>
+						<a href = "index.php?page=re_item_db&item_type=3"> - Miscellaneous</a>
+					</li>
+				</ul>
+			</li>
+            <li>
+				<img src="images/marrow.png" border = 0>
+				<a href = "index.php?page=re_mob_db" class="sb" title="Ragnarok Renewal Monster Database">Re-Monster Search</a>
+			</li>
+		</ul>
+    </div>
+
+				<img src="images/marrow.png" border = 0>
+				<a href = "https://ratemyserver.net/index.php?page=skill_db_class" class="sb" title="See our skill database.">Skill Database</a>
+				<br>
+				<img src="images/marrow.png" border = 0>
+				<a href = "https://ratemyserver.net/quest_db.php" class="sb" title="RO Quest Database">Quest Database</a>
+				<br>
+				<img src="images/marrow.png" border = 0>
+				<a href = "http://write.ratemyserver.net" class="sb" title="User subbmited RO Writings" target="_blank">RO Writings</a>
+				<br>
+				<img src="images/marrow.png" border = 0>
+				<a href = "https://ratemyserver.net/index.php?page=map_db" class="sb" title="RO world map, dungeon map, castle maps and a list of fields and dungeons.">Map Database</a>
+				<br>
+				<img src="images/marrow.png" border = 0>
+				<a href = "https://ratemyserver.net/index.php?page=creation_db" class="sb" title="Guides on forging, cooking, arrow crafting, potion making and other RO creation process." >Creation Database</a>
+				<br>
+				<img src="images/marrow.png" border = 0>
+				<a href = "https://ratemyserver.net/index.php?page=misc_db_list" class="sb" title="Click here to see some very useful tables about Ragnarok Online.">Misc Database</a>
+				<br>
+				<img src="images/marrow.png" border = 0>
+				<a href = "https://ratemyserver.net/index.php?page=nsw_npc_search" class="sb" title="Click here to search for an NPC in RO.">NPC Search</a>
+				<br>
+				<img src="images/marrow.png" border = 0>
+				<a href = "https://ratemyserver.net/index.php?page=nsw_shop_search" class="sb" title="Click here to search for a shop or vender in RO.">Shop Search</a>
+			</div>
+		</div>
+
+		<div class="tool-BL">
+			<div style="padding-top: 100px; margin: 0 0 0 15px;">
+				<img src="images/marrow.png" border = 0>
+				<a href = "https://ratemyserver.net/skill_sim.php" class="sb" title="RO Skill Simulator and Planner">Skill Simulator</a>
+				<br>
+				<img src="images/marrow.png" border = 0>
+				<a href = "http://ro-character-simulator.ratemyserver.net/" class="sb" title="RO Character Simulator">Char Simulator</a>
+				<br>
+				<img src="images/marrow.png" border = 0>
+				<a href = "https://ratemyserver.net/calc_main.php" class="sb" title="RO stat, forge, brew, edp and cooking calculators.">Calculators</a>
+						</div>
+		</div>
+
+		<div class="option-BL">
+			<div class="bl-ct">
+				<a href="https://ratemyserver.net/set_rates.php" target="_blank" title="Change item, monster and drop rate display" class="sb" onclick="return popWin('set_rates.php', 'Rate_Settings', rate_dim)">Rate Settings</a>
+				<br>
+				<a href="https://ratemyserver.net/settings_image.php" target="_blank"  title="Change the graphical display settings on ratemyserver.net" class="sb" onclick="return popWin('settings_image.php', 'Graphical_Settings', rate_dim)">Graphic Settings</a>
+				<br>
+
+					</div>
+		</div>
+
+		<div class="link-BL">
+			<div class="bl-ct">
+				<a href = "https://ratemyserver.net/advertise.php" title = "Advertise your server on ratemyserver.net." class="sb">Advertise on RMS</a>
+				<br><br>
+				<a href = "https://ratemyserver.net/sitemap.html" title = "Every links on RateMyServer.Net is included in our site map." class="sb">Site Map</a>
+				<br>
+				<a href = "http://ro321.com" class="sb" target="_blank"><img src='images/ch2.gif' onMouseOver='this.src="images/ch2_mo.gif"' onMouseOut='this.src="images/ch2.gif"' border=0></a>
+				<br><br>
+				<div style="text-align: left; margin: 10px 0 10px 20px;">
+					<span class="sb">Affiliate Links &raquo;</span> 
+					<br>
+					<div style="text-align: left; margin-left: 10px;">
+						<a href='https://rathena.org/board/' title = 'Visit the rAthena RO Server Emulator Website' class="sb" target = '_blank' rel='nofollow'>rAthena</a><br>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div><!-- close sidebar-left -->
+	
+<div class="content-div">
+<div class='main_block main_3col'>
+	<div class='box_title'>Welcome to RateMyServer.Net</div>
+
+
+<div class='mainpage_grid'>
+
+	<div class='mp_forum_msg'>
+	<div class='ft_blkhd' style='margin-bottom: 3px; width: fit-content; padding: 2px 8px;'>Recent Forum Discussions</div><div class='darkclr' style='border-radius: 5px; -moz-border-radius: 5px;' title='Posted By Raïner'><div class='ft_board'><a href="https://forum.ratemyserver.net/index.php?board=60.0">Rant and Rave</a> &raquo;  Yesterday </div><img src='images/sarrow.png' class='ft_bullet'><div class='ft_topic'><a href="https://forum.ratemyserver.net/index.php?topic=38259.msg210766#new" rel="nofollow" target="_blank">Soulbound Journey - what hides behind the drama.</a></div></div><div class='lightclr' style='border-radius: 5px; -moz-border-radius: 5px;' title='Posted By Raïner'><div class='ft_board'><a href="https://forum.ratemyserver.net/index.php?board=31.0">Server Reviews</a> &raquo; Oct 26, 2026</div><img src='images/sarrow.png' class='ft_bullet'><div class='ft_topic'><a href="https://forum.ratemyserver.net/index.php?topic=38266.msg210757#new" rel="nofollow" target="_blank">SpringRO - Server review respond</a></div></div><div class='darkclr' style='border-radius: 5px; -moz-border-radius: 5px;' title='Posted By UnknownSoldier'><div class='ft_board'><a href="https://forum.ratemyserver.net/index.php?board=8.0">Long Lost Friends</a> &raquo; Oct 16, 2026</div><img src='images/sarrow.png' class='ft_bullet'><div class='ft_topic'><a href="https://forum.ratemyserver.net/index.php?topic=65.msg210725#new" rel="nofollow" target="_blank">Oh MattRO players where art thou?</a></div></div><div class='lightclr' style='border-radius: 5px; -moz-border-radius: 5px;' title='Posted By Vheyran'><div class='ft_board'><a href="https://forum.ratemyserver.net/index.php?board=31.0">Server Reviews</a> &raquo; Oct 12, 2026</div><img src='images/sarrow.png' class='ft_bullet'><div class='ft_topic'><a href="https://forum.ratemyserver.net/index.php?topic=38233.msg210723#new" rel="nofollow" target="_blank">Nightmare RO, a server only made for few individuals</a></div></div><div class='darkclr' style='border-radius: 5px; -moz-border-radius: 5px;' title='Posted By imfun'><div class='ft_board'><a href="https://forum.ratemyserver.net/index.php?board=31.0">Server Reviews</a> &raquo; Oct 12, 2026</div><img src='images/sarrow.png' class='ft_bullet'><div class='ft_topic'><a href="https://forum.ratemyserver.net/index.php?topic=38240.msg210722#new" rel="nofollow" target="_blank">NightmareRO - A positive, but honest review (also, exposing Vheyran/kiryu lies)</a></div></div>	</div>
+	
+	<div class='mp_rms_msg'>
+	<p class = 'btext_m' align = 'justify'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			We are on our way to bring you the best tool to search for the server you need.  In order to do that, we need your help! 
+			<br><br>
+			Please <a href='https://ratemyserver.net/user_register.php' class='sb' title = 'Create a reviewer account'>Register Here to review servers</a> that you have played.  This will greatly help other players to pick the server that is best for them.
+			<br><br>
+			If you are a server owner, <a href='https://ratemyserver.net/index.php?page=join_basics' class='sb' title = 'Create a server owner account'>Add your server to our listings</a>. Eventually, players can write reviews of your server.
+			</p>	</div>
+	
+	<div class='mp_top_slot'>
+<div style='width:520px; height: 100px;  margin: auto; overflow: hidden;'><a href='https://momoro.net/' target='_blank' rel='nofollow'><img src='https://ratemyserver.net/banner/momoro_2ax_2025-09.gif' border=0 width=520 height=100></a></div>	</div>
+
+<div class='mp_reviewed'>
+
+	<div style='float: right; margin: 2px;'>
+	
+	<!-- fb iframe -->
+	<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fratemyserver.net&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:80px; height:20px;" allowTransparency="true">
+	</iframe>
+	<!-- fb iframe -->
+	</div>
+
+<div class='ft_blkhd' style='width: fit-content; padding: 2px 8px; margin-bottom: 3px;'>Most Reviewed Servers This Week</div><table border=0 cellpadding='2px' cellspacing=0 width='100%' style='color: #00568a; font-size: 1em'>
+			<tr class='darkclr_m'>
+				<td width='8px' style='height: 28px; text-align:center; padding: 10px 4px'> <small>1.</small></td>
+				<td width='255px'><a href='index.php?page=detailedlistserver&serid=23552&itv=6&url_sname=Fenzura' title = 'View more information about Fenzura' class='gen_mm'>Fenzura</a> <b>(</b><a href= 'index.php?page=serverstat&serid=23552&itv=6&url_sname=Fenzura&page_num=1' class='gen_mm' title = 'Reviews in the last 7 days / last 6 months'>18/47</a><b>)</b></td><td width='65px' align='right'><small>3x</small></td><td width='65px' align='right'><small>3x</small></td><td width='45px' align='right'><small>1x</small></td><td width='65px' style='padding-left: 8px; text-wrap: nowrap;' align='right'><small>99/50<br>Classic</small></td></tr><tr><td colspan=6><div style='width: 100%; height: 1px;'><!-- empty --></div></td></tr>
+			<tr class='lightclr_m'>
+				<td width='8px' style='height: 28px; text-align:center; padding: 10px 4px'> <small>2.</small></td>
+				<td width='255px'><a href='index.php?page=detailedlistserver&serid=793&itv=6&url_sname=heRO' title = 'View more information about heRO' class='gen_mm'>heRO</a> <b>(</b><a href= 'index.php?page=serverstat&serid=793&itv=6&url_sname=heRO&page_num=1' class='gen_mm' title = 'Reviews in the last 7 days / last 6 months'>10/22</a><b>)</b></td><td width='65px' align='right'><small>5x</small></td><td width='65px' align='right'><small>5x</small></td><td width='45px' align='right'><small>5x</small></td><td width='65px' style='padding-left: 8px; text-wrap: nowrap;' align='right'><small>99/70<br>Pre-Re</small></td></tr><tr><td colspan=6><div style='width: 100%; height: 1px;'><!-- empty --></div></td></tr>
+			<tr class='darkclr_m'>
+				<td width='8px' style='height: 28px; text-align:center; padding: 10px 4px'> <small>3.</small></td>
+				<td width='255px'><a href='index.php?page=detailedlistserver&serid=23556&itv=6&url_sname=SpringRO' title = 'View more information about SpringRO' class='gen_mm'>SpringRO</a> <b>(</b><a href= 'index.php?page=serverstat&serid=23556&itv=6&url_sname=SpringRO&page_num=1' class='gen_mm' title = 'Reviews in the last 7 days / last 6 months'>8/43</a><b>)</b></td><td width='65px' align='right'><small>1x</small></td><td width='65px' align='right'><small>1x</small></td><td width='45px' align='right'><small>1x</small></td><td width='65px' style='padding-left: 8px; text-wrap: nowrap;' align='right'><small>99/50<br>Classic</small></td></tr><tr><td colspan=6><div style='width: 100%; height: 1px;'><!-- empty --></div></td></tr>
+			<tr class='lightclr_m'>
+				<td width='8px' style='height: 28px; text-align:center; padding: 10px 4px'> <small>4.</small></td>
+				<td width='255px'><a href='index.php?page=detailedlistserver&serid=22102&itv=6&url_sname=UARO World of your dream' title = 'View more information about UARO World of your dream' class='gen_mm'>UARO World of your dream</a> <b>(</b><a href= 'index.php?page=serverstat&serid=22102&itv=6&url_sname=UARO World of your dream&page_num=1' class='gen_mm' title = 'Reviews in the last 7 days / last 6 months'>7/194</a><b>)</b></td><td width='65px' align='right'><small>5x</small></td><td width='65px' align='right'><small>5x</small></td><td width='45px' align='right'><small>5x</small></td><td width='65px' style='padding-left: 8px; text-wrap: nowrap;' align='right'><small>99/70<br>Pre-Re</small></td></tr><tr><td colspan=6><div style='width: 100%; height: 1px;'><!-- empty --></div></td></tr>
+			<tr class='darkclr_m'>
+				<td width='8px' style='height: 28px; text-align:center; padding: 10px 4px'> <small>5.</small></td>
+				<td width='255px'><a href='index.php?page=detailedlistserver&serid=23606&itv=6&url_sname=NybelicRO' title = 'View more information about NybelicRO' class='gen_mm'>NybelicRO</a> <b>(</b><a href= 'index.php?page=serverstat&serid=23606&itv=6&url_sname=NybelicRO&page_num=1' class='gen_mm' title = 'Reviews in the last 7 days / last 6 months'>5/8</a><b>)</b></td><td width='65px' align='right'><small>999999x</small></td><td width='65px' align='right'><small>999999x</small></td><td width='45px' align='right'><small>10000x</small></td><td width='65px' style='padding-left: 8px; text-wrap: nowrap;' align='right'><small>255/70<br>Renewal</small></td></tr><tr><td colspan=6><div style='width: 100%; height: 1px;'><!-- empty --></div></td></tr></table><div style='float: right;'>
+	<a href='index.php?page=more_top_reviewed_servers' title='More recently reviewed servers' style='text-decoration: none; color: #00568a;' class='tips_mm'>More &raquo;</a>
+	</div></div><div class='mp_new_server'><div class='ft_blkhd' style='width: fit-content; padding: 2px 8px; margin-bottom: 3px;'>Newly Listed Servers</div><table border=0 cellpadding='2px' cellspacing=0 width='100%' style='color: #00568a; font-size: 1em'>
+			<tr class='darkclr_m'>
+				<td width='8px' style='height: 28px; text-align:center; padding: 10px 4px'> <small>1.</small></td>
+				<td width='255px'><a href='index.php?page=detailedlistserver&serid=23641&itv=6&url_sname=YGG Ragnarok Online' title = 'View more information about YGG Ragnarok Online' class='gen_mm'>YGG Ragnarok Online</a> <b>(</b>0<b>)</b></td><td width='65px' align='right'><small>50x</small></td><td width='65px' align='right'><small>50x</small></td><td width='45px' align='right'><small>10x</small></td><td width='65px' style='padding-left: 8px; text-wrap: nowrap;' align='right'><small>99/70<br>Pre-Re</small></td></tr><tr><td colspan=6><div style='width: 100%; height: 1px;'><!-- empty --></div></td></tr>
+			<tr class='lightclr_m'>
+				<td width='8px' style='height: 28px; text-align:center; padding: 10px 4px'> <small>2.</small></td>
+				<td width='255px'><a href='index.php?page=detailedlistserver&serid=23640&itv=6&url_sname=Kalmado RO' title = 'View more information about Kalmado RO' class='gen_mm'>Kalmado RO</a> <b>(</b>0<b>)</b></td><td width='65px' align='right'><small>100x</small></td><td width='65px' align='right'><small>100x</small></td><td width='45px' align='right'><small>25x</small></td><td width='65px' style='padding-left: 8px; text-wrap: nowrap;' align='right'><small>99/50<br>Classic</small></td></tr><tr><td colspan=6><div style='width: 100%; height: 1px;'><!-- empty --></div></td></tr>
+			<tr class='darkclr_m'>
+				<td width='8px' style='height: 28px; text-align:center; padding: 10px 4px'> <small>3.</small></td>
+				<td width='255px'><a href='index.php?page=detailedlistserver&serid=23639&itv=6&url_sname=YamiRO' title = 'View more information about YamiRO' class='gen_mm'>YamiRO</a> <b>(</b><a href= 'index.php?page=serverstat&serid=23639&itv=6&url_sname=YamiRO&page_num=1' class='gen_mm' title = 'Reviews in the last 6 months'>2</a><b>)</b></td><td width='65px' align='right'><small>5000x</small></td><td width='65px' align='right'><small>5000x</small></td><td width='45px' align='right'><small>10000x</small></td><td width='65px' style='padding-left: 8px; text-wrap: nowrap;' align='right'><small>255/120<br>Pre-Re</small></td></tr><tr><td colspan=6><div style='width: 100%; height: 1px;'><!-- empty --></div></td></tr>
+			<tr class='lightclr_m'>
+				<td width='8px' style='height: 28px; text-align:center; padding: 10px 4px'> <small>4.</small></td>
+				<td width='255px'><a href='index.php?page=detailedlistserver&serid=23637&itv=6&url_sname=Rune Haven' title = 'View more information about Rune Haven' class='gen_mm'>Rune Haven</a> <b>(</b><a href= 'index.php?page=serverstat&serid=23637&itv=6&url_sname=Rune Haven&page_num=1' class='gen_mm' title = 'Reviews in the last 6 months'>2</a><b>)</b></td><td width='65px' align='right'><small>5x</small></td><td width='65px' align='right'><small>5x</small></td><td width='45px' align='right'><small>3x</small></td><td width='65px' style='padding-left: 8px; text-wrap: nowrap;' align='right'><small>99/70<br>Pre-Re</small></td></tr><tr><td colspan=6><div style='width: 100%; height: 1px;'><!-- empty --></div></td></tr>
+			<tr class='darkclr_m'>
+				<td width='8px' style='height: 28px; text-align:center; padding: 10px 4px'> <small>5.</small></td>
+				<td width='255px'><a href='index.php?page=detailedlistserver&serid=23636&itv=6&url_sname=Yora Ragnarok' title = 'View more information about Yora Ragnarok' class='gen_mm'>Yora Ragnarok</a> <b>(</b><a href= 'index.php?page=serverstat&serid=23636&itv=6&url_sname=Yora Ragnarok&page_num=1' class='gen_mm' title = 'Reviews in the last 6 months'>5</a><b>)</b></td><td width='65px' align='right'><small>20x</small></td><td width='65px' align='right'><small>20x</small></td><td width='45px' align='right'><small>5x</small></td><td width='65px' style='padding-left: 8px; text-wrap: nowrap;' align='right'><small>99/70<br>Pre-Re</small></td></tr><tr><td colspan=6><div style='width: 100%; height: 1px;'><!-- empty --></div></td></tr></table><div style='text-align:right; margin-right: 7px; margin-bottom: 5px;'>
+	<a href='index.php?page=listserver&rate=all&order_type=date_New&page_num=1' title='More new Ragnarok servers.' style='text-decoration: none; color: #00568a;' class='tips_mm'>More &raquo;</a>
+	</div></div><div class='mp_lower_slot'>
+		<style type='text/css'>
+		.g_adslot_small { min-width:468px; max-width:520px; width:100%; min-height: 60px; max-height: 100px; margin: auto; }
+		</style>
+		<script async src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8545002715011591'
+		crossorigin='anonymous'></script>
+		<!-- rms_small-responsive -->
+		<ins class='adsbygoogle g_adslot_small'
+			 style='display:block'
+			 data-ad-client='ca-pub-8545002715011591'
+			 data-ad-slot='5137381884'></ins>
+		<script>
+			 (adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+		</div>	
+</div>
+		<!--/td>
+		<td class = 'content_box_body'>&nbsp;</td>
+		</tr>
+		<tr>
+			<td class='corner'><img src='images/table/content_bottomleft.gif'></td>
+			<td class = 'content_box_bottom'>&nbsp;</td>
+			<td class='corner'><img src='images/table/content_bottomright.gif'></td>
+		</tr>
+	</table-->
+
+
+	<br>
+
+</div><!-- end first main block -->
+
+
+<div class='main_block main_3col' style='margin: 15px 0'>
+	<div class='box_title'>.:Latest Reviews:.</div>
+
+<script type='text/javascript' src='switch_content.js'></script>
+	<style type='text/css'><!--		@import url('review-bl.css');	--></style>
+	<div id='review' style='margin: auto;'><div class='review-BL-top'><!-- empty --></div><div class='review-BL-mid'><div style='padding: 3px 0 3px 5px; border-bottom: 2px solid #38719C; text-align: left; margin: 0px 5px;'><img src = 'images/circle.gif'><a href = '/index.php?page=detailedlistserver&serid=23552&url_sname=Fenzura' class='sb_m' >
+		Fenzura - 3x/3x/1x</a></div><div style='padding: 2px; border-bottom: 2px solid #38719C; margin: 0px 5px;'>
+		<table cellpadding=0 cellspacing=0>
+			<tr class='switch'>
+				<td width=140> &nbsp; <a href = 'index.php?page=userprofile&uid=275233' class = 'rev_sw' >emon3mon1</a></td>
+				<td width=115><div style='width: 96; height: 20; background: url(images/overall.gif) repeat-x 0 0;'><!-- empty --></div></td>
+				<td width=180 align='center'>Played for less than 1 month</td>
+				<td width=70 align='right'>2026-11-01</td>
+			</tr>
+		</table>
+	</div><div class='btext_mm' style='padding: 2px; overflow: auto; width:510; word-wrap:break-word; margin: 0px 8px;'>So far so good, well balanced game play. All GM's are good. Players are friendly and eager to level up. I am enjoying right now and hope this will not end. Thank you. This is the server I am looking for and I am looking forward to win on WOE and earn respect.</div><div id='revinfo' style='height: 16px;'>
+		<div style='width:150px; float:left;'>			
+			<img src="images/plus.gif" onClick="expandcontent(this, 'expand225092')"/>
+			<a href = 'javascript:void(0)' onClick="expandcontent(this, 'expand225092')" class = 'rev_sw'>See Detailed Rating</a>
+		</div>
+		<div style='width:105px; float:left; text-align:right;'><b>Rating:</b>&nbsp;<span class='score_pass'>87</span></div>
+		<div style='width:150px; float:left; text-align:right;'>
+			<a href = 'index.php?page=reportComment&sid=23552&cid=225092' class = 'rev_sw'  onClick='if(confirm("Are you sure you want to report this review?")) return true; else return false;'>Report This Comment</a>
+		 </div>
+		 <div style='width:102px; float:left; text-align:right;'>Comment #1</div>
+	</div><div id='revinfo'>
+			<div id='expand225092' style='height: 58px;' class='switchcontent'>
+				<div style='width:120; float:left; margin-left: 2px'>
+					<u><b>Server</b></u><br>
+					<img src = 'images/circle.gif'>Stability: <span class='score_pass'>9</span><br>
+					<img src = 'images/circle.gif'>Availability: <span class='score_pass'>9</span>
+				</div>
+				<div style='width:122; float:left;'>
+					<u><b>Community</b></u><br>
+					<img src = 'images/circle.gif'>Friendliness: <span class='score_pass'>9</span><br>
+					<img src = 'images/circle.gif'>Eventfulness: <span class='score_pass'>9</span>
+				</div>
+				<div style='width:122; float:left;'>
+					<u><b>Game Masters</b></u><br>
+					<img src = 'images/circle.gif'>Friendliness: <span class='score_pass'>9</span><br>
+					<img src = 'images/circle.gif'>Availability: <span class='score_pass'>9</span><br>
+					<img src = 'images/circle.gif'>Helpfulness: <span class='score_pass'>9</span>
+				</div>
+				<div style='width:142; float:left;'>
+					<u><b>Game-play</b></u><br>
+					<img src = 'images/circle.gif'>Economy: <span class='score_pass'>8</span><br>
+					<img src = 'images/circle.gif'>Guild Competition: <span class='score_pass'>8</span><br>
+					<img src = 'images/circle.gif'>Class Balance: <span class='score_pass'>8</span>
+				</div>
+			</div>
+		</div>
+	</div><div class='review-BL-low'><!-- empty --></div></div>
+	<br><div id='review' style='margin: auto;'><div class='review-BL-top'><!-- empty --></div><div class='review-BL-mid'><div style='padding: 3px 0 3px 5px; border-bottom: 2px solid #38719C; text-align: left; margin: 0px 5px;'><img src = 'images/circle.gif'><a href = '/index.php?page=detailedlistserver&serid=23639&url_sname=YamiRO' class='sb_m' >
+		YamiRO - 5000x/5000x/10000x</a></div><div style='padding: 2px; border-bottom: 2px solid #38719C; margin: 0px 5px;'>
+		<table cellpadding=0 cellspacing=0>
+			<tr class='switch'>
+				<td width=140> &nbsp; <a href = 'index.php?page=userprofile&uid=253229' class = 'rev_sw' >highlander0</a></td>
+				<td width=115><div style='width: 92; height: 20; background: url(images/overall.gif) repeat-x 0 0;'><!-- empty --></div></td>
+				<td width=180 align='center'>Played for less than 1 month</td>
+				<td width=70 align='right'>2026-11-01</td>
+			</tr>
+		</table>
+	</div><div class='btext_mm' style='padding: 2px; overflow: auto; width:510; word-wrap:break-word; margin: 0px 8px;'>This New YAMI RO has new features to play unlike any other servers, NEW UI
+and with other jobs, and the gm`s are so responsive and helpful they are so quick to fix things. and the players are so friendly. so i highly recommend this to play server they are so many new things to see in this server. :))</div><div id='revinfo' style='height: 16px;'>
+		<div style='width:150px; float:left;'>			
+			<img src="images/plus.gif" onClick="expandcontent(this, 'expand225091')"/>
+			<a href = 'javascript:void(0)' onClick="expandcontent(this, 'expand225091')" class = 'rev_sw'>See Detailed Rating</a>
+		</div>
+		<div style='width:105px; float:left; text-align:right;'><b>Rating:</b>&nbsp;<span class='score_pass'>84</span></div>
+		<div style='width:150px; float:left; text-align:right;'>
+			<a href = 'index.php?page=reportComment&sid=23639&cid=225091' class = 'rev_sw'  onClick='if(confirm("Are you sure you want to report this review?")) return true; else return false;'>Report This Comment</a>
+		 </div>
+		 <div style='width:102px; float:left; text-align:right;'>Comment #2</div>
+	</div><div id='revinfo'>
+			<div id='expand225091' style='height: 58px;' class='switchcontent'>
+				<div style='width:120; float:left; margin-left: 2px'>
+					<u><b>Server</b></u><br>
+					<img src = 'images/circle.gif'>Stability: <span class='score_pass'>7</span><br>
+					<img src = 'images/circle.gif'>Availability: <span class='score_pass'>9</span>
+				</div>
+				<div style='width:122; float:left;'>
+					<u><b>Community</b></u><br>
+					<img src = 'images/circle.gif'>Friendliness: <span class='score_pass'>9</span><br>
+					<img src = 'images/circle.gif'>Eventfulness: <span class='score_pass'>9</span>
+				</div>
+				<div style='width:122; float:left;'>
+					<u><b>Game Masters</b></u><br>
+					<img src = 'images/circle.gif'>Friendliness: <span class='score_pass'>10</span><br>
+					<img src = 'images/circle.gif'>Availability: <span class='score_pass'>10</span><br>
+					<img src = 'images/circle.gif'>Helpfulness: <span class='score_pass'>10</span>
+				</div>
+				<div style='width:142; float:left;'>
+					<u><b>Game-play</b></u><br>
+					<img src = 'images/circle.gif'>Economy: <span class='score_pass'>8</span><br>
+					<img src = 'images/circle.gif'>Guild Competition: <span class='score_pass'>6</span><br>
+					<img src = 'images/circle.gif'>Class Balance: <span class='score_pass'>6</span>
+				</div>
+			</div>
+		</div>
+	</div><div class='review-BL-low'><!-- empty --></div></div>
+	<br><div id='review' style='margin: auto;'><div class='review-BL-top'><!-- empty --></div><div class='review-BL-mid'><div style='padding: 3px 0 3px 5px; border-bottom: 2px solid #38719C; text-align: left; margin: 0px 5px;'><img src = 'images/circle.gif'><a href = '/index.php?page=detailedlistserver&serid=23481&url_sname=Apex Oracle ' class='sb_m' >
+		Apex Oracle  - 30x/30x/3x</a></div><div style='padding: 2px; border-bottom: 2px solid #38719C; margin: 0px 5px;'>
+		<table cellpadding=0 cellspacing=0>
+			<tr class='switch'>
+				<td width=140> &nbsp; <a href = 'index.php?page=userprofile&uid=269573' class = 'rev_sw' >kraswook123</a></td>
+				<td width=115><div style='width: 102; height: 20; background: url(images/overall.gif) repeat-x 0 0;'><!-- empty --></div></td>
+				<td width=180 align='center'>Played for 2 months</td>
+				<td width=70 align='right'>2026-11-01</td>
+			</tr>
+		</table>
+	</div><div class='btext_mm' style='padding: 2px; overflow: auto; width:510; word-wrap:break-word; margin: 0px 8px;'>Hi, The server is good and balanced. NEW UI and autoattack is friendly to newbie. Solopack is good for new players to migrate and GM is so helpful can chat anytime. Kudos to the team good feature and not a scammer server</div><div id='revinfo' style='height: 16px;'>
+		<div style='width:150px; float:left;'>			
+			<img src="images/plus.gif" onClick="expandcontent(this, 'expand225089')"/>
+			<a href = 'javascript:void(0)' onClick="expandcontent(this, 'expand225089')" class = 'rev_sw'>See Detailed Rating</a>
+		</div>
+		<div style='width:105px; float:left; text-align:right;'><b>Rating:</b>&nbsp;<span class='score_pass'>93</span></div>
+		<div style='width:150px; float:left; text-align:right;'>
+			<a href = 'index.php?page=reportComment&sid=23481&cid=225089' class = 'rev_sw'  onClick='if(confirm("Are you sure you want to report this review?")) return true; else return false;'>Report This Comment</a>
+		 </div>
+		 <div style='width:102px; float:left; text-align:right;'>Comment #3</div>
+	</div><div id='revinfo'>
+			<div id='expand225089' style='height: 58px;' class='switchcontent'>
+				<div style='width:120; float:left; margin-left: 2px'>
+					<u><b>Server</b></u><br>
+					<img src = 'images/circle.gif'>Stability: <span class='score_pass'>9</span><br>
+					<img src = 'images/circle.gif'>Availability: <span class='score_pass'>9</span>
+				</div>
+				<div style='width:122; float:left;'>
+					<u><b>Community</b></u><br>
+					<img src = 'images/circle.gif'>Friendliness: <span class='score_pass'>9</span><br>
+					<img src = 'images/circle.gif'>Eventfulness: <span class='score_pass'>9</span>
+				</div>
+				<div style='width:122; float:left;'>
+					<u><b>Game Masters</b></u><br>
+					<img src = 'images/circle.gif'>Friendliness: <span class='score_pass'>9</span><br>
+					<img src = 'images/circle.gif'>Availability: <span class='score_pass'>9</span><br>
+					<img src = 'images/circle.gif'>Helpfulness: <span class='score_pass'>9</span>
+				</div>
+				<div style='width:142; float:left;'>
+					<u><b>Game-play</b></u><br>
+					<img src = 'images/circle.gif'>Economy: <span class='score_pass'>10</span><br>
+					<img src = 'images/circle.gif'>Guild Competition: <span class='score_pass'>10</span><br>
+					<img src = 'images/circle.gif'>Class Balance: <span class='score_pass'>10</span>
+				</div>
+			</div>
+		</div>
+	</div><div class='review-BL-low'><!-- empty --></div></div>
+	<br><div id='review' style='margin: auto;'><div class='review-BL-top'><!-- empty --></div><div class='review-BL-mid'><div style='padding: 3px 0 3px 5px; border-bottom: 2px solid #38719C; text-align: left; margin: 0px 5px;'><img src = 'images/circle.gif'><a href = '/index.php?page=detailedlistserver&serid=23639&url_sname=YamiRO' class='sb_m' >
+		YamiRO - 5000x/5000x/10000x</a></div><div style='padding: 2px; border-bottom: 2px solid #38719C; margin: 0px 5px;'>
+		<table cellpadding=0 cellspacing=0>
+			<tr class='switch'>
+				<td width=140> &nbsp; <a href = 'index.php?page=userprofile&uid=269573' class = 'rev_sw' >kraswook123</a></td>
+				<td width=115><div style='width: 99; height: 20; background: url(images/overall.gif) repeat-x 0 0;'><!-- empty --></div></td>
+				<td width=180 align='center'>Played for less than 1 month</td>
+				<td width=70 align='right'>2026-11-01</td>
+			</tr>
+		</table>
+	</div><div class='btext_mm' style='padding: 2px; overflow: auto; width:510; word-wrap:break-word; margin: 0px 8px;'>So far, this is one of the best HR server i played on. new custom jobs and friendly community and allows me to go back on the old ragnarok times. they listened to players and fix the error immediately. Kudos GM for fast action, NEW UI so modern. Come play here with your friends fresh server with a lot of new features 255/120!!!</div><div id='revinfo' style='height: 16px;'>
+		<div style='width:150px; float:left;'>			
+			<img src="images/plus.gif" onClick="expandcontent(this, 'expand225088')"/>
+			<a href = 'javascript:void(0)' onClick="expandcontent(this, 'expand225088')" class = 'rev_sw'>See Detailed Rating</a>
+		</div>
+		<div style='width:105px; float:left; text-align:right;'><b>Rating:</b>&nbsp;<span class='score_pass'>90</span></div>
+		<div style='width:150px; float:left; text-align:right;'>
+			<a href = 'index.php?page=reportComment&sid=23639&cid=225088' class = 'rev_sw'  onClick='if(confirm("Are you sure you want to report this review?")) return true; else return false;'>Report This Comment</a>
+		 </div>
+		 <div style='width:102px; float:left; text-align:right;'>Comment #4</div>
+	</div><div id='revinfo'>
+			<div id='expand225088' style='height: 58px;' class='switchcontent'>
+				<div style='width:120; float:left; margin-left: 2px'>
+					<u><b>Server</b></u><br>
+					<img src = 'images/circle.gif'>Stability: <span class='score_pass'>9</span><br>
+					<img src = 'images/circle.gif'>Availability: <span class='score_pass'>9</span>
+				</div>
+				<div style='width:122; float:left;'>
+					<u><b>Community</b></u><br>
+					<img src = 'images/circle.gif'>Friendliness: <span class='score_pass'>9</span><br>
+					<img src = 'images/circle.gif'>Eventfulness: <span class='score_pass'>9</span>
+				</div>
+				<div style='width:122; float:left;'>
+					<u><b>Game Masters</b></u><br>
+					<img src = 'images/circle.gif'>Friendliness: <span class='score_pass'>9</span><br>
+					<img src = 'images/circle.gif'>Availability: <span class='score_pass'>9</span><br>
+					<img src = 'images/circle.gif'>Helpfulness: <span class='score_pass'>9</span>
+				</div>
+				<div style='width:142; float:left;'>
+					<u><b>Game-play</b></u><br>
+					<img src = 'images/circle.gif'>Economy: <span class='score_pass'>9</span><br>
+					<img src = 'images/circle.gif'>Guild Competition: <span class='score_pass'>9</span><br>
+					<img src = 'images/circle.gif'>Class Balance: <span class='score_pass'>9</span>
+				</div>
+			</div>
+		</div>
+	</div><div class='review-BL-low'><!-- empty --></div></div>
+	<br><div id='review' style='margin: auto;'><div class='review-BL-top'><!-- empty --></div><div class='review-BL-mid'><div style='padding: 3px 0 3px 5px; border-bottom: 2px solid #38719C; text-align: left; margin: 0px 5px;'><img src = 'images/circle.gif'><a href = '/index.php?page=detailedlistserver&serid=22102&url_sname=UARO World of your dream' class='sb_m' >
+		UARO World of your dream - 5x/5x/5x</a></div><div style='padding: 2px; border-bottom: 2px solid #38719C; margin: 0px 5px;'>
+		<table cellpadding=0 cellspacing=0>
+			<tr class='switch'>
+				<td width=140> &nbsp; <a href = 'index.php?page=userprofile&uid=275219' class = 'rev_sw' >Reinamichi</a></td>
+				<td width=115><div style='width: 110; height: 20; background: url(images/overall.gif) repeat-x 0 0;'><!-- empty --></div></td>
+				<td width=180 align='center'>Played for 3 months</td>
+				<td width=70 align='right'>2026-11-01</td>
+			</tr>
+		</table>
+	</div><div class='btext_mm' style='padding: 2px; overflow: auto; width:510; word-wrap:break-word; margin: 0px 8px;'>The GMs actually listen to the player base and are constantly putting out QoL updates and bug fixes. The community is nice, and the discord has plenty of great guides if you need help on your build or a new farming spot. 
+Its also super friendly for new player, almost every monster has a 5% chance to drop a poring coin so you can start making zeny at level 1 by selling them to older players. The events are nice too even if you don't win, you still get a consolation prize that help you progress.</div><div id='revinfo' style='height: 16px;'>
+		<div style='width:150px; float:left;'>			
+			<img src="images/plus.gif" onClick="expandcontent(this, 'expand225087')"/>
+			<a href = 'javascript:void(0)' onClick="expandcontent(this, 'expand225087')" class = 'rev_sw'>See Detailed Rating</a>
+		</div>
+		<div style='width:105px; float:left; text-align:right;'><b>Rating:</b>&nbsp;<span class='score_pass'>100</span></div>
+		<div style='width:150px; float:left; text-align:right;'>
+			<a href = 'index.php?page=reportComment&sid=22102&cid=225087' class = 'rev_sw'  onClick='if(confirm("Are you sure you want to report this review?")) return true; else return false;'>Report This Comment</a>
+		 </div>
+		 <div style='width:102px; float:left; text-align:right;'>Comment #5</div>
+	</div><div id='revinfo'>
+			<div id='expand225087' style='height: 58px;' class='switchcontent'>
+				<div style='width:120; float:left; margin-left: 2px'>
+					<u><b>Server</b></u><br>
+					<img src = 'images/circle.gif'>Stability: <span class='score_pass'>10</span><br>
+					<img src = 'images/circle.gif'>Availability: <span class='score_pass'>10</span>
+				</div>
+				<div style='width:122; float:left;'>
+					<u><b>Community</b></u><br>
+					<img src = 'images/circle.gif'>Friendliness: <span class='score_pass'>10</span><br>
+					<img src = 'images/circle.gif'>Eventfulness: <span class='score_pass'>10</span>
+				</div>
+				<div style='width:122; float:left;'>
+					<u><b>Game Masters</b></u><br>
+					<img src = 'images/circle.gif'>Friendliness: <span class='score_pass'>10</span><br>
+					<img src = 'images/circle.gif'>Availability: <span class='score_pass'>10</span><br>
+					<img src = 'images/circle.gif'>Helpfulness: <span class='score_pass'>10</span>
+				</div>
+				<div style='width:142; float:left;'>
+					<u><b>Game-play</b></u><br>
+					<img src = 'images/circle.gif'>Economy: <span class='score_pass'>10</span><br>
+					<img src = 'images/circle.gif'>Guild Competition: <span class='score_pass'>10</span><br>
+					<img src = 'images/circle.gif'>Class Balance: <span class='score_pass'>10</span>
+				</div>
+			</div>
+		</div>
+	</div><div class='review-BL-low'><!-- empty --></div></div>
+	<br><div id='review' style='margin: auto;'><div class='review-BL-top'><!-- empty --></div><div class='review-BL-mid'><div style='padding: 3px 0 3px 5px; border-bottom: 2px solid #38719C; text-align: left; margin: 0px 5px;'><img src = 'images/circle.gif'><a href = '/index.php?page=detailedlistserver&serid=23552&url_sname=Fenzura' class='sb_m' >
+		Fenzura - 3x/3x/1x</a></div><div style='padding: 2px; border-bottom: 2px solid #38719C; margin: 0px 5px;'>
+		<table cellpadding=0 cellspacing=0>
+			<tr class='switch'>
+				<td width=140> &nbsp; <a href = 'index.php?page=userprofile&uid=275230' class = 'rev_sw' >kaarubearmd</a></td>
+				<td width=115><div style='width: 95; height: 20; background: url(images/overall.gif) repeat-x 0 0;'><!-- empty --></div></td>
+				<td width=180 align='center'>Played for less than 1 month</td>
+				<td width=70 align='right'>2026-11-01</td>
+			</tr>
+		</table>
+	</div><div class='btext_mm' style='padding: 2px; overflow: auto; width:510; word-wrap:break-word; margin: 0px 8px;'>Been playing Fenzura for less than a month but I have been playing with the GM of the server since 2024 on their previous server. I must say that the server is welcoming and beginner friendly. Lots of things to do and it is not too late to catch up. The community is helpful and leveling is quite okay due to the availability of party members. The only caveat is it's only 2-1 but I think it is a good start for the server. More power to the server and the staff.</div><div id='revinfo' style='height: 16px;'>
+		<div style='width:150px; float:left;'>			
+			<img src="images/plus.gif" onClick="expandcontent(this, 'expand225085')"/>
+			<a href = 'javascript:void(0)' onClick="expandcontent(this, 'expand225085')" class = 'rev_sw'>See Detailed Rating</a>
+		</div>
+		<div style='width:105px; float:left; text-align:right;'><b>Rating:</b>&nbsp;<span class='score_pass'>86</span></div>
+		<div style='width:150px; float:left; text-align:right;'>
+			<a href = 'index.php?page=reportComment&sid=23552&cid=225085' class = 'rev_sw'  onClick='if(confirm("Are you sure you want to report this review?")) return true; else return false;'>Report This Comment</a>
+		 </div>
+		 <div style='width:102px; float:left; text-align:right;'>Comment #6</div>
+	</div><div id='revinfo'>
+			<div id='expand225085' style='height: 58px;' class='switchcontent'>
+				<div style='width:120; float:left; margin-left: 2px'>
+					<u><b>Server</b></u><br>
+					<img src = 'images/circle.gif'>Stability: <span class='score_pass'>9</span><br>
+					<img src = 'images/circle.gif'>Availability: <span class='score_pass'>9</span>
+				</div>
+				<div style='width:122; float:left;'>
+					<u><b>Community</b></u><br>
+					<img src = 'images/circle.gif'>Friendliness: <span class='score_pass'>8</span><br>
+					<img src = 'images/circle.gif'>Eventfulness: <span class='score_pass'>9</span>
+				</div>
+				<div style='width:122; float:left;'>
+					<u><b>Game Masters</b></u><br>
+					<img src = 'images/circle.gif'>Friendliness: <span class='score_pass'>10</span><br>
+					<img src = 'images/circle.gif'>Availability: <span class='score_pass'>10</span><br>
+					<img src = 'images/circle.gif'>Helpfulness: <span class='score_pass'>10</span>
+				</div>
+				<div style='width:142; float:left;'>
+					<u><b>Game-play</b></u><br>
+					<img src = 'images/circle.gif'>Economy: <span class='score_pass'>8</span><br>
+					<img src = 'images/circle.gif'>Guild Competition: <span class='score_pass'>6</span><br>
+					<img src = 'images/circle.gif'>Class Balance: <span class='score_pass'>7</span>
+				</div>
+			</div>
+		</div>
+	</div><div class='review-BL-low'><!-- empty --></div></div>
+	<br><div id='review' style='margin: auto;'><div class='review-BL-top'><!-- empty --></div><div class='review-BL-mid'><div style='padding: 3px 0 3px 5px; border-bottom: 2px solid #38719C; text-align: left; margin: 0px 5px;'><img src = 'images/circle.gif'><a href = '/index.php?page=detailedlistserver&serid=23552&url_sname=Fenzura' class='sb_m' >
+		Fenzura - 3x/3x/1x</a></div><div style='padding: 2px; border-bottom: 2px solid #38719C; margin: 0px 5px;'>
+		<table cellpadding=0 cellspacing=0>
+			<tr class='switch'>
+				<td width=140> &nbsp; <a href = 'index.php?page=userprofile&uid=263687' class = 'rev_sw' >burnsp</a></td>
+				<td width=115><div style='width: 102; height: 20; background: url(images/overall.gif) repeat-x 0 0;'><!-- empty --></div></td>
+				<td width=180 align='center'>Played for 1 month</td>
+				<td width=70 align='right'>2026-11-01</td>
+			</tr>
+		</table>
+	</div><div class='btext_mm' style='padding: 2px; overflow: auto; width:510; word-wrap:break-word; margin: 0px 8px;'>Goods tong server na to, Kung nag hahanap kayo ng classic 99/50 dito na kayo maglaro. Mababait gm dito, friendly din mga tao. Kung solo player ka, pasok sayo tong server na to. Madaming events na pang solo player at yan din focus ng server dahil alam nilang madaming solo player na casual playing lang.</div><div id='revinfo' style='height: 16px;'>
+		<div style='width:150px; float:left;'>			
+			<img src="images/plus.gif" onClick="expandcontent(this, 'expand225083')"/>
+			<a href = 'javascript:void(0)' onClick="expandcontent(this, 'expand225083')" class = 'rev_sw'>See Detailed Rating</a>
+		</div>
+		<div style='width:105px; float:left; text-align:right;'><b>Rating:</b>&nbsp;<span class='score_pass'>93</span></div>
+		<div style='width:150px; float:left; text-align:right;'>
+			<a href = 'index.php?page=reportComment&sid=23552&cid=225083' class = 'rev_sw'  onClick='if(confirm("Are you sure you want to report this review?")) return true; else return false;'>Report This Comment</a>
+		 </div>
+		 <div style='width:102px; float:left; text-align:right;'>Comment #7</div>
+	</div><div id='revinfo'>
+			<div id='expand225083' style='height: 58px;' class='switchcontent'>
+				<div style='width:120; float:left; margin-left: 2px'>
+					<u><b>Server</b></u><br>
+					<img src = 'images/circle.gif'>Stability: <span class='score_pass'>9</span><br>
+					<img src = 'images/circle.gif'>Availability: <span class='score_pass'>9</span>
+				</div>
+				<div style='width:122; float:left;'>
+					<u><b>Community</b></u><br>
+					<img src = 'images/circle.gif'>Friendliness: <span class='score_pass'>9</span><br>
+					<img src = 'images/circle.gif'>Eventfulness: <span class='score_pass'>10</span>
+				</div>
+				<div style='width:122; float:left;'>
+					<u><b>Game Masters</b></u><br>
+					<img src = 'images/circle.gif'>Friendliness: <span class='score_pass'>9</span><br>
+					<img src = 'images/circle.gif'>Availability: <span class='score_pass'>9</span><br>
+					<img src = 'images/circle.gif'>Helpfulness: <span class='score_pass'>10</span>
+				</div>
+				<div style='width:142; float:left;'>
+					<u><b>Game-play</b></u><br>
+					<img src = 'images/circle.gif'>Economy: <span class='score_pass'>10</span><br>
+					<img src = 'images/circle.gif'>Guild Competition: <span class='score_pass'>9</span><br>
+					<img src = 'images/circle.gif'>Class Balance: <span class='score_pass'>9</span>
+				</div>
+			</div>
+		</div>
+	</div><div class='review-BL-low'><!-- empty --></div></div>
+	<br><div id='review' style='margin: auto;'><div class='review-BL-top'><!-- empty --></div><div class='review-BL-mid'><div style='padding: 3px 0 3px 5px; border-bottom: 2px solid #38719C; text-align: left; margin: 0px 5px;'><img src = 'images/circle.gif'><a href = '/index.php?page=detailedlistserver&serid=23556&url_sname=SpringRO' class='sb_m' >
+		SpringRO - 1x/1x/1x</a></div><div style='padding: 2px; border-bottom: 2px solid #38719C; margin: 0px 5px;'>
+		<table cellpadding=0 cellspacing=0>
+			<tr class='switch'>
+				<td width=140> &nbsp; <a href = 'index.php?page=userprofile&uid=82313' class = 'rev_sw' >Poofy</a></td>
+				<td width=115><div style='width: 91; height: 20; background: url(images/overall.gif) repeat-x 0 0;'><!-- empty --></div></td>
+				<td width=180 align='center'>Played for 1 month</td>
+				<td width=70 align='right'>2026-11-01</td>
+			</tr>
+		</table>
+	</div><div class='btext_mm' style='padding: 2px; overflow: auto; width:510; word-wrap:break-word; margin: 0px 8px;'>Big pull is implemented RetroAchievements if your thing. Many cool custom class tweaks but some are odd (Why buff archers?) Server had brief DDoS and host issues that seem on track to be resolved, will update score if holds. GMs can be helpful enough but weirdly abrasive? Allowing suggestions through Discord, seeing one get shut down due to wanting to focus on catering to &quot;the 80% and not the 20%&quot; of players only to lock it when it generates discussion and popularity is certainly off-putting.</div><div id='revinfo' style='height: 16px;'>
+		<div style='width:150px; float:left;'>			
+			<img src="images/plus.gif" onClick="expandcontent(this, 'expand225080')"/>
+			<a href = 'javascript:void(0)' onClick="expandcontent(this, 'expand225080')" class = 'rev_sw'>See Detailed Rating</a>
+		</div>
+		<div style='width:105px; float:left; text-align:right;'><b>Rating:</b>&nbsp;<span class='score_pass'>83</span></div>
+		<div style='width:150px; float:left; text-align:right;'>
+			<a href = 'index.php?page=reportComment&sid=23556&cid=225080' class = 'rev_sw'  onClick='if(confirm("Are you sure you want to report this review?")) return true; else return false;'>Report This Comment</a>
+		 </div>
+		 <div style='width:102px; float:left; text-align:right;'>Comment #8</div>
+	</div><div id='revinfo'>
+			<div id='expand225080' style='height: 58px;' class='switchcontent'>
+				<div style='width:120; float:left; margin-left: 2px'>
+					<u><b>Server</b></u><br>
+					<img src = 'images/circle.gif'>Stability: <span class='score_pass'>6</span><br>
+					<img src = 'images/circle.gif'>Availability: <span class='score_pass'>8</span>
+				</div>
+				<div style='width:122; float:left;'>
+					<u><b>Community</b></u><br>
+					<img src = 'images/circle.gif'>Friendliness: <span class='score_pass'>9</span><br>
+					<img src = 'images/circle.gif'>Eventfulness: <span class='score_pass'>10</span>
+				</div>
+				<div style='width:122; float:left;'>
+					<u><b>Game Masters</b></u><br>
+					<img src = 'images/circle.gif'>Friendliness: <span class='score_pass'>5</span><br>
+					<img src = 'images/circle.gif'>Availability: <span class='score_pass'>9</span><br>
+					<img src = 'images/circle.gif'>Helpfulness: <span class='score_pass'>8</span>
+				</div>
+				<div style='width:142; float:left;'>
+					<u><b>Game-play</b></u><br>
+					<img src = 'images/circle.gif'>Economy: <span class='score_pass'>10</span><br>
+					<img src = 'images/circle.gif'>Guild Competition: <span class='score_pass'>10</span><br>
+					<img src = 'images/circle.gif'>Class Balance: <span class='score_pass'>8</span>
+				</div>
+			</div>
+		</div>
+	</div><div class='review-BL-low'><!-- empty --></div></div>
+	<br><div id='review' style='margin: auto;'><div class='review-BL-top'><!-- empty --></div><div class='review-BL-mid'><div style='padding: 3px 0 3px 5px; border-bottom: 2px solid #38719C; text-align: left; margin: 0px 5px;'><img src = 'images/circle.gif'><a href = '/index.php?page=detailedlistserver&serid=23603&url_sname=OlamRO' class='sb_m' >
+		OlamRO - 150x/150x/50x</a></div><div style='padding: 2px; border-bottom: 2px solid #38719C; margin: 0px 5px;'>
+		<table cellpadding=0 cellspacing=0>
+			<tr class='switch'>
+				<td width=140> &nbsp; <a href = 'index.php?page=userprofile&uid=275165' class = 'rev_sw' >lovesomeonedown</a></td>
+				<td width=115><div style='width: 97; height: 20; background: url(images/overall.gif) repeat-x 0 0;'><!-- empty --></div></td>
+				<td width=180 align='center'>Played for less than 1 month</td>
+				<td width=70 align='right'>2026-11-01</td>
+			</tr>
+		</table>
+	</div><div class='btext_mm' style='padding: 2px; overflow: auto; width:510; word-wrap:break-word; margin: 0px 8px;'>Been playing since the start (almost 2 weeks). Community is still microscopic, but GM is active in listening to feedback, implementing necessary or interesting changes and fixing bugs. The economy surrounding cards and Zeny is taking good shape in my opinion, and it makes me look forward to some unique changes in the server, which are still being discussed so I hope more people join in to offer their perspective in what could get better and add their experience. Everything is free by the way.</div><div id='revinfo' style='height: 16px;'>
+		<div style='width:150px; float:left;'>			
+			<img src="images/plus.gif" onClick="expandcontent(this, 'expand225073')"/>
+			<a href = 'javascript:void(0)' onClick="expandcontent(this, 'expand225073')" class = 'rev_sw'>See Detailed Rating</a>
+		</div>
+		<div style='width:105px; float:left; text-align:right;'><b>Rating:</b>&nbsp;<span class='score_pass'>88</span></div>
+		<div style='width:150px; float:left; text-align:right;'>
+			<a href = 'index.php?page=reportComment&sid=23603&cid=225073' class = 'rev_sw'  onClick='if(confirm("Are you sure you want to report this review?")) return true; else return false;'>Report This Comment</a>
+		 </div>
+		 <div style='width:102px; float:left; text-align:right;'>Comment #9</div>
+	</div><div id='revinfo'>
+			<div id='expand225073' style='height: 58px;' class='switchcontent'>
+				<div style='width:120; float:left; margin-left: 2px'>
+					<u><b>Server</b></u><br>
+					<img src = 'images/circle.gif'>Stability: <span class='score_pass'>9</span><br>
+					<img src = 'images/circle.gif'>Availability: <span class='score_pass'>10</span>
+				</div>
+				<div style='width:122; float:left;'>
+					<u><b>Community</b></u><br>
+					<img src = 'images/circle.gif'>Friendliness: <span class='score_pass'>10</span><br>
+					<img src = 'images/circle.gif'>Eventfulness: <span class='score_pass'>6</span>
+				</div>
+				<div style='width:122; float:left;'>
+					<u><b>Game Masters</b></u><br>
+					<img src = 'images/circle.gif'>Friendliness: <span class='score_pass'>10</span><br>
+					<img src = 'images/circle.gif'>Availability: <span class='score_pass'>10</span><br>
+					<img src = 'images/circle.gif'>Helpfulness: <span class='score_pass'>10</span>
+				</div>
+				<div style='width:142; float:left;'>
+					<u><b>Game-play</b></u><br>
+					<img src = 'images/circle.gif'>Economy: <span class='score_pass'>10</span><br>
+					<img src = 'images/circle.gif'>Guild Competition: <span class='score_pass'>5</span><br>
+					<img src = 'images/circle.gif'>Class Balance: <span class='score_pass'>8</span>
+				</div>
+			</div>
+		</div>
+	</div><div class='review-BL-low'><!-- empty --></div></div>
+	<br><div id='review' style='margin: auto;'><div class='review-BL-top'><!-- empty --></div><div class='review-BL-mid'><div style='padding: 3px 0 3px 5px; border-bottom: 2px solid #38719C; text-align: left; margin: 0px 5px;'><img src = 'images/circle.gif'><a href = '/index.php?page=detailedlistserver&serid=23552&url_sname=Fenzura' class='sb_m' >
+		Fenzura - 3x/3x/1x</a></div><div style='padding: 2px; border-bottom: 2px solid #38719C; margin: 0px 5px;'>
+		<table cellpadding=0 cellspacing=0>
+			<tr class='switch'>
+				<td width=140> &nbsp; <a href = 'index.php?page=userprofile&uid=260113' class = 'rev_sw' >Aizukurimux</a></td>
+				<td width=115><div style='width: 99; height: 20; background: url(images/overall.gif) repeat-x 0 0;'><!-- empty --></div></td>
+				<td width=180 align='center'>Played for less than 1 month</td>
+				<td width=70 align='right'>2026-11-01</td>
+			</tr>
+		</table>
+	</div><div class='btext_mm' style='padding: 2px; overflow: auto; width:510; word-wrap:break-word; margin: 0px 8px;'>its been almost 1 month since ive played Fenzura, it has auto attack but i really still enjoy playing manual grind like the classic experience, still the gms admin are easy to approach and listen to the players suggestion as long it was balance in the server, and the community are very much active.. if you want to join a classic 99/50 you are welcome here in FENZURA lets go!!</div><div id='revinfo' style='height: 16px;'>
+		<div style='width:150px; float:left;'>			
+			<img src="images/plus.gif" onClick="expandcontent(this, 'expand225061')"/>
+			<a href = 'javascript:void(0)' onClick="expandcontent(this, 'expand225061')" class = 'rev_sw'>See Detailed Rating</a>
+		</div>
+		<div style='width:105px; float:left; text-align:right;'><b>Rating:</b>&nbsp;<span class='score_pass'>90</span></div>
+		<div style='width:150px; float:left; text-align:right;'>
+			<a href = 'index.php?page=reportComment&sid=23552&cid=225061' class = 'rev_sw'  onClick='if(confirm("Are you sure you want to report this review?")) return true; else return false;'>Report This Comment</a>
+		 </div>
+		 <div style='width:102px; float:left; text-align:right;'>Comment #10</div>
+	</div><div id='revinfo'>
+			<div id='expand225061' style='height: 58px;' class='switchcontent'>
+				<div style='width:120; float:left; margin-left: 2px'>
+					<u><b>Server</b></u><br>
+					<img src = 'images/circle.gif'>Stability: <span class='score_pass'>9</span><br>
+					<img src = 'images/circle.gif'>Availability: <span class='score_pass'>9</span>
+				</div>
+				<div style='width:122; float:left;'>
+					<u><b>Community</b></u><br>
+					<img src = 'images/circle.gif'>Friendliness: <span class='score_pass'>9</span><br>
+					<img src = 'images/circle.gif'>Eventfulness: <span class='score_pass'>9</span>
+				</div>
+				<div style='width:122; float:left;'>
+					<u><b>Game Masters</b></u><br>
+					<img src = 'images/circle.gif'>Friendliness: <span class='score_pass'>9</span><br>
+					<img src = 'images/circle.gif'>Availability: <span class='score_pass'>9</span><br>
+					<img src = 'images/circle.gif'>Helpfulness: <span class='score_pass'>9</span>
+				</div>
+				<div style='width:142; float:left;'>
+					<u><b>Game-play</b></u><br>
+					<img src = 'images/circle.gif'>Economy: <span class='score_pass'>9</span><br>
+					<img src = 'images/circle.gif'>Guild Competition: <span class='score_pass'>9</span><br>
+					<img src = 'images/circle.gif'>Class Balance: <span class='score_pass'>9</span>
+				</div>
+			</div>
+		</div>
+	</div><div class='review-BL-low'><!-- empty --></div></div>
+	<br><div style='margin: 10px auto; text-align: center;'><a href='https://ratemyserver.net/index.php?page=more_latest_review&page_num=2' title = 'more latest review on RO servers' class='re_button_reverse'>
+		More Latest Reviews <i class='fa fa-chevron-right' aria-hidden='true'></i></a></div>
+</div><!-- close latest review main block -->
+</div><!-- close content-div -->
+		<div class="sidebar-right">
+			<div class="community-BL">
+				<div class="bl-ct">
+					<!-- determine what user msg to show -->
+					<a href='https://ratemyserver.net/index.php?page=login' class='sb'>Login</a>
+		<br><a href='https://ratemyserver.net/index.php?page=registration' class='sb'>Register</a>
+		<br><a href='https://ratemyserver.net/forgetpass.php' class='sb'>Lost Password?</a>					<br>	
+					<a href="http://forum.ratemyserver.net/" title = "Visit our forum" class="sb" target = "_blank">Forum</a>
+					<span style="margin: 0 3px; font-weight: bold; color: #00568a;">|</span>
+					<a href="https://discord.gg/ATfY8rHzX2" title = "Visit the RMS Discord" class="sb"  target = "_blank">Discord</a>
+					<br><br>
+					<a href="https://ratemyserver.net/index.php?page=userlist" title = "View the list of members registered on ratemyserver.net" class="sb">Member List</a>
+					<br>
+					<a href="https://ratemyserver.net/index.php?page=usersearch" title = "Search a member on ratemyserver.net" class="sb">Member Search</a>
+				</div>
+			</div>
+
+
+			<div class="download-BL">
+				<div class="bl-ct">
+					<a href="https://ratemyserver.net/index.php?page=download_kROLinks" title="Download the latest kRO, Renewal and Sakray Ragnarok clients" class="sb">kRO Clients</a>
+					<br>
+					<a href="https://ratemyserver.net/index.php?page=download_tool" title="Download Ragnarok Online Client / Server related Tools" class="sb">RO Tools</a>
+					<br>
+					<a href="https://ratemyserver.net/index.php?page=ro_mp3_select" title="Download Ragnarok Online BGM Remixes Mp3" class="sb">RO Music</a>
+					<br>
+					<a href="https://ratemyserver.net/index.php?page=riot_bible_main" title="View the 2006 Sprite Bible by Riotblade" class="sb">Sprite Bible</a>
+					<!--br>
+					<a href="http://forum.ratemyserver.net/announcements/rms-search-plugins-rms-firefox-toolbar/" title="Download the RMS Toolbar" class="sb">RMS Toolbar</a-->
+				</div>
+			</div>
+
+			<div class="latestrev-BL">
+				<div style="padding-top: 106px;">
+					
+<style type="text/css">
+<!--
+
+.latest_div{
+	width: 148px;
+	height: 78px;
+	margin: 2px 13px;
+	background: url(images/latrev_bg.png) no-repeat;
+}
+
+.latest_cont{
+	padding: 8px 5px 0px 5px;
+	line-height: 12px;
+	text-align: center;
+	width: 138px;
+	height: 74px;
+	overflow: auto;
+}
+
+a:link.top_ten, a:visited.top_ten{
+font-size: 10px;
+font-family: verdana;
+font-weight: bold;
+color: #00568a;
+text-decoration: none;
+}
+
+a:hover.top_ten{
+font-size: 10px;
+font-family: verdana;
+font-weight: bold;
+color: #fff;
+text-decoration: none;
+}
+
+.top_ten_txt{
+font-size: 10px;
+font-family: verdana;
+color: #516982;
+}
+
+-->
+</style>
+
+<div class='latest_div'>
+			<div class='latest_cont'>
+	  			<a href= 'https://ratemyserver.net/index.php?page=detailedlistserver&serid=23552&url_sname=Fenzura' class = 'top_ten'>Fenzura</a>
+	  			<br>
+				<span class='top_ten_txt'>Low Rate</span>
+				<br>
+				<a href= 'https://ratemyserver.net/index.php?page=serverstat&serid=23552&url_sname=Fenzura&page_num=1' class = 'top_ten'>Latest Rating:</a><span class='top_ten_txt' style='color: #ffa500; font-weight: bold;'>87</span>
+			 	<br>
+				<span class='top_ten_txt'>3 hours ago</span>
+			</div>
+		</div><div class='latest_div'>
+			<div class='latest_cont'>
+	  			<a href= 'https://ratemyserver.net/index.php?page=detailedlistserver&serid=23639&url_sname=YamiRO' class = 'top_ten'>YamiRO</a>
+	  			<br>
+				<span class='top_ten_txt'>High Rate</span>
+				<br>
+				<a href= 'https://ratemyserver.net/index.php?page=serverstat&serid=23639&url_sname=YamiRO&page_num=1' class = 'top_ten'>Latest Rating:</a><span class='top_ten_txt' style='color: #ffa500; font-weight: bold;'>84</span>
+			 	<br>
+				<span class='top_ten_txt'>5 hours ago</span>
+			</div>
+		</div><div class='latest_div'>
+			<div class='latest_cont'>
+	  			<a href= 'https://ratemyserver.net/index.php?page=detailedlistserver&serid=23481&url_sname=Apex Oracle ' class = 'top_ten'>Apex Oracle </a>
+	  			<br>
+				<span class='top_ten_txt'>Mid Rate</span>
+				<br>
+				<a href= 'https://ratemyserver.net/index.php?page=serverstat&serid=23481&url_sname=Apex Oracle &page_num=1' class = 'top_ten'>Latest Rating:</a><span class='top_ten_txt' style='color: #ffa500; font-weight: bold;'>93</span>
+			 	<br>
+				<span class='top_ten_txt'>7 hours ago</span>
+			</div>
+		</div><div class='latest_div'>
+			<div class='latest_cont'>
+	  			<a href= 'https://ratemyserver.net/index.php?page=detailedlistserver&serid=23639&url_sname=YamiRO' class = 'top_ten'>YamiRO</a>
+	  			<br>
+				<span class='top_ten_txt'>High Rate</span>
+				<br>
+				<a href= 'https://ratemyserver.net/index.php?page=serverstat&serid=23639&url_sname=YamiRO&page_num=1' class = 'top_ten'>Latest Rating:</a><span class='top_ten_txt' style='color: #ffa500; font-weight: bold;'>90</span>
+			 	<br>
+				<span class='top_ten_txt'>7 hours ago</span>
+			</div>
+		</div><div class='latest_div'>
+			<div class='latest_cont'>
+	  			<a href= 'https://ratemyserver.net/index.php?page=detailedlistserver&serid=22102&url_sname=UARO World of your dream' class = 'top_ten'>UARO World of your dream</a>
+	  			<br>
+				<span class='top_ten_txt'>Low Rate</span>
+				<br>
+				<a href= 'https://ratemyserver.net/index.php?page=serverstat&serid=22102&url_sname=UARO World of your dream&page_num=1' class = 'top_ten'>Latest Rating:</a><span class='top_ten_txt' style='color: #ffa500; font-weight: bold;'>100</span>
+			 	<br>
+				<span class='top_ten_txt'>7 hours ago</span>
+			</div>
+		</div>				</div>
+			</div>
+			
+			<div class="nobg-BL">
+				<a href='https://ratemyserver.net/index.php?page=more_latest_review' title = 'View other latest review on RO servers' >
+				<img src="images/mlr_btn.gif" border=0 onmouseover="this.src='images/mlr_btn-mo.gif'" onmouseout="this.src='images/mlr_btn.gif'">
+				</a>
+			</div>
+
+</div><!-- close sidebar-right -->
+
+<div id="footer">
+	<div style="clear:both;" class="copyright">
+		<a href='review_guidelines.php' class='sm'>Review Guidelines</a> | 
+		<a href='TOS_owner.html' class='sm'>ToS: Server Owner</a> |
+		<a href='TOS_player.html' class='sm'>ToS: Reviewer</a> |
+		<a href='privacy_policy.php' class='sm'>Privacy Policy</a>
+		<br>
+		<div class = 'copyright'>
+			RateMyServer.Net Copyright &copy; 2005-2026 <br>
+			All images and content on ratemyserver.net belong to their respective creators.
+		</div>
+	</div>
+</div>
+
+</div><!-- close contentwrap -->
+
+</div><!-- close wrapper -->
+
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a53ec691bc20cc5a',t:'MTc5MzU3Njc1Mg=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a53ec691bc20cc5a',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
+
