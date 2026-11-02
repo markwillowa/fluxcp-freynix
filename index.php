@@ -139,16 +139,47 @@ try {
 		Flux::config('BaseURI', $detectedBaseURI ?: '/');
 	}
 
+	// Detect if essential CP and CMS database tables are missing (e.g. fresh installation)
+	$cpTablesMissing = false;
+	try {
+		if (!empty(Flux::$loginAthenaGroupRegistry)) {
+			$firstServer = reset(Flux::$loginAthenaGroupRegistry);
+			if ($firstServer && $firstServer->connection) {
+				$tblCheck = $firstServer->connection->getStatement("SHOW TABLES LIKE 'cp_%'");
+				$tblCheck->execute();
+				$existingTables = $tblCheck->fetchAll(PDO::FETCH_COLUMN);
+				$requiredTables = array('cp_credits', 'cp_cmsnews', 'cp_cmssettings', 'cp_navigation');
+				foreach ($requiredTables as $reqTbl) {
+					if (!in_array($reqTbl, $existingTables)) {
+						$cpTablesMissing = true;
+						break;
+					}
+				}
+			}
+		}
+	} catch (Exception $e) {
+		$cpTablesMissing = true;
+	}
+
+	// If CP tables are missing from database, clear stale schema tracking so installer runs fresh
+	if ($cpTablesMissing) {
+		$loginDbFiles = glob(FLUX_DATA_DIR.'/logs/schemas/logindb/*/*.txt') ?: array();
+		$charDbFiles  = glob(FLUX_DATA_DIR.'/logs/schemas/charmapdb/*/*.txt') ?: array();
+		foreach (array_merge($loginDbFiles, $charDbFiles) as $f) {
+			@unlink($f);
+		}
+	}
+
 	// Installer library.
 	$installer = Flux_Installer::getInstance();
 	$isInstallModule = (isset($_GET['module']) && $_GET['module'] === 'install' && (!isset($_GET['action']) || $_GET['action'] !== 'reinstall'));
-	if (($hasUpdates=$installer->updateNeeded()) || $isInstallModule || $pathMismatch) {
+	if (($hasUpdates=($installer->updateNeeded() || $cpTablesMissing)) || $isInstallModule || $pathMismatch) {
 		Flux::config('ThemeName', array('installer'));
 		$hasUpdates = true;
 	}
 
-	// If path moved/mismatched or schemas need updating, redirect to installer wizard so layout is never broken
-	if (php_sapi_name() !== 'cli' && ($pathMismatch || $installer->updateNeeded())) {
+	// If path moved/mismatched or schemas need updating or CP tables missing, redirect to installer wizard so layout is never broken
+	if (php_sapi_name() !== 'cli' && ($pathMismatch || $hasUpdates)) {
 		$reqUri = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '';
 		$isInstallReq = (isset($_GET['module']) && $_GET['module'] === 'install') || (stripos($reqUri, 'module=install') !== false) || (preg_match('~/install([/?&#]|$)~i', $reqUri));
 		if (!$isInstallReq) {
@@ -189,6 +220,11 @@ try {
 
 	// Initialize session data.
 	Flux::$sessionData = new Flux_SessionData($_SESSION[$sessionKey], $hasUpdates);
+
+	// Synchronize active theme with primary configured ThemeName
+	if (empty($hasUpdates) && !empty(Flux::config('ThemeName.0'))) {
+		Flux::$sessionData->setThemeData(Flux::config('ThemeName.0'));
+	}
 
 	// Initialize authorization component.
 	$accessConfig = Flux::parseConfigFile(FLUX_CONFIG_DIR.'/access.php');

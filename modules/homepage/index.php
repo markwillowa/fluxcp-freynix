@@ -87,7 +87,23 @@ if (count($_POST)) {
 		if ($field === 'facebook_url') Flux_CMS::set('hp_facebook_url', $valStr, $server);
 	}
 
-	$session->setMessageData("Homepage configuration saved successfully!");
+	// Handle Active Theme Switcher
+	$chosenTheme = trim((string)$params->get('active_theme'));
+	if (!empty($chosenTheme) && in_array($chosenTheme, array('celestial', 'freynix'))) {
+		Flux_CMS::set('active_theme', $chosenTheme, $server);
+		$appConfigFile = FLUX_CONFIG_DIR . '/application.php';
+		if (file_exists($appConfigFile)) {
+			$otherTheme = ($chosenTheme === 'celestial') ? 'freynix' : 'celestial';
+			$newThemeArray = "array('{$chosenTheme}', '{$otherTheme}', 'default', 'bootstrap')";
+			$appContent = file_get_contents($appConfigFile);
+			$appContent = preg_replace("/('ThemeName'\s*=>\s*)array\([^)]+\),/", "$1{$newThemeArray},", $appContent);
+			file_put_contents($appConfigFile, $appContent);
+			Flux::config('ThemeName', array($chosenTheme, $otherTheme, 'default', 'bootstrap'));
+			$session->setThemeData($chosenTheme);
+		}
+	}
+
+	$session->setMessageData("Homepage and theme configuration saved successfully!");
 	$this->redirect($this->url('homepage', 'index'));
 }
 

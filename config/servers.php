@@ -10,8 +10,9 @@ return array (
       'Username' => 'admin',
       'Password' => 'Maki0913$',
       'Database' => 'freynix',
-      'Persistent' => true,
+      'Persistent' => false,
       'Timezone' => NULL,
+      'Port' => 3306,
     ),
     'LogsDbConfig' => 
     array (
@@ -20,8 +21,9 @@ return array (
       'Username' => 'admin',
       'Password' => 'Maki0913$',
       'Database' => 'freynix',
-      'Persistent' => true,
+      'Persistent' => false,
       'Timezone' => NULL,
+      'Port' => 3306,
     ),
     'WebDbConfig' => 
     array (
@@ -29,7 +31,8 @@ return array (
       'Username' => 'admin',
       'Password' => 'Maki0913$',
       'Database' => 'freynix',
-      'Persistent' => true,
+      'Persistent' => false,
+      'Port' => 3306,
     ),
     'LoginServer' => 
     array (
@@ -125,6 +128,7 @@ return array (
             'action' => 'mapstats',
           ),
         ),
+        'CharMapDatabase' => 'freynix',
       ),
     ),
   ),

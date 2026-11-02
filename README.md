@@ -184,22 +184,71 @@ htdocs/
    - Place this codebase in your web root (e.g. `c:/xampp/htdocs` or `/var/www/html`).
    - Ensure Apache/Nginx has write permissions to `data/`, `config/`, and subdirectories.
 
-2. **Launch the Setup Wizard & Verify Web Path:**
-   - Navigate to `http://localhost/fluxcp-freynix/?module=install` (or `http://localhost/?module=install` if at web root).
-   - Review the **Web Path & Installation Location** in Step 1 to verify that your detected directory matches your configured path.
-   - Enter your installer password (default: `secretpassword`, configured in `config/application.php`).
+## Installation & Setup (Two-Step Wizard)
 
-3. **Verify Web Path & Configure MySQL:**
-   - In **Section 0A**, confirm your **Web Path / Base URI** and click **"Save & Synchronize Web Path"**.
-   - In **Section 0**, fill in your MySQL Host, Port, Username, Password, Database Name, and Server Group Name.
-   - Click **"Test Connection & Save MySQL Configuration"**. The wizard automatically tests the connection, creates the database if it doesn't exist, and writes the required configurations into `config/servers.php`.
+The installation manager features a dedicated, neutral tech layout separate from both community themes:
 
-4. **Install Schemas:**
-   - Click **"Install / Update All Schemas"** to run FluxCP database migrations.
+1. **Step 1: System Requirements & Database Verification:**
+   - **Engine & Extensions:** Validates PHP 7.3.0+, MySQL 5.0+, and all 9 required extensions (`curl`, `gd`, `pdo`, `pdo_mysql`, `mysqli`, `mbstring`, `xml`, `xmlreader`, `openssl`).
+   - **Permissions:** Verifies writable access for `data/logs`, `data/itemshop`, and `data/tmp`.
+   - **Database Connection & `login` Table:** Tests MySQL connectivity and verifies that the rAthena `login` table exists. If missing, a one-click button is provided to create the standard rAthena `login` table schema immediately.
+   - **Core Schemas & CMS Tables:** Installs and synchronizes all core FluxCP tables and community CMS tables (`cp_credits`, `cp_cmsnews`, `cp_cmssettings`, `cp_navigation`, `cp_cmspages`).
+   - **Strict Gate:** If any requirement fails, the wizard blocks progression to Step 2 until resolved.
+   - **Unlock:** Enter your `InstallerPassword` (configured in `config/application.php`) to unlock Step 2.
 
-5. **Customize Server Details:**
-   - Enter your Server Name, Slogan, EXP/Drop Rates, Max Levels, Hero banner texts, and Community links.
-   - Click **"Save Configuration & Launch Website"**.
+2. **Step 2: Server Details & Theme Setup (`?module=install&step=2`):**
+   - **Theme Selector:** Choose between **Celestial Chronicle V3** (Light Anime-Fantasy) and **Eclipse Realm V2** (Dark MMORPG).
+   - **Server Identity:** Configure Server Name, Slogan, Meta Description, Keywords, and Logo URL.
+   - **Gameplay Rates:** Configure Base/Job EXP rates, drop rates, level caps, Pre-Renewal/Renewal mode, and WoE schedule.
+   - **Hero Banner:** Customize headline, subtitles, description, and action button links.
+   - **Client Downloads:** Set Full and Lite client download mirrors and file sizes.
+   - **Community:** Configure Discord invite link, Facebook page, and staff contact email.
+   - Click **"Save Configuration & Launch Website"** to complete setup and launch your portal.
+
+---
+
+## Website Themes & Theme Switching
+
+FluxCP includes two community themes:
+
+1. **Celestial Chronicle V3 (`celestial`):**
+   - **Aesthetic:** Light anime-fantasy, skyward floating islands, and crystal castles.
+   - **Color Palette:** Ivory White (`#F8F5EC`), Sky Blue (`#DCEFFA`), Azure (`#83B9DA`), Royal Gold (`#C9A45E`), Deep Navy (`#283B59`).
+   - **Components:** Floating translucent navbar, atmospheric floating particles, gold filigree buttons, Adventurer's Hub account dashboard, and responsive mobile drawer.
+
+2. **Eclipse Realm V2 (`freynix`):**
+   - **Aesthetic:** Dark gothic fantasy MMORPG, obsidian castle, and mystical violet auroras.
+   - **Color Palette:** Deep Void (`#0B1020`), Dark Indigo (`#171C31`), Mystic Violet (`#9D80E8`), Royal Gold (`#D6AD66`), Platinum White (`#F4F0FF`).
+   - **Components:** Glowing glassmorphism cards, interactive particle canvas, server rate badges, and responsive sidebar.
+
+### Switching Themes Live
+- **Via Homepage CMS (`/?module=homepage`):**
+  - Navigate to **Homepage CMS** from the staff user dropdown.
+  - In **Section 1 (Server Brand & Identity)**, select your preferred theme radio card (**Celestial Chronicle V3** or **Eclipse Realm V2**).
+  - Click **"Save Homepage Settings"**. The theme updates instantly across all user sessions with zero caching lag.
+- **Via Installation Wizard (`/?module=install`):**
+  - Select your preferred theme during initial setup in Step 2.
+
+---
+
+## Staff Controls & Navigation Parity
+
+Both themes provide an identical staff experience:
+- **Navbar User Dropdown:**
+  - Player Balance and Account Info
+  - Adventurer's Hub / Player Dashboard
+  - Change Password / Change E-mail
+  - Support Tickets & Login History
+  - **Staff Controls Section (Group Level &ge; 99):**
+    - `Homepage CMS` (`/?module=homepage`)
+    - `Manage News` (`/?module=news&action=manage`)
+    - `Manage Pages` (`/?module=pages`)
+    - `Manage Nav` (`/?module=navigation`)
+    - `Manage Downloads` (`/?module=downloads&action=manage`)
+    - `Re-Install & Reset Wizard` (`/?module=install&action=reinstall`)
+    - Dynamic Addon & Core Module Action Links (`getAdminMenuItems()`)
+- **Inner Page Submenu & Action Bars:** Both themes render dynamic section tabs (`submenu.php`) and page action links (`pagemenu.php`).
+- **Off-Canvas Mobile Drawer:** Complete staff controls and dynamic menu links accessible on mobile devices.
 
 ---
 

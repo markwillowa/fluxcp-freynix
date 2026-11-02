@@ -7,14 +7,19 @@ $newstype = (int)Flux::config('CMSNewsType');
 
 if ($newstype == '1') {
 	$newsTable = Flux::config('FluxTables.CMSNewsTable'); 
-	$sql = "SELECT id, title, category, status, is_pinned, featured_image, body, link, author, published_at, created, modified 
-			FROM {$server->loginDatabase}.$newsTable 
-			WHERE status = 'published' AND (published_at IS NULL OR published_at <= NOW())
-			ORDER BY is_pinned DESC, published_at DESC, id DESC 
-			LIMIT $newslimit";
-	$sth = $server->connection->getStatement($sql);
-	$sth->execute();
-	$news = $sth->fetchAll();
+	$news = array();
+	try {
+		$sql = "SELECT id, title, category, status, is_pinned, featured_image, body, link, author, published_at, created, modified 
+				FROM {$server->loginDatabase}.$newsTable 
+				WHERE status = 'published' AND (published_at IS NULL OR published_at <= NOW())
+				ORDER BY is_pinned DESC, published_at DESC, id DESC 
+				LIMIT $newslimit";
+		$sth = $server->connection->getStatement($sql);
+		$sth->execute();
+		$news = $sth->fetchAll();
+	} catch (Exception $e) {
+		$news = array();
+	}
 } elseif ($newstype == '2') {
 	$content = @file_get_contents(Flux::config('CMSNewsRSS'));
 	$news = array();
