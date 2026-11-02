@@ -182,7 +182,7 @@ class Flux_Installer_Schema {
 	/**
 	 *
 	 */
-	public static function getSchemas(Flux_Installer_MainServer $mainServer, Flux_Installer_CharMapServer $charMapServer = null)
+	public static function getSchemas(Flux_Installer_MainServer $mainServer, ?Flux_Installer_CharMapServer $charMapServer = null)
 	{
 		$mainServerName = $mainServer->loginAthenaGroup->serverName;
 		

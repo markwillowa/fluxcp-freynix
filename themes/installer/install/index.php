@@ -13,6 +13,20 @@ $curDb   = $curServer['DbConfig']['Database'] ?? 'freynix';
 $curServerName = $curServer['ServerName'] ?? 'Freynix Ragnarok Online';
 ?>
 
+<?php if (!empty($pathMismatch)): ?>
+	<div class="alert-banner danger" style="margin-bottom: 24px; border-color: #e74c3c; background: rgba(231, 76, 60, 0.15); padding: 18px 24px;">
+		<span style="font-size: 1.6rem; color: #ff6b81;">&#9888;</span>
+		<div>
+			<strong style="color: #ff6b81; font-size: 1.1rem; display: block; margin-bottom: 6px;">Web Path Change Detected!</strong>
+			<span style="color: #F4F0FF; font-size: 0.95rem; line-height: 1.5; display: block;">
+				FluxCP was moved to a new web directory: <code style="color: var(--color-gold); background: rgba(0,0,0,0.4); padding: 2px 6px; border-radius: 4px;"><?php echo htmlspecialchars($detectedBaseURI ?: '/') ?></code>.<br />
+				The previously configured Base URI was: <code style="color: #ff6b81; background: rgba(0,0,0,0.4); padding: 2px 6px; border-radius: 4px;"><?php echo htmlspecialchars($configuredBaseURI ?: '/') ?></code>.<br />
+				Please confirm the <strong>Web Path (Base URI)</strong> below and save your configuration so that all theme styles, images, and routes load with zero broken layout.
+			</span>
+		</div>
+	</div>
+<?php endif ?>
+
 <?php if (!$session->installerAuth): ?>
 	<?php $success = TRUE; ?>
 	
@@ -120,6 +134,49 @@ $curServerName = $curServer['ServerName'] ?? 'Freynix Ragnarok Online';
 			</tbody>
 		</table>
 
+		<!-- Web Path & Application Directory Detection -->
+		<h4 style="font-family: 'Rajdhani', sans-serif; font-size: 1.1rem; color: var(--color-gold); text-transform: uppercase; margin: 28px 0 12px 0;">
+			Web Path &amp; Installation Location
+		</h4>
+		<table class="installer-table">
+			<thead>
+				<tr>
+					<th width="35%">Configuration Item</th>
+					<th width="45%">Detected / Configured Path</th>
+					<th width="20%">Status</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><strong>Physical Filesystem Root</strong></td>
+					<td><small style="font-family: monospace; color: var(--color-gold);"><?php echo htmlspecialchars(FLUX_ROOT) ?></small></td>
+					<td><span class="badge-success">&#10003; Accessible</span></td>
+				</tr>
+				<tr>
+					<td><strong>Detected Web Path (Base URI)</strong></td>
+					<td><code><?php echo htmlspecialchars($detectedBaseURI ?: '/') ?></code></td>
+					<td>
+						<?php if (empty($pathMismatch)): ?>
+							<span class="badge-success">&#10003; Matched</span>
+						<?php else: ?>
+							<span class="badge-danger">&#9888; Path Mismatch</span>
+						<?php endif ?>
+					</td>
+				</tr>
+				<tr>
+					<td><strong>Configured Base URI (config/application.php)</strong></td>
+					<td><code><?php echo htmlspecialchars($configuredBaseURI ?: '/') ?></code></td>
+					<td>
+						<?php if (empty($pathMismatch)): ?>
+							<span class="badge-success">&#10003; Synchronized</span>
+						<?php else: ?>
+							<span class="badge-warning" style="background: rgba(230,126,34,0.2); color: #e67e22; border: 1px solid #e67e22; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem;">Sync Required</span>
+						<?php endif ?>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
 		<?php if ($success): ?>
 			<!-- Password Form -->
 			<div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--border-subtle);">
@@ -172,6 +229,46 @@ $curServerName = $curServer['ServerName'] ?? 'Freynix Ragnarok Online';
 				<span>Lock / Logout</span>
 			</a>
 		</div>
+	</div>
+
+	<!-- Section 0A: Web Path & Application Directory (config/application.php) -->
+	<div class="installer-card card-gold" style="margin-bottom: 28px;">
+		<div class="card-header-styled">
+			<h3 class="card-title-styled" style="color: var(--color-gold);">&#128194; WEB PATH &amp; APPLICATION DIRECTORY (CONFIG/APPLICATION.PHP)</h3>
+		</div>
+		<p style="color: var(--color-muted); font-size: 0.9rem; margin-bottom: 20px;">
+			The base URL web path where FluxCP is hosted relative to your domain. If FluxCP is moved to another subdirectory, this setting is automatically validated to prevent broken layouts.
+		</p>
+
+		<form action="<?php echo $this->urlWithQs ?>" method="post">
+			<input type="hidden" name="save_app_path" value="1" />
+
+			<div class="form-grid-2" style="margin-bottom: 18px;">
+				<div>
+					<label for="app_base_uri" style="display: flex; justify-content: space-between; align-items: center;">
+						<span>Web Path / Base URI * (e.g. /fluxcp-freynix or /)</span>
+						<?php if (!empty($pathMismatch)): ?>
+							<span class="badge-danger" style="font-size: 0.72rem;">&#9888; Path Mismatch Detected</span>
+						<?php else: ?>
+							<span class="badge-success" style="font-size: 0.72rem;">&#10003; Synchronized</span>
+						<?php endif ?>
+					</label>
+					<input type="text" name="app_base_uri" id="app_base_uri" value="<?php echo htmlspecialchars($detectedBaseURI ?: ($configuredBaseURI ?: '/')) ?>" required style="font-family: monospace; font-size: 1rem; font-weight: 600;" />
+					<small style="color: var(--color-muted); font-size: 0.78rem; display: block; margin-top: 4px;">Detected from server: <code><?php echo htmlspecialchars($detectedBaseURI ?: '/') ?></code></small>
+				</div>
+				<div>
+					<label for="app_server_address">Server Hostname &amp; Domain (config/application.php)</label>
+					<input type="text" name="app_server_address" id="app_server_address" value="<?php echo htmlspecialchars($curServerAddress ?: 'localhost') ?>" required style="font-family: monospace; font-size: 1rem;" />
+					<small style="color: var(--color-muted); font-size: 0.78rem; display: block; margin-top: 4px;">Hostname used for cookie domain &amp; URLs (e.g. <code>localhost</code> or <code>myro-server.com</code>).</small>
+				</div>
+			</div>
+
+			<div style="display: flex; justify-content: flex-end;">
+				<button type="submit" class="btn-gold" style="font-weight: 700;">
+					<span>&#128190; Save &amp; Synchronize Web Path in config/application.php &rarr;</span>
+				</button>
+			</div>
+		</form>
 	</div>
 
 	<!-- Section 0: MySQL Database Connection & config/servers.php -->
@@ -281,6 +378,8 @@ $curServerName = $curServer['ServerName'] ?? 'Freynix Ragnarok Online';
 	     ======================================================================== -->
 	<form action="<?php echo $this->urlWithQs ?>" method="post">
 		<input type="hidden" name="save_server_config" value="1" />
+		<input type="hidden" name="app_base_uri" value="<?php echo htmlspecialchars($detectedBaseURI ?: ($configuredBaseURI ?: '/')) ?>" />
+		<input type="hidden" name="app_server_address" value="<?php echo htmlspecialchars($curServerAddress ?: 'localhost') ?>" />
 
 		<!-- 1. Server Identity & Branding -->
 		<div class="installer-card card-gold">

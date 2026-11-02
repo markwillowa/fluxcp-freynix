@@ -19,7 +19,8 @@ A modern, high-performance, dark fantasy custom theme and CMS engine for **Flux 
   - [4. Sticky Header & Intelligent Navigation](#4-sticky-header--intelligent-navigation)
   - [5. Redesigned FluxCP Core Modules](#5-redesigned-fluxcp-core-modules)
   - [6. Enhanced Installation Wizard](#6-enhanced-installation-wizard)
-  - [7. Admin Re-Install & Reset Tool](#7-admin-re-install--reset-tool)
+  - [7. Web Path Auto-Detection & Move Protection](#7-web-path-auto-detection--move-protection)
+  - [8. Admin Re-Install & Reset Tool](#8-admin-re-install--reset-tool)
 - [Color Palette & Design Tokens](#color-palette--design-tokens)
 - [Directory Structure](#directory-structure)
 - [Installation & Setup](#installation--setup)
@@ -98,11 +99,20 @@ Administrators can customize every aspect of the homepage directly from the web 
   - Enter Hostname, Port, DB Name, User, and Password.
   - Auto-tests connection via PDO, creates the database if missing (`CREATE DATABASE IF NOT EXISTS`), backs up `config/servers.php.bak`, and writes valid server arrays.
   - Automatically preserves and generates required FluxCP blocks (`CharServer`, `MapServer`, `WoeDayTimes`, `WoeDisallow`).
-- **Pre-Flight Environment Check:** Verifies PHP version, PDO extensions, directory write permissions (`data/`, `data/logs/`).
+- **Pre-Flight Environment Check:** Verifies PHP version, PDO extensions, directory write permissions (`data/`, `data/logs/`), and checks the physical filesystem path against the detected web URL path.
+- **Web Path & Application Directory (config/application.php):** Allows reviewing, setting, and saving `BaseURI` and `ServerAddress` with a single click.
 - **Schema Migration Execution:** Executes migrations without abruptly kicking the admin off the page, allowing review of server parameters.
 - **Initial Server Setup:** Configures Server Name, Slogan, EXP/Drop rates, Max Levels, Hero banner, Download mirrors, and Community links before launching.
 
-### 7. Admin Re-Install & Reset Tool (`/?module=install&action=reinstall`)
+### 7. Web Path Auto-Detection & Move Protection (Zero Broken Layouts)
+When a FluxCP installation is moved across folders or URLs (e.g. from domain root `/` to a subfolder like `/fluxcp-freynix/` or vice versa):
+- **Dynamic Script Path Detection:** FluxCP dynamically inspects `$_SERVER['SCRIPT_NAME']` on every request and compares it against the configured `BaseURI` in `config/application.php`.
+- **Immediate Path Mismatch Interception:** If a folder change or path discrepancy is detected, the core application automatically intercepts the request and routes the user into the Setup Wizard with an informative alert banner: `Web Path Change Detected!`.
+- **Zero Broken Layouts Guarantee:** During a path mismatch, installer assets, CSS, images, and fonts are dynamically anchored to the newly detected path. Unlike standard FluxCP setups which 404 on stylesheets and display unstyled text or raw HTML, the setup wizard always renders with high-fidelity styling.
+- **Step 1 Path Verification:** The Environment Check table inspects the **Physical Filesystem Root**, **Detected Web Path**, and **Configured Base URI** with instant status badges (`Matched` vs `Path Mismatch`).
+- **One-Click Synchronization:** The authenticated wizard provides **Section 0A: WEB PATH & APPLICATION DIRECTORY** where administrators can confirm and persist the new `BaseURI` directly into `config/application.php`.
+
+### 8. Admin Re-Install & Reset Tool (`/?module=install&action=reinstall`)
 - Dedicated administrative tool located under Staff Controls.
 - Allows developers and administrators to reset schema tracking logs (`data/logs/schemas/logindb/` and `charmapdb/`).
 - Optional checkbox to reset CMS default settings and navigation links.
@@ -174,13 +184,15 @@ htdocs/
    - Place this codebase in your web root (e.g. `c:/xampp/htdocs` or `/var/www/html`).
    - Ensure Apache/Nginx has write permissions to `data/`, `config/`, and subdirectories.
 
-2. **Launch the Setup Wizard:**
-   - Navigate to `http://localhost/?module=install` (or `https://your-domain.com/?module=install`).
+2. **Launch the Setup Wizard & Verify Web Path:**
+   - Navigate to `http://localhost/fluxcp-freynix/?module=install` (or `http://localhost/?module=install` if at web root).
+   - Review the **Web Path & Installation Location** in Step 1 to verify that your detected directory matches your configured path.
    - Enter your installer password (default: `secretpassword`, configured in `config/application.php`).
 
-3. **Configure MySQL:**
-   - Fill in your MySQL Host, Port, Username, Password, Database Name, and Server Group Name.
-   - Click **"Test Connection & Save MySQL Configuration"**. The wizard automatically tests the connection, creates the database if it doesn't exist, and configures `config/servers.php`.
+3. **Verify Web Path & Configure MySQL:**
+   - In **Section 0A**, confirm your **Web Path / Base URI** and click **"Save & Synchronize Web Path"**.
+   - In **Section 0**, fill in your MySQL Host, Port, Username, Password, Database Name, and Server Group Name.
+   - Click **"Test Connection & Save MySQL Configuration"**. The wizard automatically tests the connection, creates the database if it doesn't exist, and writes the required configurations into `config/servers.php`.
 
 4. **Install Schemas:**
    - Click **"Install / Update All Schemas"** to run FluxCP database migrations.

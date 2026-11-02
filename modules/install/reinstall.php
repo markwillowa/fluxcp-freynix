@@ -10,7 +10,10 @@ $title = 'Re-Install & Database Reset Wizard';
 
 if (count($_POST) && $params->get('reinstall')) {
 	$loginDbFiles   = glob(FLUX_DATA_DIR.'/logs/schemas/logindb/*/*.txt') ?: array();
-	$charMapDbFiles = glob(FLUX_DATA_DIR.'/logs/schemas/charmapdb/*/*.txt') ?: array();
+	$charMapDbFiles = array_merge(
+		glob(FLUX_DATA_DIR.'/logs/schemas/charmapdb/*/*.txt') ?: array(),
+		glob(FLUX_DATA_DIR.'/logs/schemas/charmapdb/*/*/*.txt') ?: array()
+	);
 	
 	foreach (array($loginDbFiles, $charMapDbFiles) as $dbFiles) {
 		if ($dbFiles) {

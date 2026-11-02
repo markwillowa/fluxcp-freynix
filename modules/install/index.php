@@ -11,7 +11,6 @@ Flux::config('ThemeName', array('installer'));
 $requiredExtensions = array(
 	'pdo',
 	'pdo_mysql',
-	'curl',
 	'xml',
 	'xmlreader',
 	'mysqli'
@@ -39,6 +38,12 @@ $permissionsChecks = [
 
 $schemasInstalled = false;
 
+// Web path detection & mismatch validation
+$detectedBaseURI = (string)(Flux::config('DetectedBaseURI') !== null ? Flux::config('DetectedBaseURI') : ((php_sapi_name() !== 'cli' && isset($_SERVER['SCRIPT_NAME'])) ? (dirname($_SERVER['SCRIPT_NAME']) !== '/' && dirname($_SERVER['SCRIPT_NAME']) !== '\\' ? rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'])), '/') : '') : ''));
+$configuredBaseURI = (string)(Flux::config('OriginalConfiguredBaseURI') !== null ? Flux::config('OriginalConfiguredBaseURI') : (Flux::config('BaseURI') === '/' ? '' : rtrim((string)Flux::config('BaseURI'), '/')));
+$pathMismatch = Flux::config('PathMismatch') !== null ? (bool)Flux::config('PathMismatch') : ($detectedBaseURI !== $configuredBaseURI);
+$curServerAddress = (string)Flux::config('ServerAddress');
+
 if ($session->installerAuth) {
 	if ($params->get('logout')) {
 		$session->setInstallerAuthData(false);
@@ -56,6 +61,28 @@ if ($session->installerAuth) {
 				$message .= $res ? " You are running version {$res->mysql_version}" : "You are running an unknown version";
 				$message .= " on the server '$serverName'"; 
 				throw new Flux_Error($message);
+			}
+		}
+
+		// Handle Web Path & Application Directory Update (config/application.php)
+		if ($params->get('save_app_path')) {
+			$newBaseUri = trim((string)$params->get('app_base_uri'));
+			$cleanUri = ($newBaseUri === '/' || $newBaseUri === '') ? '' : '/' . trim($newBaseUri, '/');
+			$newServerAddr = trim((string)$params->get('app_server_address') ?: 'localhost');
+
+			$appConfigFile = FLUX_CONFIG_DIR . '/application.php';
+			if (file_exists($appConfigFile)) {
+				$appContent = file_get_contents($appConfigFile);
+				$appContent = preg_replace("/('BaseURI'\s*=>\s*).*?,/", "$1" . var_export($cleanUri, true) . ",", $appContent);
+				$appContent = preg_replace("/('ServerAddress'\s*=>\s*).*?,/", "$1" . var_export($newServerAddr, true) . ",", $appContent);
+				file_put_contents($appConfigFile, $appContent);
+
+				Flux::config('BaseURI', $cleanUri ?: '/');
+				$configuredBaseURI = $cleanUri;
+				$pathMismatch = false;
+
+				$session->setMessageData("Web Path successfully confirmed as '" . ($cleanUri ?: '/') . "'! Saved to config/application.php.");
+				$this->redirect($this->url('install', 'index'));
 			}
 		}
 
@@ -258,6 +285,21 @@ if ($session->installerAuth) {
 
 		// Handle Saving Server & Website Configuration
 		if ($params->get('save_server_config')) {
+			if ($params->get('app_base_uri') !== null) {
+				$newBaseUri = trim((string)$params->get('app_base_uri'));
+				$cleanUri = ($newBaseUri === '/' || $newBaseUri === '') ? '' : '/' . trim($newBaseUri, '/');
+				$appConfigFile = FLUX_CONFIG_DIR . '/application.php';
+				if (file_exists($appConfigFile)) {
+					$appContent = file_get_contents($appConfigFile);
+					$appContent = preg_replace("/('BaseURI'\s*=>\s*).*?,/", "$1" . var_export($cleanUri, true) . ",", $appContent);
+					if ($params->get('app_server_address')) {
+						$newServerAddr = trim((string)$params->get('app_server_address'));
+						$appContent = preg_replace("/('ServerAddress'\s*=>\s*).*?,/", "$1" . var_export($newServerAddr, true) . ",", $appContent);
+					}
+					file_put_contents($appConfigFile, $appContent);
+					Flux::config('BaseURI', $cleanUri ?: '/');
+				}
+			}
 			$cfgFields = array(
 				'site_title', 'server_name', 'site_slogan', 'site_description', 'site_keywords',
 				'server_mode', 'rates_text', 'drop_rates', 'max_base_level', 'max_job_level',

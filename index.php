@@ -121,12 +121,41 @@ try {
 	if (ini_get('session.use_trans_sid'))
 		throw new Flux_Error("The 'session.use_trans_sid' php.ini configuration must be turned off for Flux to work.");
 
+	// Web path detection & mismatch validation
+	$detectedBaseURI = (php_sapi_name() !== 'cli' && isset($_SERVER['SCRIPT_NAME'])) 
+		? (dirname($_SERVER['SCRIPT_NAME']) !== '/' && dirname($_SERVER['SCRIPT_NAME']) !== '\\' 
+			? rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'])), '/') 
+			: '') 
+		: '';
+	$rawConfiguredURI = (string)Flux::config('BaseURI');
+	$configuredBaseURI = ($rawConfiguredURI === '/' || $rawConfiguredURI === '') ? '' : '/' . trim($rawConfiguredURI, '/');
+	$pathMismatch = (php_sapi_name() !== 'cli' && $detectedBaseURI !== $configuredBaseURI);
+	Flux::config('PathMismatch', $pathMismatch);
+	Flux::config('DetectedBaseURI', $detectedBaseURI);
+	Flux::config('OriginalConfiguredBaseURI', $configuredBaseURI);
+
+	// If path moved or mismatched, use detected path so installer assets load cleanly without broken layout
+	if ($pathMismatch) {
+		Flux::config('BaseURI', $detectedBaseURI ?: '/');
+	}
+
 	// Installer library.
 	$installer = Flux_Installer::getInstance();
 	$isInstallModule = (isset($_GET['module']) && $_GET['module'] === 'install' && (!isset($_GET['action']) || $_GET['action'] !== 'reinstall'));
-	if (($hasUpdates=$installer->updateNeeded()) || $isInstallModule) {
+	if (($hasUpdates=$installer->updateNeeded()) || $isInstallModule || $pathMismatch) {
 		Flux::config('ThemeName', array('installer'));
 		$hasUpdates = true;
+	}
+
+	// If path moved/mismatched or schemas need updating, redirect to installer wizard so layout is never broken
+	if (php_sapi_name() !== 'cli' && ($pathMismatch || $installer->updateNeeded())) {
+		$reqUri = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '';
+		$isInstallReq = (isset($_GET['module']) && $_GET['module'] === 'install') || (stripos($reqUri, 'module=install') !== false) || (preg_match('~/install([/?&#]|$)~i', $reqUri));
+		if (!$isInstallReq) {
+			$installUrl = ($detectedBaseURI ?: '') . '/?module=install';
+			header("Location: $installUrl");
+			exit;
+		}
 	}
 
 	$sessionKey = Flux::config('SessionKey');
