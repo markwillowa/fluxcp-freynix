@@ -27,12 +27,13 @@ if (count($_POST)) {
 		}
 
 		$sql = "INSERT INTO {$server->loginDatabase}.$navTable 
-				(location, title, url_type, url_val, parent_id, sort_order, is_active, min_group_level, target_blank, created_at)
-				VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";
+				(name, title, location, url_type, url_val, parent_id, sort_order, is_active, min_group_level, target_blank, created_at, updated_at)
+				VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW(), NOW())";
 		$sth = $server->connection->getStatement($sql);
 		$sth->execute(array(
-			$item_location,
 			$item_title,
+			$item_title,
+			$item_location,
 			$item_url_type,
 			$item_url_val,
 			$item_parent_id,

@@ -18,9 +18,18 @@ if (!$page) {
 }
 
 // Fetch potential parent pages (excluding self)
-$parentStmt = $server->connection->getStatement("SELECT id, title FROM {$server->loginDatabase}.$pagesTable WHERE id != ? AND parent_id = 0 ORDER BY title ASC");
-$parentStmt->execute(array($id));
-$parentPages = $parentStmt->fetchAll();
+$parentPages = array();
+try {
+    $parentStmt = $server->connection->getStatement("SELECT id, title FROM {$server->loginDatabase}.$pagesTable WHERE id != ? AND parent_id = 0 ORDER BY title ASC");
+    $parentStmt->execute(array($id));
+    $parentPages = $parentStmt->fetchAll();
+} catch (Exception $e) {
+    try {
+        $parentStmt = $server->connection->getStatement("SELECT id, title FROM {$server->loginDatabase}.$pagesTable WHERE id != ? ORDER BY title ASC");
+        $parentStmt->execute(array($id));
+        $parentPages = $parentStmt->fetchAll();
+    } catch (Exception $e2) {}
+}
 
 if (count($_POST)) {
     $page_title      = trim($params->get('page_title'));

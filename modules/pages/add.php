@@ -7,9 +7,18 @@ $title = Flux::message('CMSPageAddTitle') ?: 'Create New Page';
 $pagesTable = Flux::config('FluxTables.CMSPagesTable');
 
 // Fetch potential parent pages
-$parentStmt = $server->connection->getStatement("SELECT id, title FROM {$server->loginDatabase}.$pagesTable WHERE parent_id = 0 ORDER BY title ASC");
-$parentStmt->execute();
-$parentPages = $parentStmt->fetchAll();
+$parentPages = array();
+try {
+    $parentStmt = $server->connection->getStatement("SELECT id, title FROM {$server->loginDatabase}.$pagesTable WHERE parent_id = 0 ORDER BY title ASC");
+    $parentStmt->execute();
+    $parentPages = $parentStmt->fetchAll();
+} catch (Exception $e) {
+    try {
+        $parentStmt = $server->connection->getStatement("SELECT id, title FROM {$server->loginDatabase}.$pagesTable ORDER BY title ASC");
+        $parentStmt->execute();
+        $parentPages = $parentStmt->fetchAll();
+    } catch (Exception $e2) {}
+}
 
 if (count($_POST)) {
     $page_title      = trim($params->get('page_title'));

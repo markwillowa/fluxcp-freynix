@@ -48,20 +48,23 @@ if (count($_POST)) {
 		}
 
 		$updateSql = "UPDATE {$server->loginDatabase}.$navTable SET
-						location = ?,
+						name = ?,
 						title = ?,
+						location = ?,
 						url_type = ?,
 						url_val = ?,
 						parent_id = ?,
 						sort_order = ?,
 						is_active = ?,
 						min_group_level = ?,
-						target_blank = ?
+						target_blank = ?,
+						updated_at = NOW()
 					  WHERE id = ?";
 		$updateSth = $server->connection->getStatement($updateSql);
 		$updateSth->execute(array(
-			$item_location,
 			$item_title,
+			$item_title,
+			$item_location,
 			$item_url_type,
 			$item_url_val,
 			$item_parent_id,

@@ -279,7 +279,7 @@ $cms = $cmsSettings ?? array();
 				</tr>
 				<tr>
 					<td><strong>FluxCP Core &amp; CMS Tables</strong></td>
-					<td>Tables: <code>cp_credits</code>, <code>cp_cmsnews</code>, <code>cp_cmssettings</code>, <code>cp_navigation</code></td>
+					<td>Tables: <code>cp_credits</code>, <code>cp_cmsnews</code>, <code>cp_downloads</code>, <code>cp_navigation</code>, <code>cp_commands</code>, <code>cp_cmspages</code>, etc.</td>
 					<td>
 						<?php if (!$cpTablesMissing): ?>
 							<span class="badge-pass">&#10003; Ready</span>
