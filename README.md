@@ -1,278 +1,292 @@
-# FluxCP — Eclipse Realm V2 (Custom Theme & CMS Expansion)
+# FluxCP — Multi-Theme & CMS Platform (Community Edition)
 
-[![PHP Version](https://img.shields.io/badge/PHP-7.4%20|%208.0%20|%208.1%20|%208.2-blue.svg)](https://php.net)
+[![PHP Version](https://img.shields.io/badge/PHP-7.4%20|%208.0%20|%208.1%20|%208.2%20|%208.3-blue.svg)](https://php.net)
 [![rAthena](https://img.shields.io/badge/rAthena-Pre--Renewal%20|%20Renewal-orange.svg)](https://rathena.org)
-[![Theme](https://img.shields.io/badge/Theme-Eclipse%20Realm%20V2-purple.svg)]()
-[![CMS](https://img.shields.io/badge/CMS-Flux_CMS%20Enhanced-gold.svg)]()
+[![Themes](https://img.shields.io/badge/Themes-5%20Unique%20Layouts-brightgreen.svg)]()
+[![Arcane Nexus](https://img.shields.io/badge/V5-Arcane%20Nexus-00D9F5.svg)]()
+[![Eternal Dominion](https://img.shields.io/badge/V4-Eternal%20Dominion-D4AD65.svg)]()
+[![Celestial Chronicle](https://img.shields.io/badge/V3-Celestial%20Chronicle-83B9DA.svg)]()
+[![Eclipse Realm](https://img.shields.io/badge/V2-Eclipse%20Realm-9D80E8.svg)]()
+[![Classic](https://img.shields.io/badge/V1-Classic%20FluxCP-gray.svg)]()
 
-A modern, high-performance, dark fantasy custom theme and CMS engine for **Flux Control Panel (FluxCP)**, tailored for Ragnarok Online private servers. Designed with an MMORPG portal aesthetic, dynamic server branding, full administrator CMS controls, and an enhanced setup & re-installation system.
+A next-generation, high-performance Ragnarok Online web portal built on **Flux Control Panel (FluxCP)**. Features 5 distinct community themes, a bento-style cyber-magic layout (Arcane Nexus), dark medieval kingdom architecture (Eternal Dominion), light anime-fantasy aesthetics (Celestial Chronicle), dark gothic MMORPG portal (Eclipse Realm), a neutral two-step installation wizard, transparent vector logos, guaranteed fallbacks, dynamic CMS controls, and real-time rAthena telemetry.
 
 ---
 
 ## Table of Contents
 
-- [Overview & Aesthetics](#overview--aesthetics)
-- [Key Features & Additions](#key-features--additions)
-  - [1. Eclipse Realm V2 Design System](#1-eclipse-realm-v2-design-system)
-  - [2. White-Label & Dynamic Branding](#2-white-label--dynamic-branding)
-  - [3. Homepage CMS & Live Controls](#3-homepage-cms--live-controls)
-  - [4. Sticky Header & Intelligent Navigation](#4-sticky-header--intelligent-navigation)
-  - [5. Redesigned FluxCP Core Modules](#5-redesigned-fluxcp-core-modules)
-  - [6. Enhanced Installation Wizard](#6-enhanced-installation-wizard)
-  - [7. Web Path Auto-Detection & Move Protection](#7-web-path-auto-detection--move-protection)
-  - [8. Admin Re-Install & Reset Tool](#8-admin-re-install--reset-tool)
-- [Color Palette & Design Tokens](#color-palette--design-tokens)
+- [Theme Gallery & Layout Styles](#theme-gallery--layout-styles)
+- [Key Features & Architectural Enhancements](#key-features--architectural-enhancements)
+  - [1. Transparent Logo System (Navigation & Footer)](#1-transparent-logo-system-navigation--footer)
+  - [2. Intelligent Floating Navigation & Logged-In User Experience](#2-intelligent-floating-navigation--logged-in-user-experience)
+  - [3. Live rAthena Telemetry & Server Command Center](#3-live-rathena-telemetry--server-command-center)
+  - [4. Reusable UI Component Library & Bento Layouts](#4-reusable-ui-component-library--bento-layouts)
+  - [5. White-Label Homepage CMS & 5-Theme Switcher](#5-white-label-homepage-cms--5-theme-switcher)
+  - [6. Two-Step Setup Wizard with All Layout Presets](#6-two-step-setup-wizard-with-all-layout-presets)
+  - [7. Complete CMS Integration (Pages, News, Downloads, Tickets)](#7-complete-cms-integration-pages-news-downloads-tickets)
+- [Color Palettes & Design Tokens](#color-palettes--design-tokens)
 - [Directory Structure](#directory-structure)
-- [Installation & Setup](#installation--setup)
+- [Installation & Quick Start](#installation--quick-start)
 - [Administrator Guide](#administrator-guide)
-- [Compatibility & Tech Stack](#compatibility--tech-stack)
+- [Troubleshooting & FAQ](#troubleshooting--faq)
+- [Compatibility & Requirements](#compatibility--requirements)
 
 ---
 
-## Overview & Aesthetics
+## Theme Gallery & Layout Styles
 
-The **Eclipse Realm V2** theme transforms FluxCP into a cinematic, high-end fantasy MMORPG portal. Outdated table-based layouts, crowded borders, and hardcoded texts have been completely replaced with a modular, responsive flexbox/grid layout and rich interactive controls.
+The platform includes **5 switchable themes**, each with distinct typography, layout structure, color schemes, and interactive elements:
 
-### Design Principles
-- **Atmospheric & Immersive:** Midnight Navy backgrounds layered with Arcane Purple gradients, gold accents, and subtle particle glows.
-- **CMS-Driven & Upgradable:** No duplicate hardcoded content or static PHP copies. Content is driven by the database and editable through the administrative interface.
-- **Fully White-Label:** Instantly adaptable to any server name, rate, mode, or logo without modifying underlying code.
-
----
-
-## Key Features & Additions
-
-### 1. Eclipse Realm V2 Design System
-- **Custom Fonts:** Google Fonts pairing using **Cinzel** (fantasy headings/branding), **Outfit** (readable body text), and **Rajdhani** (technical specs & rates).
-- **CSS Architecture:**
-  - `themes/freynix/css/freynix.css`: Main design system tokens, components, cards, tables, badges, and layout grids.
-  - `themes/freynix/css/responsive.css`: Mobile drawer breakpoints, tablet stacking, and adaptive layouts.
-  - `themes/freynix/css/flux-compat.css`: Legacy FluxCP table normalization, form field modernizations, and alert styling.
-- **Interactive JavaScript:** `themes/freynix/js/freynix.js` handles sticky header transitions, mobile navigation drawer, dropdown hover/click states, tabs switching, and atmospheric canvas particle effects.
-
-### 2. White-Label & Dynamic Branding
-All server branding across the entire theme is completely dynamic:
-- **Navbar & Header:** Dynamic server name, subtitle/slogan, and custom logo URL.
-- **Footer:** Dynamic copyright notice, brand emblem, and editable legal disclaimer.
-- **Meta & SEO:** Page `<title>`, description, keywords, and author dynamically pulled from `cp_cmssettings`.
-- **Game Modules:** Server Info, Account Registration, Login, Web Commands, and WoE pages automatically inherit the configured server identity.
-
-### 3. Homepage CMS & Live Controls (`/?module=homepage`)
-Administrators can customize every aspect of the homepage directly from the web interface without touching PHP files:
-- **Server Branding & Identity:**
-  - **Server Brand Name:** Updates navbar, footer, browser title, and templates across the site immediately.
-  - **Brand Slogan:** Tagline shown below the header logo (e.g., `FORGE YOUR FREEDOM.`).
-  - **Logo URL:** Path to custom server crest / logo PNG.
-  - **Footer Disclaimer:** Custom legal and copyright text.
-- **Section Visibility Toggles:** Show or hide Hero, Floating Stats, News, Features, WoE, Rankings, or Discord callouts.
-- **Cinematic Hero Customizer:** Editable main headline, tagline, narrative description, CTA button texts, and target URLs.
-- **Floating Stats:** Editable rates (e.g. `1000x / 1000x`), max base level (`99`), max job level (`70`), and server mode (`Pre-Renewal`).
-- **Feature Highlights (6 Cards):** Editable titles and descriptions for the 6 core server highlights.
-- **Community Callouts:** Editable Discord title, text, invite URL, and Facebook page link.
-
-### 4. Sticky Header & Intelligent Navigation
-- **Unified Flexbox Layout:** Clean separation between server branding (left), CMS content navigation (center), and user actions (right).
-- **CMS Navigation Integration:** Pulls top-level links and sub-menus dynamically from `cp_navigation`.
-- **Refined Active & Hover States:** Antique Gold glowing bottom indicator line for active pages and smooth purple-violet hover glow.
-- **User Account Pill & Dropdown:**
-  - Grouped into the right action bar for authenticated users.
-  - Displays user avatar, username, and live Credit Balance.
-  - Dropdown options: Player Dashboard, Change Password, Change E-mail, Support Tickets, Login History.
-  - **Staff Controls Section:** Instant shortcuts to Homepage CMS, Manage News, Manage Pages, Manage Nav, Manage Downloads, and Re-Install & Reset.
-  - Dedicated Logout button with confirmation modal.
-- **Dropdown Hover Bridges:** Invisible pseudo-element bridges prevent dropdowns from closing prematurely when moving the cursor.
-- **Off-Canvas Mobile Drawer (`<= 1080px`):** Smooth slide-out mobile menu with touch accordion sub-menus.
-
-### 5. Redesigned FluxCP Core Modules
-- **News Module (`/?module=news`):** Rich news articles, category badges, publication dates, and administrative management.
-- **Pages CMS (`/?module=pages`):** Corrected content container overlap, full support for custom content pages with standard theme framing.
-- **Downloads Section (`/?module=main&action=downloads`):** Attractive cards for Full Client, Lite Client, and mirrors with system requirements and installation steps.
-- **Service Desk (`/?module=servicedesk`):** Modern ITIL support ticketing interface, ticket conversation threads, category filters, and staff replies.
-- **Player Dashboard (`/?module=account&action=view`):** Matched and aligned **Account Credentials** and **Activity & Timestamps** grid, character summaries, and quick actions.
-- **Rankings (`/?module=ranking`):** Character leaderboard, Guild ranking, MVP leaderboard, and Zeny leaderboards.
-- **War of Emperium (`/?module=woe` & `/?module=castle`):** Timetable and castle ownership boards.
-- **Web Commands (`/?module=webcommands`):** Dark fantasy form inputs, clean responsive tables, and syntax guide.
-
-### 6. Enhanced Installation Wizard (`/?module=install`)
-- **Theme-Integrated Installer:** Redesigned setup wizard matching the Eclipse Realm aesthetic (`themes/installer`).
-- **MySQL Configuration & Connection Tester:**
-  - Enter Hostname, Port, DB Name, User, and Password.
-  - Auto-tests connection via PDO, creates the database if missing (`CREATE DATABASE IF NOT EXISTS`), backs up `config/servers.php.bak`, and writes valid server arrays.
-  - Automatically preserves and generates required FluxCP blocks (`CharServer`, `MapServer`, `WoeDayTimes`, `WoeDisallow`).
-- **Pre-Flight Environment Check:** Verifies PHP version, PDO extensions, directory write permissions (`data/`, `data/logs/`), and checks the physical filesystem path against the detected web URL path.
-- **Web Path & Application Directory (config/application.php):** Allows reviewing, setting, and saving `BaseURI` and `ServerAddress` with a single click.
-- **Schema Migration Execution:** Executes migrations without abruptly kicking the admin off the page, allowing review of server parameters.
-- **Initial Server Setup:** Configures Server Name, Slogan, EXP/Drop rates, Max Levels, Hero banner, Download mirrors, and Community links before launching.
-
-### 7. Web Path Auto-Detection & Move Protection (Zero Broken Layouts)
-When a FluxCP installation is moved across folders or URLs (e.g. from domain root `/` to a subfolder like `/fluxcp-freynix/` or vice versa):
-- **Dynamic Script Path Detection:** FluxCP dynamically inspects `$_SERVER['SCRIPT_NAME']` on every request and compares it against the configured `BaseURI` in `config/application.php`.
-- **Immediate Path Mismatch Interception:** If a folder change or path discrepancy is detected, the core application automatically intercepts the request and routes the user into the Setup Wizard with an informative alert banner: `Web Path Change Detected!`.
-- **Zero Broken Layouts Guarantee:** During a path mismatch, installer assets, CSS, images, and fonts are dynamically anchored to the newly detected path. Unlike standard FluxCP setups which 404 on stylesheets and display unstyled text or raw HTML, the setup wizard always renders with high-fidelity styling.
-- **Step 1 Path Verification:** The Environment Check table inspects the **Physical Filesystem Root**, **Detected Web Path**, and **Configured Base URI** with instant status badges (`Matched` vs `Path Mismatch`).
-- **One-Click Synchronization:** The authenticated wizard provides **Section 0A: WEB PATH & APPLICATION DIRECTORY** where administrators can confirm and persist the new `BaseURI` directly into `config/application.php`.
-
-### 8. Admin Re-Install & Reset Tool (`/?module=install&action=reinstall`)
-- Dedicated administrative tool located under Staff Controls.
-- Allows developers and administrators to reset schema tracking logs (`data/logs/schemas/logindb/` and `charmapdb/`).
-- Optional checkbox to reset CMS default settings and navigation links.
-- Automatically grants installer session authorization and redirects to the setup wizard for clean re-deployments.
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 1. ARCANE NEXUS (V5)       │ Cyber-magic anime fantasy, floating capsule    │
+│                            │ dock, bento grid, holographic telemetry.       │
+├────────────────────────────┼────────────────────────────────────────────────┤
+│ 2. ETERNAL DOMINION (V4)   │ Dark medieval kingdom, royal gold & crimson,   │
+│                            │ fortress citadel hero, rising ember particles. │
+├────────────────────────────┼────────────────────────────────────────────────┤
+│ 3. CELESTIAL CHRONICLE (V3)│ Light anime-fantasy, skyward floating islands, │
+│                            │ azure & gold filigree, ethereal atmosphere.    │
+├────────────────────────────┼────────────────────────────────────────────────┤
+│ 4. ECLIPSE REALM (V2)      │ Dark gothic MMORPG, obsidian stone, mystic     │
+│                            │ violet aura, compact portal sidebar.           │
+├────────────────────────────┼────────────────────────────────────────────────┤
+│ 5. CLASSIC FLUXCP (V1)     │ Retro table-based layout, lightweight, zero-js  │
+│                            │ legacy administrator view.                     │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
 
 ---
 
-## Color Palette & Design Tokens
+## Key Features & Architectural Enhancements
 
-| Token Name | Hex Code | Purpose |
+### 1. Transparent Logo System (Navigation & Footer)
+- **True 32-Bit Alpha Channels:** Every theme includes an optimized 32-bit transparent PNG logo (`nexus-logo.png`, `dominion-logo.png`, `celestial-logo.png`, `logo.png`) with zero solid or black background boxes.
+- **Dual Placement Parity:** All themes display the brand emblem in both the **Top Navigation Bar / Floating Dock** and the **Global Footer** (as well as mobile slide drawers).
+- **Guaranteed CMS Fallback:** The CMS engine (`lib/Flux/CMS.php`) and theme templates guard against empty or whitespace database values (`trim((string)$customLogo)`). If an administrator leaves the custom logo URL blank, templates automatically and safely fall back to the built-in theme logo asset, completely preventing broken `<img src="" alt="...">` tags.
+- **Ambient Glows:** Applied via CSS `filter: drop-shadow(...)` to create natural lighting integration matching each theme's primary accent color.
+
+### 2. Intelligent Floating Navigation & Logged-In User Experience
+- **Floating Glassmorphic Docks:** Modern capsule navbar suspended above hero art with smooth scroll backdrop blurs (`backdrop-filter: blur(14px)`).
+- **Logged-In Account Hub:**
+  - Displays user avatar initial, username, and active account ID.
+  - Dropdown shortcuts for **Player Dashboard**, **Change Password**, **Change E-mail**, **Support Tickets**, and **Login History**.
+  - **1-Click Logout Action:** Clean, red-accented exit link directly within user dropdowns.
+- **Integrated Staff Panel Dropdown:**
+  - Automatically revealed for users with administrative privileges (`group_level >= AdminMenuGroupLevel`).
+  - Instant access to **Homepage CMS**, **Manage Announcements**, **Manage Codex Pages**, **Manage Navigation**, **Manage Downloads**, **Service Desk Tickets**, and **Flux Core Administration**.
+- **Off-Canvas Mobile Drawer (`<= 1080px`):** Smooth slide-out touch drawer containing complete navigation hierarchies, server monitors, account actions, and mobile logo headers.
+
+### 3. Live rAthena Telemetry & Server Command Center
+- **Real-Time Data (Never Invented):**
+  - Online player counts retrieved directly from `char.online > 0`.
+  - Base and Job level caps retrieved from server configuration.
+  - Base and Job EXP rates and drop rates retrieved from active Athena server settings.
+  - Server Mode (Pre-Renewal / Renewal) and PvP availability.
+  - War of Emperium castle ownership and schedule countdowns.
+- **Live Status Beacons:** Animated pulsing status indicators displaying `ONLINE` or `MAINTENANCE` states.
+
+### 4. Reusable UI Component Library & Bento Layouts
+- **Bento-Style Modular Grids:** Asymmetric card layouts (Hero, Holo-Dispatches, Client Launcher, Apex Rankings, Operative Portal, Transmission Network).
+- **Unified UI Component Set:**
+  - Buttons (`btn-nexus-cyan`, `btn-nexus-glass`, `btn-dominion-crimson`, `btn-celestial-azure`).
+  - Glassmorphic panels with subtle glowing borders.
+  - Responsive, touch-scrollable data tables for rankings and item shops.
+  - Flash message notification banners (Success, Danger, Notice).
+  - Modal confirmation dialogs for critical actions.
+
+### 5. White-Label Homepage CMS & 5-Theme Switcher
+Accessible at `?module=homepage` for administrators:
+- **5-Theme Switcher Cards:** Select between Arcane Nexus, Eternal Dominion, Celestial Chronicle, Eclipse Realm, or Classic FluxCP with instant live preview.
+- **Server Identity:** Update server brand name, slogan, logo URL, and footer disclaimer in real time.
+- **Section Visibility Toggles:** Toggle Hero, Live Stats Strip, News Grid, Rankings, Download Widget, or Discord callout.
+- **Feature Cards Editor:** Customize 6 modular cards with custom headlines, icons, descriptions, and destination links.
+- **Social Gateways:** Set Discord invite URLs and community links.
+
+### 6. Two-Step Setup Wizard with All Layout Presets
+Accessible at `?module=install`:
+- **Step 1: System Requirements & Database Sync:**
+  - Validates PHP 7.4 - 8.3+, required extensions (`curl`, `gd`, `pdo`, `pdo_mysql`, `mysqli`, `mbstring`, `xml`, `openssl`).
+  - Tests database connection and detects rAthena `login` table.
+  - Creates the `login` table schema with a single click if missing.
+  - Executes migrations and records schema tracking logs without deleting them on submit.
+  - Reversible and safe: does not wipe existing character or account data.
+- **Step 2: Server & Theme Setup (`?module=install&step=2`):**
+  - **All Available Layout Presets Listed:** Visually displays cards for Arcane Nexus, Eternal Dominion, Celestial Chronicle, Eclipse Realm, and Classic FluxCP.
+  - Configure Server Identity, Rates, Level Caps, Download Mirrors, and Community Links before launch.
+  - Submitting configuration binds settings and transitions seamlessly to the live website without redirect loops.
+
+### 7. Complete CMS Integration (Pages, News, Downloads, Tickets)
+- **Pages Module (`?module=pages`):** Custom CMS pages (Rules, FAQ, Guides, Donation info) rendered within the active theme layout.
+- **News Module (`?module=news`):** Rich announcements with HTML support, category badges, author tags, and pagination.
+- **Downloads Module (`?module=downloads`):** Multi-mirror distribution supporting Full Client, Lite Client, and patches.
+- **Service Desk (`?module=servicedesk`):** Full player ticketing system with status tags, category controls, and staff responses.
+
+---
+
+## Color Palettes & Design Tokens
+
+### Arcane Nexus (V5)
+| Token | Hex / Value | Description |
 |:---|:---|:---|
-| `--color-midnight` | `#0B1020` | Base background, deep midnight fantasy foundation |
-| `--color-arcane` | `#242044` | Dark arcane purple, card backgrounds, hero overlays |
-| `--color-card` | `#171C31` | Content cards, sidebars, and panels |
-| `--color-violet` | `#9D80E8` | Mystic violet, accent borders, subtle particle glows |
-| `--color-gold` | `#D6AD66` | Antique gold, primary buttons, badges, active accents |
-| `--color-text` | `#F4F0FF` | Primary typography, maximum readability |
-| `--color-muted` | `#A6ACC5` | Secondary text, meta details, navigation inactive |
+| Void Black | `#070B18` | Primary background canvas |
+| Deep Navy | `#111C33` | Glass card surfaces & panels |
+| Neon Cyan | `#00D9F5` | Primary cyber accent, illuminated buttons & glows |
+| Arcane Violet | `#9461FF` | Secondary magic accent, badge highlights |
+| Electric Blue | `#367BFF` | Gradient transitions & telemetry indicators |
+| Frost White | `#F4F7FF` | High-contrast readable typography |
+| Muted Text | `#9BAAC6` | Secondary labels & telemetry descriptors |
+| Glass Border | `rgba(130, 180, 255, 0.18)` | Subtle translucent cyber borders |
+
+### Eternal Dominion (V4)
+| Token | Hex / Value | Description |
+|:---|:---|:---|
+| Obsidian Stone | `#0C0B0F` / `#17141B` | Deep medieval dark fantasy canvas |
+| Royal Crimson | `#9E2633` | Primary action buttons & War Room badges |
+| Antique Gold | `#D4AD65` | Crest accents, active borders, rank badges |
+| Bone White | `#EDE6D6` | Primary fantasy typography |
+| Muted Stone | `#8F8A94` | Secondary text & lore descriptions |
+
+### Celestial Chronicle (V3)
+| Token | Hex / Value | Description |
+|:---|:---|:---|
+| Ivory Sky | `#F8F5EC` | Light fantasy backdrop |
+| Sky Blue | `#DCEFFA` | Floating panel surfaces |
+| Azure Blue | `#83B9DA` | Primary sky accent & action buttons |
+| Royal Gold | `#C9A45E` | Filigree borders & rank badges |
+| Deep Navy | `#283B59` | High-contrast text & branding |
 
 ---
 
 ## Directory Structure
 
 ```text
-htdocs/
+htdocs/fluxcp-freynix/
 ├── config/
-│   ├── application.php       # FluxCP core settings, security, cookies
-│   ├── servers.php           # Athena servers & MySQL connection configuration
-│   └── servers.php.bak       # Automated installer backup
+│   ├── application.php          # Core configuration & theme arrays
+│   ├── servers.php              # Athena cluster & MySQL credentials
+│   └── access.php               # Module permissions & group levels
 ├── lib/
 │   ├── Flux/
-│   │   ├── CMS.php           # CMS settings repository & helper functions
-│   │   └── Sanitizer.php     # Dynamic content escaping & HTML sanitization
-│   └── Flux.php              # Core Flux framework initialization
+│   │   ├── CMS.php              # Dynamic CMS repository with safe fallbacks
+│   │   ├── SessionData.php      # Session management & user data
+│   │   └── Template.php         # Theme rendering engine
+│   └── Flux.php                 # Core framework bootstrap
 ├── modules/
-│   ├── homepage/             # Homepage CMS backend controller
-│   ├── install/              # Setup wizard & Re-install controller
-│   ├── news/                 # News & Announcements management
-│   ├── pages/                # Content pages controller
-│   ├── ranking/              # Character, guild, and MVP rankings
-│   └── servicedesk/          # Ticket support system
+│   ├── homepage/                # Homepage CMS & 5-Theme Switcher
+│   ├── install/                 # Two-Step setup & Re-Install wizard
+│   ├── news/                    # Announcement manager & reader
+│   ├── pages/                   # Codex document manager
+│   ├── downloads/               # Client package manager
+│   ├── servicedesk/             # ITIL support ticket system
+│   └── ranking/                 # Character, Guild, and MVP ladders
 └── themes/
-    ├── freynix/              # Eclipse Realm V2 Custom Theme
-    │   ├── css/
-    │   │   ├── freynix.css       # Core design system & component rules
-    │   │   ├── responsive.css    # Responsive breakpoints & mobile drawer
-    │   │   └── flux-compat.css   # Legacy module compatibility styles
-    │   ├── js/
-    │   │   └── freynix.js        # Navigation, dropdowns, particles, tabs
-    │   ├── img/                  # Theme graphic assets, logos, and hero art
-    │   ├── main/
-    │   │   ├── navbar.php        # Sticky header & navigation template
-    │   │   └── sidebar.php       # Widget sidebar & staff controls
-    │   ├── homepage/             # Admin Homepage CMS template
-    │   ├── install/              # Admin Re-Install confirmation template
-    │   ├── header.php            # HTML <head>, dynamic SEO & scripts
-    │   └── footer.php            # Dynamic footer, emblem, & disclaimer
-    └── installer/            # Eclipse Realm Installation Wizard Theme
-        ├── install/index.php # Multi-step visual setup wizard
-        ├── header.php        # Installer header
-        └── footer.php        # Installer footer
+    ├── nexus/                   # Arcane Nexus (Theme V5)
+    │   ├── css/nexus.css        # Cyber-magic design system
+    │   ├── img/nexus-logo.png   # Transparent 32-bit PNG logo
+    │   ├── main/navbar.php      # Floating dock & user pill
+    │   ├── footer.php           # Command center footer & mobile drawer
+    │   └── README.md            # Theme documentation
+    ├── dominion/                # Eternal Dominion (Theme V4)
+    │   ├── css/dominion.css     # Medieval fantasy design system
+    │   ├── img/dominion-logo.png# Transparent 32-bit PNG crest
+    │   ├── main/navbar.php      # Two-tier royal navigation
+    │   └── footer.php           # Citadel footer & brand links
+    ├── celestial/               # Celestial Chronicle (Theme V3)
+    │   ├── css/celestial.css    # Light fantasy design system
+    │   ├── img/celestial-logo.png# Transparent 32-bit PNG logo
+    │   └── footer.php           # Skyward footer
+    ├── freynix/                 # Eclipse Realm (Theme V2)
+    │   ├── css/freynix.css      # Dark MMORPG design system
+    │   └── img/logo.png         # Transparent 32-bit PNG logo
+    ├── default/                 # Classic FluxCP (Theme V1)
+    │   └── img/logo.png         # Clean crest logo
+    └── installer/               # Installation Wizard Theme
+        └── install/index.php    # Two-step setup wizard layout
 ```
 
 ---
 
-## Installation & Setup
+## Installation & Quick Start
 
-1. **Web Server Setup:**
-   - Place this codebase in your web root (e.g. `c:/xampp/htdocs` or `/var/www/html`).
-   - Ensure Apache/Nginx has write permissions to `data/`, `config/`, and subdirectories.
+### 1. Requirements Check
+- Web server: **Apache 2.4+** or **Nginx 1.18+** with PHP 7.4 to 8.3+.
+- PHP Extensions: `curl`, `gd`, `pdo`, `pdo_mysql`, `mysqli`, `mbstring`, `xml`, `openssl`.
+- MySQL 5.7+ or MariaDB 10.3+.
 
-## Installation & Setup (Two-Step Wizard)
+### 2. Deployment
+1. Clone or extract this repository into your web directory (e.g. `c:/xampp/htdocs/fluxcp-freynix` or `/var/www/html/fluxcp`).
+2. Ensure write permissions on `data/`, `data/logs/`, `data/itemshop/`, and `data/tmp/`.
+3. Open your browser and navigate to:
+   ```
+   http://localhost/fluxcp-freynix/
+   ```
+4. You will be greeted by the **Installation & Configuration Manager**.
 
-The installation manager features a dedicated, neutral tech layout separate from both community themes:
-
-1. **Step 1: System Requirements & Database Verification:**
-   - **Engine & Extensions:** Validates PHP 7.3.0+, MySQL 5.0+, and all 9 required extensions (`curl`, `gd`, `pdo`, `pdo_mysql`, `mysqli`, `mbstring`, `xml`, `xmlreader`, `openssl`).
-   - **Permissions:** Verifies writable access for `data/logs`, `data/itemshop`, and `data/tmp`.
-   - **Database Connection & `login` Table:** Tests MySQL connectivity and verifies that the rAthena `login` table exists. If missing, a one-click button is provided to create the standard rAthena `login` table schema immediately.
-   - **Core Schemas & CMS Tables:** Installs and synchronizes all core FluxCP tables and community CMS tables (`cp_credits`, `cp_cmsnews`, `cp_cmssettings`, `cp_navigation`, `cp_cmspages`).
-   - **Strict Gate:** If any requirement fails, the wizard blocks progression to Step 2 until resolved.
-   - **Unlock:** Enter your `InstallerPassword` (configured in `config/application.php`) to unlock Step 2.
-
-2. **Step 2: Server Details & Theme Setup (`?module=install&step=2`):**
-   - **Theme Selector:** Choose between **Celestial Chronicle V3** (Light Anime-Fantasy) and **Eclipse Realm V2** (Dark MMORPG).
-   - **Server Identity:** Configure Server Name, Slogan, Meta Description, Keywords, and Logo URL.
-   - **Gameplay Rates:** Configure Base/Job EXP rates, drop rates, level caps, Pre-Renewal/Renewal mode, and WoE schedule.
-   - **Hero Banner:** Customize headline, subtitles, description, and action button links.
-   - **Client Downloads:** Set Full and Lite client download mirrors and file sizes.
-   - **Community:** Configure Discord invite link, Facebook page, and staff contact email.
-   - Click **"Save Configuration & Launch Website"** to complete setup and launch your portal.
-
----
-
-## Website Themes & Theme Switching
-
-FluxCP includes two community themes:
-
-1. **Celestial Chronicle V3 (`celestial`):**
-   - **Aesthetic:** Light anime-fantasy, skyward floating islands, and crystal castles.
-   - **Color Palette:** Ivory White (`#F8F5EC`), Sky Blue (`#DCEFFA`), Azure (`#83B9DA`), Royal Gold (`#C9A45E`), Deep Navy (`#283B59`).
-   - **Components:** Floating translucent navbar, atmospheric floating particles, gold filigree buttons, Adventurer's Hub account dashboard, and responsive mobile drawer.
-
-2. **Eclipse Realm V2 (`freynix`):**
-   - **Aesthetic:** Dark gothic fantasy MMORPG, obsidian castle, and mystical violet auroras.
-   - **Color Palette:** Deep Void (`#0B1020`), Dark Indigo (`#171C31`), Mystic Violet (`#9D80E8`), Royal Gold (`#D6AD66`), Platinum White (`#F4F0FF`).
-   - **Components:** Glowing glassmorphism cards, interactive particle canvas, server rate badges, and responsive sidebar.
-
-### Switching Themes Live
-- **Via Homepage CMS (`/?module=homepage`):**
-  - Navigate to **Homepage CMS** from the staff user dropdown.
-  - In **Section 1 (Server Brand & Identity)**, select your preferred theme radio card (**Celestial Chronicle V3** or **Eclipse Realm V2**).
-  - Click **"Save Homepage Settings"**. The theme updates instantly across all user sessions with zero caching lag.
-- **Via Installation Wizard (`/?module=install`):**
-  - Select your preferred theme during initial setup in Step 2.
-
----
-
-## Staff Controls & Navigation Parity
-
-Both themes provide an identical staff experience:
-- **Navbar User Dropdown:**
-  - Player Balance and Account Info
-  - Adventurer's Hub / Player Dashboard
-  - Change Password / Change E-mail
-  - Support Tickets & Login History
-  - **Staff Controls Section (Group Level &ge; 99):**
-    - `Homepage CMS` (`/?module=homepage`)
-    - `Manage News` (`/?module=news&action=manage`)
-    - `Manage Pages` (`/?module=pages`)
-    - `Manage Nav` (`/?module=navigation`)
-    - `Manage Downloads` (`/?module=downloads&action=manage`)
-    - `Re-Install & Reset Wizard` (`/?module=install&action=reinstall`)
-    - Dynamic Addon & Core Module Action Links (`getAdminMenuItems()`)
-- **Inner Page Submenu & Action Bars:** Both themes render dynamic section tabs (`submenu.php`) and page action links (`pagemenu.php`).
-- **Off-Canvas Mobile Drawer:** Complete staff controls and dynamic menu links accessible on mobile devices.
+### 3. Running the Setup Wizard
+- **Step 1 (System Requirements & DB Sync):**
+  - Verify all extension checks and write permissions pass.
+  - Review database connection status. If the rAthena `login` table is missing, click **"Create Standard rAthena Login Table"**.
+  - Review database schema migrations.
+  - Click **"Continue to Server & Theme Setup &rarr;"**.
+- **Step 2 (Server & Theme Setup):**
+  - Select your preferred layout from the 5 visual cards (**Arcane Nexus**, **Eternal Dominion**, **Celestial Chronicle**, **Eclipse Realm**, or **Classic FluxCP**).
+  - Enter your **Server Name**, **Slogan**, **EXP / Drop Rates**, **Level Caps**, and **Client Download Mirrors**.
+  - Click **"Save Configuration & Launch Website"**.
+  - The wizard finalizes setup and redirects directly to your live, fully-styled MMORPG portal.
 
 ---
 
 ## Administrator Guide
 
-### Changing the Server Name & Branding
-1. Log in with an administrator account.
-2. Click your account pill in the top-right corner and select **Homepage CMS** (`/?module=homepage`).
-3. Under **1. SERVER BRANDING & IDENTITY**, update the **Server Brand Name**, **Header Slogan**, or **Logo URL**.
-4. Click **"Save Homepage Settings"**. The entire portal updates immediately across all pages.
+### Changing Themes Live
+1. Log in with an administrator account (`group_level >= 20` or configured `AdminMenuGroupLevel`).
+2. In the navigation bar, click the user pill and select **Staff Panel &rarr; Homepage & Theme CMS** (`?module=homepage`).
+3. Under **Theme & Layout Selection**, select your preferred layout card:
+   - **Arcane Nexus (V5)**
+   - **Eternal Dominion (V4)**
+   - **Celestial Chronicle (V3)**
+   - **Eclipse Realm (V2)**
+   - **Classic FluxCP (V1)**
+4. Click **"Save Homepage Settings"**. The theme updates instantly across all pages and sessions.
+
+### Updating Server Logos & Branding
+1. In **Homepage CMS** (`?module=homepage`), locate **1. Server Brand & Identity**.
+2. **Logo URL:** Enter the web path or URL to your custom logo (e.g. `/themes/nexus/img/nexus-logo.png`).
+   > **Note:** If left empty, themes automatically fall back to their built-in high-resolution transparent logo.
+3. Update your **Server Name**, **Header Slogan**, and **Footer Disclaimer**.
+4. Click **"Save Homepage Settings"**.
 
 ### Managing Navigation Links
-- Navigate to **Manage Nav** (`/?module=navigation`) from the user dropdown.
-- Add, edit, or reorder top-level links and sub-menus. The navigation bar updates automatically.
+1. Open **Staff Panel &rarr; Manage Navigation** (`?module=navigation`).
+2. Add, edit, or reorder top-level links and nested dropdowns for both the **Main Navigation Dock** and the **Footer Columns**.
 
-### Re-installing or Resetting Schemas
-- Go to the admin dropdown and select **Re-Install & Reset** (`/?module=install&action=reinstall`).
-- Select whether to clear schema tracking logs or reset CMS defaults, confirm the action, and you will be returned to the setup wizard.
+### Re-installing or Resetting
+1. Navigate to `?module=install&action=reinstall` (or via the staff dropdown).
+2. Choose whether to reset schema tracking logs or restore default CMS settings, then confirm to re-enter the setup wizard.
 
 ---
 
-## Compatibility & Tech Stack
+## Troubleshooting & FAQ
 
-- **PHP:** 7.4, 8.0, 8.1, 8.2 compatible (safe syntax, strict types handled).
-- **Database:** MySQL 5.7+, MySQL 8.0+, MariaDB 10.3+.
-- **rAthena:** Pre-Renewal and Renewal rAthena server branches.
-- **Browsers:** Chrome, Firefox, Edge, Safari (Desktop & Mobile).
+#### Q: Why is my logo showing a broken image or alt text?
+**A:** This occurred when `site_logo_url` in the database was saved as an empty string `""`. In this updated version, `Flux_CMS::get()` and all theme templates explicitly check `!empty(trim((string)$customLogo))`. If empty, all templates automatically fall back to their built-in 32-bit transparent theme logo. Ensure your custom logo URL is either a valid accessible path or left completely blank to use the default theme logo.
+
+#### Q: The installer kept looping back to Step 1. Is this resolved?
+**A:** Yes. The previous installer logic had an unlinking loop that deleted schema tracking `.txt` files upon submission, causing FluxCP to believe tables were still missing. That loop has been removed, and the wizard cleanly saves configuration and directs you straight to the live website.
+
+#### Q: Can I use my own custom logo without modifying theme templates?
+**A:** Yes. All logos are rendered with `background: transparent; object-fit: contain;` and drop shadows. Upload your PNG into `themes/<theme-name>/img/` or enter any valid relative or absolute URL in the Homepage CMS.
+
+#### Q: How do I access staff controls?
+**A:** Log into any account with `group_level >= 20` (or the level configured in `config/application.php` under `AdminMenuGroupLevel`). A dedicated **Staff Panel** dropdown will appear in the top utility bar and in the user profile pill.
+
+---
+
+## Compatibility & Requirements
+
+- **PHP Compatibility:** PHP 7.4.x, PHP 8.0.x, PHP 8.1.x, PHP 8.2.x, PHP 8.3.x.
+- **Database Support:** MySQL 5.7+, MySQL 8.0+, MariaDB 10.3+.
+- **Emulators Supported:** rAthena (Pre-Renewal & Renewal), Hercules, eAthena.
+- **FluxCP Core:** Tested against standard FluxCP 1.0+ and 2.0+ rAthena branches.
+- **Browsers:** Modern desktop and mobile browsers (Chrome, Firefox, Safari, Edge, Opera).

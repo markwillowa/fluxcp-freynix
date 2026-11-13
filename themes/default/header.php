@@ -133,7 +133,21 @@
 				<td bgcolor="#8ebceb" width="20"></td>
 				<td bgcolor="#8ebceb" colspan="3">
 					<a href="<?php echo $this->basePath ?>">
-						<img src="<?php echo $this->themePath($session->account->group_level >= Flux::config('AdminMenuGroupLevel') ? 'img/logo_admin.gif' : 'img/logo.gif') ?>" id="logo" />
+						<?php
+							$headerLogo = $this->themePath('img/logo.png');
+							try {
+								if (class_exists('Flux_CMS') && isset($server)) {
+									$customLogo = Flux_CMS::get('site_logo_url', '', $server);
+									if (!empty(trim((string)$customLogo))) {
+										$headerLogo = $customLogo;
+									}
+								}
+							} catch (Exception $e) {}
+							if (empty($headerLogo) || trim((string)$headerLogo) === '') {
+								$headerLogo = $this->themePath('img/logo.png');
+							}
+						?>
+						<img src="<?php echo htmlspecialchars($headerLogo) ?>" id="logo" style="max-height: 52px; width: auto; background: transparent; object-fit: contain;" />
 					</a>
 				</td>
 				<td bgcolor="#8ebceb" width="20"></td>

@@ -227,8 +227,15 @@ try {
 	$hasUpdates = !empty($cpTablesMissing);
 	Flux::$sessionData = new Flux_SessionData($_SESSION[$sessionKey], $hasUpdates);
 
-	// Synchronize active theme with primary configured ThemeName
-	if (!$hasUpdates && !empty(Flux::config('ThemeName.0'))) {
+	// Synchronize active theme with user choice or primary configured ThemeName
+	$availThemes = is_object(Flux::config('ThemeName')) && method_exists(Flux::config('ThemeName'), 'toArray') ? Flux::config('ThemeName')->toArray() : (array)Flux::config('ThemeName');
+	if (!empty($_POST['preferred_theme']) && in_array($_POST['preferred_theme'], $availThemes)) {
+		Flux::$sessionData->setThemeData($_POST['preferred_theme']);
+	} elseif (!empty($_GET['preferred_theme']) && in_array($_GET['preferred_theme'], $availThemes)) {
+		Flux::$sessionData->setThemeData($_GET['preferred_theme']);
+	} elseif (!empty($_COOKIE['preferred_theme']) && in_array($_COOKIE['preferred_theme'], $availThemes)) {
+		Flux::$sessionData->setThemeData($_COOKIE['preferred_theme']);
+	} elseif (empty(Flux::$sessionData->theme) && !empty(Flux::config('ThemeName.0'))) {
 		Flux::$sessionData->setThemeData(Flux::config('ThemeName.0'));
 	}
 

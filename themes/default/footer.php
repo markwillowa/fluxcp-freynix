@@ -14,12 +14,18 @@
 				<td style="padding: 10px"></td>
 			</tr>
 			<?php
-				$defLogo = $this->themePath('img/nexus-logo.png');
+				$defLogo = $this->themePath('img/logo.png');
 				try {
 					if (class_exists('Flux_CMS') && isset($server)) {
-						$defLogo = Flux_CMS::get('site_logo_url', $defLogo, $server);
+						$customLogo = Flux_CMS::get('site_logo_url', '', $server);
+						if (!empty(trim((string)$customLogo))) {
+							$defLogo = $customLogo;
+						}
 					}
 				} catch (Exception $e) {}
+				if (empty($defLogo) || trim((string)$defLogo) === '') {
+					$defLogo = $this->themePath('img/logo.png');
+				}
 			?>
 			<tr>
 				<td colspan="3"></td>
