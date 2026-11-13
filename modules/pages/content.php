@@ -16,7 +16,8 @@ if (!$page) {
 $isAdmin = $session->isLoggedIn() && ($session->account->group_level >= Flux::config('AdminMenuGroupLevel') || $auth->actionAllowed('pages', 'edit'));
 
 // Check publication status
-if ($page->status !== 'published') {
+$status = isset($page->status) ? strtolower(trim($page->status)) : 'published';
+if ($status === 'draft' || $status === 'unpublished' || $status === 'hidden') {
     if (!$isAdmin) {
         $this->redirect($this->url('main', 'index'));
     } else {
@@ -44,6 +45,9 @@ if (!empty($page->min_group_level) && (int)$page->min_group_level > 0) {
 $title            = $page->title;
 $body             = $page->body;
 $modified         = $page->modified;
+$pageId           = $page->id;
+$page_id          = $page->id;
+$id               = $page->id;
 $meta_description = !empty($page->meta_description) ? $page->meta_description : '';
 $meta_keywords    = !empty($page->meta_keywords) ? $page->meta_keywords : '';
 $page_template    = !empty($page->template) ? $page->template : 'default';

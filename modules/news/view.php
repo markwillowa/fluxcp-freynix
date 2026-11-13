@@ -27,6 +27,7 @@ if (!$isStaff && $post->status !== 'published') {
 }
 
 $title = $post->title;
+$news = $post;
 
 // Fetch related/recent announcements
 $recentSql = "SELECT id, title, category, published_at, created FROM {$server->loginDatabase}.$newsTable WHERE id != ? AND status = 'published' AND (published_at IS NULL OR published_at <= NOW()) ORDER BY id DESC LIMIT 5";

@@ -13,6 +13,21 @@
 				<!-- Spacing between content and horizontal end-of-page -->
 				<td style="padding: 10px"></td>
 			</tr>
+			<?php
+				$defLogo = $this->themePath('img/nexus-logo.png');
+				try {
+					if (class_exists('Flux_CMS') && isset($server)) {
+						$defLogo = Flux_CMS::get('site_logo_url', $defLogo, $server);
+					}
+				} catch (Exception $e) {}
+			?>
+			<tr>
+				<td colspan="3"></td>
+				<td align="center" style="padding: 10px 0;">
+					<img src="<?php echo htmlspecialchars($defLogo) ?>" alt="Server Logo" style="height: 46px; width: auto; background: transparent; object-fit: contain;" />
+				</td>
+				<td></td>
+			</tr>
 			<?php if (Flux::config('ShowCopyright')): ?>
 			<tr>
 				<td colspan="3"></td>
@@ -37,36 +52,17 @@
 				<td></td>
 			</tr>
 			<?php endif ?>
-						<?php if (count(Flux::$appConfig->get('ThemeName', false)) > 1): ?>
-			<tr>
-				<td colspan="3"></td>
-				<td align="right">
-				<span>Theme:
-					<select name="preferred_theme" onchange="updatePreferredTheme(this)">
-						<?php foreach (Flux::$appConfig->get('ThemeName', false) as $themeName): ?>
-						<option value="<?php echo htmlspecialchars($themeName) ?>"<?php if ($session->theme == $themeName) echo ' selected="selected"' ?>><?php echo htmlspecialchars($themeName) ?></option>
-						<?php endforeach ?>
-					</select>
-					</span>
-					
-					<form action="<?php echo $this->urlWithQs ?>" method="post" name="preferred_theme_form" style="display: none">
-						<input type="hidden" name="preferred_theme" value="" />
-					</form>
-				</td>
-				<td></td>
-			</tr>
-			<?php endif ?>
 
             <tr>
                 <td colspan="3"></td>
                 <td align="right">
-                            <span>Language:
-                                <select name="preferred_language" onchange="updatePreferredLanguage(this)">
-                                    <?php foreach (Flux::getAvailableLanguages() as $lang_key => $lang): ?>
-                                        <option value="<?php echo htmlspecialchars($lang_key) ?>"<?php if (!empty($_COOKIE['language']) && $_COOKIE['language'] == $lang_key) echo ' selected="selected"' ?>><?php echo htmlspecialchars($lang) ?></option>
-                                    <?php endforeach ?>
-                                    </select>
-                                </span>
+                    <span>Language:
+                        <select name="preferred_language" onchange="updatePreferredLanguage(this)">
+                            <?php foreach (Flux::getAvailableLanguages() as $lang_key => $lang): ?>
+                                <option value="<?php echo htmlspecialchars($lang_key) ?>"<?php if (!empty($_COOKIE['language']) && $_COOKIE['language'] == $lang_key) echo ' selected="selected"' ?>><?php echo htmlspecialchars($lang) ?></option>
+                            <?php endforeach ?>
+                        </select>
+                    </span>
                 </td>
                 <td></td>
             </tr>

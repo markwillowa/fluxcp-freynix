@@ -17,6 +17,8 @@ if (!$post) {
 	$this->redirect($this->url('news', 'manage'));
 }
 
+$news = $post;
+
 $news_title = $post->title;
 $news_category = $post->category ?: 'Server Update';
 $news_status = $post->status ?: 'published';
@@ -39,8 +41,8 @@ if (count($_POST)) {
 		$news_category = $post->category ?: 'Server Update';
 	}
 	$news_status = in_array($params->get('news_status'), array('published', 'draft')) ? $params->get('news_status') : 'published';
-	$news_is_pinned = $params->get('news_is_pinned') ? 1 : 0;
-	$news_featured_image = trim($params->get('news_featured_image'));
+	$news_is_pinned = ($params->get('news_is_pinned') || $params->get('is_pinned')) ? 1 : 0;
+	$news_featured_image = trim($params->get('news_featured_image') ?: $params->get('featured_image'));
 	$news_published_at = trim($params->get('news_published_at')) ?: date('Y-m-d H:i:s');
 	$news_author = trim($params->get('news_author')) ?: $post->author;
 	$news_link = trim($params->get('news_link'));

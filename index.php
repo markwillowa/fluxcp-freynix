@@ -112,8 +112,16 @@ try {
 		$directory = realpath($directory);
 		if (!is_dir($directory))
 			mkdir($directory, 0600);
-		if (!is_writable($directory) && is_dir($directory))
-			throw new Flux_PermissionError("The $directoryFunction directory '$directory' is not writable.  Remedy with `chmod 0600 $directory`");
+		if (!is_writable($directory) && is_dir($directory)) {
+			// On Windows, is_writable() on directories can falsely report false
+			$testFile = $directory . DIRECTORY_SEPARATOR . '.flux_write_test';
+			$canWrite = @file_put_contents($testFile, '1');
+			if ($canWrite !== false) {
+				@unlink($testFile);
+			} else {
+				throw new Flux_PermissionError("The $directoryFunction directory '$directory' is not writable.  Remedy with `chmod 0600 $directory`");
+			}
+		}
 		if (Flux::config('RequireOwnership') && function_exists('posix_getuid') && fileowner($directory) != $uid)
 			throw new Flux_PermissionError("The $directoryFunction directory '$directory' is not owned by the executing user.  Remedy with `chown -R ".posix_geteuid().":".posix_geteuid()." $directory`");
 	}
@@ -161,25 +169,22 @@ try {
 		$cpTablesMissing = true;
 	}
 
-	// If CP tables are missing from database, clear stale schema tracking so installer runs fresh
-	if ($cpTablesMissing) {
-		$loginDbFiles = glob(FLUX_DATA_DIR.'/logs/schemas/logindb/*/*.txt') ?: array();
-		$charDbFiles  = glob(FLUX_DATA_DIR.'/logs/schemas/charmapdb/*/*.txt') ?: array();
-		foreach (array_merge($loginDbFiles, $charDbFiles) as $f) {
-			@unlink($f);
-		}
-	}
-
 	// Installer library.
 	$installer = Flux_Installer::getInstance();
 	$isInstallModule = (isset($_GET['module']) && $_GET['module'] === 'install' && (!isset($_GET['action']) || $_GET['action'] !== 'reinstall'));
-	if (($hasUpdates=($installer->updateNeeded() || $cpTablesMissing)) || $isInstallModule || $pathMismatch) {
+	if ($isInstallModule) {
 		Flux::config('ThemeName', array('installer'));
-		$hasUpdates = true;
 	}
 
-	// If path moved/mismatched or schemas need updating or CP tables missing, redirect to installer wizard so layout is never broken
-	if (php_sapi_name() !== 'cli' && ($pathMismatch || $hasUpdates)) {
+	// If updates are needed, auto-update them seamlessly so user is never trapped in an installer loop
+	if ($installer->updateNeeded() && !$cpTablesMissing) {
+		try {
+			$installer->updateAll();
+		} catch (Exception $e) {}
+	}
+
+	// Only redirect to installer if critical CP tables are completely missing from database
+	if (php_sapi_name() !== 'cli' && $cpTablesMissing) {
 		$reqUri = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '';
 		$isInstallReq = (isset($_GET['module']) && $_GET['module'] === 'install') || (stripos($reqUri, 'module=install') !== false) || (preg_match('~/install([/?&#]|$)~i', $reqUri));
 		if (!$isInstallReq) {
@@ -219,10 +224,11 @@ try {
 	}
 
 	// Initialize session data.
+	$hasUpdates = !empty($cpTablesMissing);
 	Flux::$sessionData = new Flux_SessionData($_SESSION[$sessionKey], $hasUpdates);
 
 	// Synchronize active theme with primary configured ThemeName
-	if (empty($hasUpdates) && !empty(Flux::config('ThemeName.0'))) {
+	if (!$hasUpdates && !empty(Flux::config('ThemeName.0'))) {
 		Flux::$sessionData->setThemeData(Flux::config('ThemeName.0'));
 	}
 

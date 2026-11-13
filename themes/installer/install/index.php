@@ -335,10 +335,19 @@ $cms = $cmsSettings ?? array();
 					</ul>
 				</div>
 			</div>
-			<div style="display: flex; justify-content: flex-end;">
-				<button type="button" class="inst-btn inst-btn-primary" disabled>
-					Proceed to Step 2: Server Details &rarr;
-				</button>
+			<div style="display: flex; justify-content: flex-end; gap: 12px;">
+				<?php if ($dbConnected && $loginTableExists && $cpTablesMissing): ?>
+					<form action="<?php echo $this->urlWithQs ?>" method="post">
+						<input type="hidden" name="install_all_tables" value="1" />
+						<button type="submit" class="inst-btn inst-btn-primary" style="font-size: 1rem; padding: 12px 28px;">
+							Install Tables &amp; Proceed to Step 2 &rarr;
+						</button>
+					</form>
+				<?php else: ?>
+					<button type="button" class="inst-btn inst-btn-primary" disabled>
+						Proceed to Step 2: Server Details &rarr;
+					</button>
+				<?php endif ?>
 			</div>
 		<?php else: ?>
 			<div class="inst-alert success" style="margin-bottom: 20px;">
@@ -349,35 +358,14 @@ $cms = $cmsSettings ?? array();
 				</div>
 			</div>
 
-			<?php if (!$session->installerAuth): ?>
-				<!-- Authenticate with InstallerPassword to proceed -->
-				<form action="<?php echo $this->urlWithQs ?>" method="post" style="background: var(--inst-card-alt); border: 1px solid var(--inst-border); border-radius: var(--radius-md); padding: 20px;">
-					<h4 style="font-size: 0.95rem; color: #fff; margin-bottom: 8px;">
-						Authenticate Installer Password
-					</h4>
-					<p style="color: var(--inst-text-muted); font-size: 0.88rem; margin-bottom: 16px;">
-						Enter the <strong>Installer Password</strong> configured in <code>config/application.php</code> to unlock Step 2.
-					</p>
-					<div style="display: flex; gap: 12px; align-items: flex-end; max-width: 500px;">
-						<div style="flex: 1;">
-							<label class="inst-label">Installer Password</label>
-							<input type="password" name="installer_password" placeholder="Enter InstallerPassword..." required class="inst-input" autofocus />
-						</div>
-						<button type="submit" class="inst-btn inst-btn-primary" style="white-space: nowrap;">
-							Unlock &amp; Proceed &rarr;
-						</button>
-					</div>
-				</form>
-			<?php else: ?>
-				<div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
-					<span style="color: var(--inst-success); font-weight: 600;">
-						&#10003; Installer unlocked! You are authorized to configure server details.
-					</span>
-					<a href="<?php echo $this->url('install', 'index', array('step' => 2)) ?>" class="inst-btn inst-btn-primary" style="font-size: 1rem; padding: 12px 28px;">
-						Proceed to Step 2: Server Details &amp; Theme Setup &rarr;
-					</a>
-				</div>
-			<?php endif ?>
+			<div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+				<span style="color: var(--inst-success); font-weight: 600;">
+					&#10003; Ready for Step 2! You are authorized to configure server details and layout.
+				</span>
+				<a href="<?php echo $this->url('install', 'index', array('step' => 2)) ?>" class="inst-btn inst-btn-primary" style="font-size: 1rem; padding: 12px 28px;">
+					Proceed to Step 2: Server Details &amp; Theme Setup &rarr;
+				</a>
+			</div>
 		<?php endif ?>
 	</div>
 
@@ -395,42 +383,95 @@ $cms = $cmsSettings ?? array();
 			<div class="inst-card-header">
 				<h2 class="inst-card-title">
 					<span class="badge-num">1</span>
-					<span>Select Website Theme</span>
+					<span>Select Website Theme &amp; Layout</span>
 				</h2>
 			</div>
 			<p style="color: var(--inst-text-muted); margin-bottom: 20px;">
-				Choose your preferred community website design. Both themes share identical CMS features and can also be switched anytime via the Homepage CMS.
+				Choose your preferred community website design from all available layouts. All themes share identical CMS features and can also be switched anytime via the Homepage CMS.
 			</p>
 
 			<div class="inst-grid-2">
-				<!-- Theme 1: Celestial Chronicle -->
+				<!-- Theme 1: Arcane Nexus V5 (Recommended) -->
+				<label style="display: flex; gap: 16px; background: rgba(0, 217, 245, 0.06); border: 2px solid rgba(0, 217, 245, 0.45); padding: 20px; border-radius: var(--radius-lg); cursor: pointer; transition: all 0.2s; grid-column: span 2;">
+					<input type="radio" name="chosen_theme" value="nexus" checked style="width: auto; margin-top: 4px;" />
+					<div style="flex: 1;">
+						<div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+							<strong style="color: #00D9F5; font-size: 1.15rem;">
+								Arcane Nexus V5
+							</strong>
+							<span style="background: rgba(0, 217, 245, 0.2); border: 1px solid rgba(0, 217, 245, 0.5); color: #00D9F5; font-size: 0.72rem; font-weight: 800; padding: 2px 10px; border-radius: 999px; text-transform: uppercase;">
+								Recommended &bull; Latest V5
+							</span>
+						</div>
+						<span style="color: #A5F3FC; font-size: 0.82rem; font-weight: 600; display: block; margin-top: 3px;">
+							Cyber-Arcane Anime-Fantasy &bull; Void Black, Neon Cyan &amp; Arcane Violet
+						</span>
+						<p style="color: var(--inst-text-muted); font-size: 0.86rem; margin-top: 8px; line-height: 1.5;">
+							A futuristic MMORPG command center featuring glassmorphism panels, holographic interface runes, live server monitor capsule, dual-tier cyber dock, and a modular bento grid layout.
+						</p>
+					</div>
+				</label>
+
+				<!-- Theme 2: Eternal Dominion V4 -->
+				<label style="display: flex; gap: 16px; background: rgba(212, 175, 55, 0.06); border: 2px solid rgba(212, 175, 55, 0.4); padding: 20px; border-radius: var(--radius-lg); cursor: pointer; transition: all 0.2s;">
+					<input type="radio" name="chosen_theme" value="dominion" style="width: auto; margin-top: 4px;" />
+					<div>
+						<strong style="color: #FBBF24; font-size: 1.1rem; display: block;">
+							Eternal Dominion V4
+						</strong>
+						<span style="color: #FDE68A; font-size: 0.8rem; font-weight: 600; display: block; margin-top: 2px;">
+							Royal High-Medieval Fantasy &bull; Obsidian, Dark Gold &amp; Crimson
+						</span>
+						<p style="color: var(--inst-text-muted); font-size: 0.85rem; margin-top: 8px;">
+							A regal kingdom portal with classical Cinzel typography, Coat of Arms branding, royal chronicle dispatch cards, and Hall of Fame hero rankings.
+						</p>
+					</div>
+				</label>
+
+				<!-- Theme 3: Celestial Chronicle V3 -->
 				<label style="display: flex; gap: 16px; background: rgba(56, 189, 248, 0.06); border: 2px solid rgba(56, 189, 248, 0.35); padding: 20px; border-radius: var(--radius-lg); cursor: pointer; transition: all 0.2s;">
-					<input type="radio" name="chosen_theme" value="celestial" checked style="width: auto; margin-top: 4px;" />
+					<input type="radio" name="chosen_theme" value="celestial" style="width: auto; margin-top: 4px;" />
 					<div>
 						<strong style="color: var(--inst-primary); font-size: 1.1rem; display: block;">
 							Celestial Chronicle V3
 						</strong>
 						<span style="color: #BAE6FD; font-size: 0.8rem; font-weight: 600; display: block; margin-top: 2px;">
-							Light Anime-Fantasy &bull; Sky Islands &bull; Ivory &amp; Gold
+							Mythic Astral Anime-Fantasy &bull; Deep Cosmic Navy &amp; Astral Cyan
 						</span>
 						<p style="color: var(--inst-text-muted); font-size: 0.85rem; margin-top: 8px;">
-							An airy, expansive sky aesthetic featuring floating castles, golden sunbeams, translucent navigation, and soft particle atmosphere.
+							An airy, expansive sky aesthetic featuring floating castles, golden sunbeams, translucent navigation dock, and soft floating particle atmosphere.
 						</p>
 					</div>
 				</label>
 
-				<!-- Theme 2: Eclipse Realm -->
+				<!-- Theme 4: Eclipse Realm V2 -->
 				<label style="display: flex; gap: 16px; background: rgba(99, 102, 241, 0.06); border: 2px solid rgba(99, 102, 241, 0.35); padding: 20px; border-radius: var(--radius-lg); cursor: pointer; transition: all 0.2s;">
 					<input type="radio" name="chosen_theme" value="freynix" style="width: auto; margin-top: 4px;" />
 					<div>
 						<strong style="color: #A5B4FC; font-size: 1.1rem; display: block;">
-							Eclipse Realm V2
+							Eclipse Realm (Freynix V2)
 						</strong>
 						<span style="color: #C7D2FE; font-size: 0.8rem; font-weight: 600; display: block; margin-top: 2px;">
 							Dark Gothic Fantasy &bull; Obsidian Citadel &bull; Violet Auroras
 						</span>
 						<p style="color: var(--inst-text-muted); font-size: 0.85rem; margin-top: 8px;">
 							A dark, competitive MMORPG look with glowing runes, deep violet lighting, floating server stats, and high-contrast leaderboards.
+						</p>
+					</div>
+				</label>
+
+				<!-- Theme 5: Classic FluxCP Default -->
+				<label style="display: flex; gap: 16px; background: rgba(148, 163, 184, 0.06); border: 2px solid rgba(148, 163, 184, 0.35); padding: 20px; border-radius: var(--radius-lg); cursor: pointer; transition: all 0.2s;">
+					<input type="radio" name="chosen_theme" value="default" style="width: auto; margin-top: 4px;" />
+					<div>
+						<strong style="color: #E2E8F0; font-size: 1.1rem; display: block;">
+							Classic FluxCP Heritage
+						</strong>
+						<span style="color: #94A3B8; font-size: 0.8rem; font-weight: 600; display: block; margin-top: 2px;">
+							Heritage Standard &bull; Classic Clean Ragnarok Online Portal
+						</span>
+						<p style="color: var(--inst-text-muted); font-size: 0.85rem; margin-top: 8px;">
+							The standard clean, lightweight heritage FluxCP layout design for traditional Ragnarok Online servers and minimalists.
 						</p>
 					</div>
 				</label>

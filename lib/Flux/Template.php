@@ -397,7 +397,13 @@ class Flux_Template {
 			include $this->headerPath;
 		}
 	
-		include $this->viewPath;
+		if (!empty($this->viewPath) && file_exists($this->viewPath)) {
+			include $this->viewPath;
+		} elseif (!empty($this->viewPath)) {
+			echo '<div style="padding: 20px; margin: 15px 0; background: #fff3cd; border: 1px solid #ffeeba; color: #856404; border-radius: 4px;">';
+			echo '<p><strong>Notice:</strong> The requested view template (<code>' . htmlspecialchars($this->moduleName . '/' . $this->actionName) . '</code>) is not found in the current theme.</p>';
+			echo '</div>';
+		}
 	
 		if (file_exists($this->footerPath)) {
 			include $this->footerPath;
@@ -600,6 +606,22 @@ class Flux_Template {
 			}
 		}
 
+		if (!file_exists($chk)) {
+			$configuredThemes = Flux::config('ThemeName');
+			if (is_array($configuredThemes)) {
+				foreach ($configuredThemes as $altTheme) {
+					if ($altTheme === $this->themeName) continue;
+					$altUri = $this->path("{$this->themePath}/{$altTheme}/{$path}", $included);
+					$altChk = FLUX_ROOT . '/' . preg_replace('/^(' . $base . ')/', '', $altUri);
+					if (file_exists($altChk)) {
+						$uri = $altUri;
+						$chk = $altChk;
+						break;
+					}
+				}
+			}
+		}
+
 		return $uri . $frag;
 	}
 	
@@ -675,6 +697,52 @@ class Flux_Template {
 			}
 		}
 		return $serverProtocol.preg_replace('&/{2,}&', '/', "$serverAddress/$url");
+	}
+
+	/**
+	 * Resolves dynamic navigation and CMS URLs cleanly across clean and query-string routing.
+	 *
+	 * @param string $url The route or path from cp_navigation or CMS.
+	 * @return string Formatted URL.
+	 */
+	public function navUrl($url)
+	{
+		$val = trim((string)$url);
+		if ($val === '' || $val === '/' || $val === 'main/index' || $val === 'main') {
+			return rtrim($this->basePath, '/') . '/';
+		}
+		// External URLs
+		if (preg_match('#^(https?:)?//#i', $val)) {
+			return htmlspecialchars($val);
+		}
+		// Already formatted query string
+		if (strpos($val, '?') === 0) {
+			return rtrim($this->basePath, '/') . '/' . $val;
+		}
+		if (strpos($val, '/?') === 0) {
+			return rtrim($this->basePath, '/') . $val;
+		}
+
+		// Handle 'module/action/param' or 'module/action'
+		$parts = explode('/', trim($val, '/'));
+		$module = !empty($parts[0]) ? $parts[0] : 'main';
+		$action = !empty($parts[1]) ? $parts[1] : 'index';
+
+		// Special case for custom CMS pages (e.g. pages/content/rules or pages/rules)
+		if ($module === 'pages') {
+			$slug = isset($parts[2]) ? $parts[2] : ($action !== 'index' ? $action : '');
+			if (!empty($slug)) {
+				return $this->url('pages', 'content', array('path' => $slug));
+			}
+			return $this->url('pages', $action);
+		}
+
+		// Special case for service/tos
+		if ($module === 'service' && $action === 'tos') {
+			return $this->url('service', 'tos');
+		}
+
+		return $this->url($module, $action);
 	}
 	
 	/**

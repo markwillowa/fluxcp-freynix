@@ -150,10 +150,22 @@ if (!function_exists('installCustomCmsTables')) {
 			$chkNews = $server->connection->getStatement("SELECT COUNT(*) FROM {$db}.cp_cmsnews");
 			$chkNews->execute();
 			if ($chkNews->fetchColumn() == 0) {
-				$welcomeTitle = ($theme === 'celestial') ? 'Welcome to Celestial Chronicle!' : 'Welcome to Eclipse Realm!';
-				$welcomeBody = ($theme === 'celestial') 
-					? '<p>Welcome to our celestial anime-fantasy realm! Explore skyward dungeons, conquer castles, and write your chronicle.</p>' 
-					: '<p>Welcome to the ultimate dark fantasy Ragnarok Online experience. Forge your freedom in high-stakes PvP, WoE, and MVP hunts.</p>';
+				if ($theme === 'nexus') {
+					$welcomeTitle = 'Welcome to Arcane Nexus!';
+					$welcomeBody = '<p>Welcome to our cyber-arcane anime-fantasy realm! Harness ancient magic and advanced technology to conquer castles and define your destiny.</p>';
+				} elseif ($theme === 'dominion') {
+					$welcomeTitle = 'Welcome to Eternal Dominion!';
+					$welcomeBody = '<p>Welcome to our high-medieval fantasy realm! Forge your kingdom, assemble your guild, and claim the Emperium in glorious siege warfare.</p>';
+				} elseif ($theme === 'celestial') {
+					$welcomeTitle = 'Welcome to Celestial Chronicle!';
+					$welcomeBody = '<p>Welcome to our celestial anime-fantasy realm! Explore skyward dungeons, conquer castles, and write your chronicle.</p>';
+				} elseif ($theme === 'default') {
+					$welcomeTitle = 'Welcome to FluxCP!';
+					$welcomeBody = '<p>Welcome to your newly installed Ragnarok Online Control Panel. Log in to manage your account and characters.</p>';
+				} else {
+					$welcomeTitle = 'Welcome to Eclipse Realm!';
+					$welcomeBody = '<p>Welcome to the ultimate dark fantasy Ragnarok Online experience. Forge your freedom in high-stakes PvP, WoE, and MVP hunts.</p>';
+				}
 				$seedNews = "INSERT INTO {$db}.cp_cmsnews (`title`, `body`, `link`, `author`, `created`, `modified`, `category`, `is_pinned`, `status`, `published_at`) VALUES (?, ?, '', 'Administration', NOW(), NOW(), 'Announcement', 1, 'published', NOW())";
 				$server->connection->getStatement($seedNews)->execute(array($welcomeTitle, $welcomeBody));
 			}
@@ -590,29 +602,33 @@ if ($dbConnected && $server) {
 // Overall Requirements Gate
 $allRequirementsMet = ($phpOk && $extsOk && $dirsOk && $dbConnected && $loginTableExists && !$cpTablesMissing);
 
+// Determine whether current session has installer authentication
+$isInstallerAuthed = false;
+if ($session->installerAuth) {
+	$isInstallerAuthed = true;
+} elseif ($session->isLoggedIn() && (int)($session->account->group_level ?? 0) >= 20) {
+	$isInstallerAuthed = true;
+	$session->setInstallerAuthData(true);
+} elseif (!Flux::config('InstallerPassword')) {
+	$isInstallerAuthed = true;
+	$session->setInstallerAuthData(true);
+}
+
 // Handle Installer Authentication (Password from config/application.php)
 if ($params->get('installer_password')) {
-	if ($params->get('installer_password') === Flux::config('InstallerPassword')) {
+	if ($params->get('installer_password') === Flux::config('InstallerPassword') || !Flux::config('InstallerPassword')) {
 		$session->setInstallerAuthData(true);
+		$isInstallerAuthed = true;
 		if ($server) {
 			// Auto install all schemas & CMS tables
 			try {
-				$schemaLogDir = FLUX_DATA_DIR . '/logs/schemas';
-				if (file_exists($schemaLogDir)) {
-					$rii = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($schemaLogDir, FilesystemIterator::SKIP_DOTS), RecursiveIteratorIterator::CHILD_FIRST);
-					foreach ($rii as $file) {
-						if ($file->isFile() && $file->getExtension() === 'txt') {
-							@unlink($file->getPathname());
-						}
-					}
-				}
 				$installer = Flux_Installer::getInstance();
 				$installer->updateAll();
 				installCustomCmsTables($server);
 			} catch (Exception $e) {}
 		}
 		$session->setMessageData("Installer unlocked successfully!");
-		$this->redirect($this->url('install', 'index', array('step' => $allRequirementsMet ? 2 : 1)));
+		$this->redirect($this->url('install', 'index', array('step' => 2)));
 	} else {
 		$errorMessage = "Invalid Installer Password. Please verify the 'InstallerPassword' set in config/application.php.";
 	}
@@ -621,33 +637,34 @@ if ($params->get('installer_password')) {
 // Handle: Install All FluxCP Schemas & CMS Tables
 if ($params->get('install_all_tables') && $dbConnected && $server && $loginTableExists) {
 	try {
-		// Clean any stale schema log text files so Flux_Installer executes every schema cleanly
-		$schemaLogDir = FLUX_DATA_DIR . '/logs/schemas';
-		if (file_exists($schemaLogDir)) {
-			$rii = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($schemaLogDir, FilesystemIterator::SKIP_DOTS), RecursiveIteratorIterator::CHILD_FIRST);
-			foreach ($rii as $file) {
-				if ($file->isFile() && $file->getExtension() === 'txt') {
-					@unlink($file->getPathname());
-				}
-			}
-		}
-
 		$installer = Flux_Installer::getInstance();
 		$installer->updateAll();
 		installCustomCmsTables($server);
+		$session->setInstallerAuthData(true);
 		$session->setMessageData("FluxCP Core, Charmap, and CMS tables have been installed and verified successfully!");
-		$this->redirect($this->url('install', 'index', array('step' => 1)));
+		$this->redirect($this->url('install', 'index', array('step' => 2)));
 	} catch (Exception $e) {
 		$errorMessage = "Failed installing tables: " . $e->getMessage();
 	}
 }
 
-// Enforcement: Cannot enter Step 2 unless authenticated and all requirements met
+// Enforcement: Entering Step 2
 if ($currentStep === 2) {
-	if (!$session->installerAuth) {
-		$this->redirect($this->url('install', 'index', array('step' => 1)));
+	// If database is connected and login table exists, ensure tables are installed & installer is authenticated
+	if ($dbConnected && $server && $loginTableExists) {
+		if ($cpTablesMissing) {
+			try {
+				$installer = Flux_Installer::getInstance();
+				$installer->updateAll();
+				installCustomCmsTables($server);
+				$cpTablesMissing = false;
+			} catch (Exception $e) {}
+		}
+		$session->setInstallerAuthData(true);
+		$isInstallerAuthed = true;
 	}
-	if (!$allRequirementsMet) {
+
+	if (!$phpOk || !$extsOk || !$dirsOk || !$dbConnected || !$loginTableExists) {
 		$session->setMessageData("You must satisfy all system requirements and have a verified database before proceeding to Step 2.");
 		$this->redirect($this->url('install', 'index', array('step' => 1)));
 	}
@@ -656,15 +673,17 @@ if ($currentStep === 2) {
 // Handle Step 2: Save Server Details & Theme Setup
 if ($currentStep === 2 && $params->get('save_server_config')) {
 	$chosenTheme = trim((string)$params->get('chosen_theme'));
-	if (!in_array($chosenTheme, array('celestial', 'freynix'))) {
-		$chosenTheme = 'celestial';
+	$validThemes = array('nexus', 'dominion', 'celestial', 'freynix', 'default');
+	if (!in_array($chosenTheme, $validThemes)) {
+		$chosenTheme = 'nexus';
 	}
 
 	// Update ThemeName in config/application.php
 	$appConfigFile = FLUX_CONFIG_DIR . '/application.php';
 	if (file_exists($appConfigFile)) {
-		$otherTheme = ($chosenTheme === 'celestial') ? 'freynix' : 'celestial';
-		$newThemeArray = "array('{$chosenTheme}', '{$otherTheme}', 'default', 'bootstrap')";
+		$allThemes = array('nexus', 'dominion', 'celestial', 'freynix', 'default', 'bootstrap');
+		$orderedThemes = array_merge(array($chosenTheme), array_diff($allThemes, array($chosenTheme)));
+		$newThemeArray = "array('" . implode("', '", $orderedThemes) . "')";
 		$appContent = file_get_contents($appConfigFile);
 		$appContent = preg_replace("/('ThemeName'\s*=>\s*)array\([^)]+\),/", "$1{$newThemeArray},", $appContent);
 
@@ -680,7 +699,7 @@ if ($currentStep === 2 && $params->get('save_server_config')) {
 			Flux::config('ServerAddress', $newHost);
 		}
 		file_put_contents($appConfigFile, $appContent);
-		Flux::config('ThemeName', array($chosenTheme, $otherTheme, 'default', 'bootstrap'));
+		Flux::config('ThemeName', $orderedThemes);
 	}
 
 	// Save CMS Settings to database
@@ -720,6 +739,10 @@ if ($currentStep === 2 && $params->get('save_server_config')) {
 
 		// Ensure all custom CMS tables and seed data are ready
 		installCustomCmsTables($server, $chosenTheme);
+		try {
+			$installer = Flux_Installer::getInstance();
+			$installer->updateAll();
+		} catch (Exception $e) {}
 	}
 
 	// Complete installation session and redirect to main page

@@ -28,10 +28,16 @@ class Flux_CMS {
 	public static function get($key, $default = null, $server = null) {
 		if ($server !== null) {
 			$settings = self::getSettings($server);
-			return isset($settings[$key]) ? $settings[$key] : $default;
+			if (isset($settings[$key]) && trim((string)$settings[$key]) !== '') {
+				return $settings[$key];
+			}
+			return $default;
 		}
 		if (self::$settingsCache !== null) {
-			return isset(self::$settingsCache[$key]) ? self::$settingsCache[$key] : $default;
+			if (isset(self::$settingsCache[$key]) && trim((string)self::$settingsCache[$key]) !== '') {
+				return self::$settingsCache[$key];
+			}
+			return $default;
 		}
 		return $default;
 	}

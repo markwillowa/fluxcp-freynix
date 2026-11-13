@@ -88,17 +88,19 @@ if (count($_POST)) {
 	}
 
 	// Handle Active Theme Switcher
-	$chosenTheme = trim((string)$params->get('active_theme'));
-	if (!empty($chosenTheme) && in_array($chosenTheme, array('celestial', 'freynix'))) {
+	$chosenTheme = trim((string)($params->get('active_theme') ?: ($_POST['active_theme'] ?? '')));
+	$validThemes = array('nexus', 'dominion', 'celestial', 'freynix', 'default');
+	if (!empty($chosenTheme) && in_array($chosenTheme, $validThemes)) {
 		Flux_CMS::set('active_theme', $chosenTheme, $server);
 		$appConfigFile = FLUX_CONFIG_DIR . '/application.php';
 		if (file_exists($appConfigFile)) {
-			$otherTheme = ($chosenTheme === 'celestial') ? 'freynix' : 'celestial';
-			$newThemeArray = "array('{$chosenTheme}', '{$otherTheme}', 'default', 'bootstrap')";
+			$remaining = array_values(array_diff($validThemes, array($chosenTheme)));
+			$allOrdered = array_merge(array($chosenTheme), $remaining, array('bootstrap'));
+			$newThemeArray = "array('" . implode("', '", $allOrdered) . "')";
 			$appContent = file_get_contents($appConfigFile);
 			$appContent = preg_replace("/('ThemeName'\s*=>\s*)array\([^)]+\),/", "$1{$newThemeArray},", $appContent);
 			file_put_contents($appConfigFile, $appContent);
-			Flux::config('ThemeName', array($chosenTheme, $otherTheme, 'default', 'bootstrap'));
+			Flux::config('ThemeName', $allOrdered);
 			$session->setThemeData($chosenTheme);
 		}
 	}
