@@ -391,17 +391,35 @@ $cms = $cmsSettings ?? array();
 			</p>
 
 			<div class="inst-grid-2">
-				<!-- Theme 1: Arcane Nexus V5 (Recommended) -->
-				<label style="display: flex; gap: 16px; background: rgba(0, 217, 245, 0.06); border: 2px solid rgba(0, 217, 245, 0.45); padding: 20px; border-radius: var(--radius-lg); cursor: pointer; transition: all 0.2s; grid-column: span 2;">
-					<input type="radio" name="chosen_theme" value="nexus" checked style="width: auto; margin-top: 4px;" />
+				<!-- Theme 0: Classic Adventure V6 (New & Recommended) -->
+				<label style="display: flex; gap: 16px; background: rgba(212, 166, 74, 0.08); border: 2px solid rgba(212, 166, 74, 0.55); padding: 20px; border-radius: var(--radius-lg); cursor: pointer; transition: all 0.2s; grid-column: span 2;">
+					<input type="radio" name="chosen_theme" value="adventure" checked style="width: auto; margin-top: 4px;" />
+					<div style="flex: 1;">
+						<div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+							<strong style="color: #D4A64A; font-size: 1.15rem;">
+								Classic Adventure V6 (Pre-Renewal Town Portal)
+							</strong>
+							<span style="background: rgba(212, 166, 74, 0.25); border: 1px solid rgba(212, 166, 74, 0.6); color: #F0C968; font-size: 0.72rem; font-weight: 800; padding: 2px 10px; border-radius: 999px; text-transform: uppercase;">
+								New V6 &bull; Pre-Renewal Era
+							</span>
+						</div>
+						<span style="color: #F8E7C5; font-size: 0.82rem; font-weight: 600; display: block; margin-top: 3px;">
+							Classic Nostalgic Ragnarok Online &bull; Prontera Skies, Warm Oak Wood &amp; Adventurer Notice Board
+						</span>
+						<p style="color: var(--inst-text-muted); font-size: 0.86rem; margin-top: 8px; line-height: 1.5;">
+							A bright, nostalgic adventurer's town portal inspired by the classic Pre-Renewal era. Features a top adventurer bar, wooden/parchment navigation, Prontera hero scene, adventurer notice board with pins, and modular town outposts.
+						</p>
+					</div>
+				</label>
+
+				<!-- Theme 1: Arcane Nexus V5 -->
+				<label style="display: flex; gap: 16px; background: rgba(0, 217, 245, 0.06); border: 2px solid rgba(0, 217, 245, 0.45); padding: 20px; border-radius: var(--radius-lg); cursor: pointer; transition: all 0.2s;">
+					<input type="radio" name="chosen_theme" value="nexus" style="width: auto; margin-top: 4px;" />
 					<div style="flex: 1;">
 						<div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
 							<strong style="color: #00D9F5; font-size: 1.15rem;">
 								Arcane Nexus V5
 							</strong>
-							<span style="background: rgba(0, 217, 245, 0.2); border: 1px solid rgba(0, 217, 245, 0.5); color: #00D9F5; font-size: 0.72rem; font-weight: 800; padding: 2px 10px; border-radius: 999px; text-transform: uppercase;">
-								Recommended &bull; Latest V5
-							</span>
 						</div>
 						<span style="color: #A5F3FC; font-size: 0.82rem; font-weight: 600; display: block; margin-top: 3px;">
 							Cyber-Arcane Anime-Fantasy &bull; Void Black, Neon Cyan &amp; Arcane Violet

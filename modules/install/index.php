@@ -150,7 +150,10 @@ if (!function_exists('installCustomCmsTables')) {
 			$chkNews = $server->connection->getStatement("SELECT COUNT(*) FROM {$db}.cp_cmsnews");
 			$chkNews->execute();
 			if ($chkNews->fetchColumn() == 0) {
-				if ($theme === 'nexus') {
+				if ($theme === 'adventure') {
+					$welcomeTitle = 'Welcome to Classic Adventure!';
+					$welcomeBody = '<p>Welcome to our classic Ragnarok Online Pre-Renewal realm! Gather your party, explore the fields of Prontera, and embark on a golden age MMORPG adventure.</p>';
+				} elseif ($theme === 'nexus') {
 					$welcomeTitle = 'Welcome to Arcane Nexus!';
 					$welcomeBody = '<p>Welcome to our cyber-arcane anime-fantasy realm! Harness ancient magic and advanced technology to conquer castles and define your destiny.</p>';
 				} elseif ($theme === 'dominion') {
@@ -673,15 +676,15 @@ if ($currentStep === 2) {
 // Handle Step 2: Save Server Details & Theme Setup
 if ($currentStep === 2 && $params->get('save_server_config')) {
 	$chosenTheme = trim((string)$params->get('chosen_theme'));
-	$validThemes = array('nexus', 'dominion', 'celestial', 'freynix', 'default');
+	$validThemes = array('adventure', 'nexus', 'dominion', 'celestial', 'freynix', 'default');
 	if (!in_array($chosenTheme, $validThemes)) {
-		$chosenTheme = 'nexus';
+		$chosenTheme = 'adventure';
 	}
 
 	// Update ThemeName in config/application.php
 	$appConfigFile = FLUX_CONFIG_DIR . '/application.php';
 	if (file_exists($appConfigFile)) {
-		$allThemes = array('nexus', 'dominion', 'celestial', 'freynix', 'default', 'bootstrap');
+		$allThemes = array('adventure', 'nexus', 'dominion', 'celestial', 'freynix', 'default', 'bootstrap');
 		$orderedThemes = array_merge(array($chosenTheme), array_diff($allThemes, array($chosenTheme)));
 		$newThemeArray = "array('" . implode("', '", $orderedThemes) . "')";
 		$appContent = file_get_contents($appConfigFile);
