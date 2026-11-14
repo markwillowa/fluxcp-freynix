@@ -391,9 +391,30 @@ $cms = $cmsSettings ?? array();
 			</p>
 
 			<div class="inst-grid-2">
-				<!-- Theme 0: Classic Adventure V6 (New & Recommended) -->
-				<label style="display: flex; gap: 16px; background: rgba(212, 166, 74, 0.08); border: 2px solid rgba(212, 166, 74, 0.55); padding: 20px; border-radius: var(--radius-lg); cursor: pointer; transition: all 0.2s; grid-column: span 2;">
-					<input type="radio" name="chosen_theme" value="adventure" checked style="width: auto; margin-top: 4px;" />
+				<!-- Theme 0: Midgardian Chronicle V7 (New & Flagship) -->
+				<label style="display: flex; gap: 16px; background: rgba(217, 164, 65, 0.12); border: 2px solid rgba(217, 164, 65, 0.75); padding: 20px; border-radius: var(--radius-lg); cursor: pointer; transition: all 0.2s; grid-column: span 2;">
+					<input type="radio" name="chosen_theme" value="chronicle" checked style="width: auto; margin-top: 4px;" />
+					<div style="flex: 1;">
+						<div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+							<strong style="color: #D9A441; font-size: 1.15rem;">
+								Midgardian Chronicle V7 (Illustrated Classic Midgard Adventure)
+							</strong>
+							<span style="background: rgba(217, 164, 65, 0.28); border: 1px solid rgba(217, 164, 65, 0.7); color: #F8DA84; font-size: 0.72rem; font-weight: 800; padding: 2px 10px; border-radius: 999px; text-transform: uppercase;">
+								Flagship V7 &bull; Pre-Renewal
+							</span>
+						</div>
+						<span style="color: #F8E7C5; font-size: 0.82rem; font-weight: 600; display: block; margin-top: 3px;">
+							"The Road to Midgard" &bull; Living Transcendent Character Party, Kingdom Atlas &amp; Town Gazette
+						</span>
+						<p style="color: var(--inst-text-muted); font-size: 0.86rem; margin-top: 8px; line-height: 1.5;">
+							An illustrated fantasy storybook and adventurer's chronicle inspired by classic Rune-Midgarts. Features an animated Transcendent adventuring party on the road to Midgard, horizontal adventurer status strip, kingdom town travel cards, and royal gazette notice boards.
+						</p>
+					</div>
+				</label>
+
+				<!-- Theme 1: Classic Adventure V6 -->
+				<label style="display: flex; gap: 16px; background: rgba(212, 166, 74, 0.08); border: 2px solid rgba(212, 166, 74, 0.45); padding: 20px; border-radius: var(--radius-lg); cursor: pointer; transition: all 0.2s; grid-column: span 2;">
+					<input type="radio" name="chosen_theme" value="adventure" style="width: auto; margin-top: 4px;" />
 					<div style="flex: 1;">
 						<div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
 							<strong style="color: #D4A64A; font-size: 1.15rem;">

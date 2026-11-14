@@ -89,7 +89,7 @@ if (count($_POST)) {
 
 	// Handle Active Theme Switcher
 	$chosenTheme = trim((string)($params->get('active_theme') ?: ($_POST['active_theme'] ?? '')));
-	$validThemes = array('adventure', 'nexus', 'dominion', 'celestial', 'freynix', 'default');
+	$validThemes = array('chronicle', 'adventure', 'nexus', 'dominion', 'celestial', 'freynix', 'default');
 	if (!empty($chosenTheme) && in_array($chosenTheme, $validThemes)) {
 		Flux_CMS::set('active_theme', $chosenTheme, $server);
 		$appConfigFile = FLUX_CONFIG_DIR . '/application.php';

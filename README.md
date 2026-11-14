@@ -2,7 +2,8 @@
 
 [![PHP Version](https://img.shields.io/badge/PHP-7.4%20|%208.0%20|%208.1%20|%208.2%20|%208.3-blue.svg)](https://php.net)
 [![rAthena](https://img.shields.io/badge/rAthena-Pre--Renewal%20|%20Renewal-orange.svg)](https://rathena.org)
-[![Themes](https://img.shields.io/badge/Themes-6%20Unique%20Layouts-brightgreen.svg)]()
+[![Themes](https://img.shields.io/badge/Themes-7%20Unique%20Layouts-brightgreen.svg)]()
+[![Midgardian Chronicle](https://img.shields.io/badge/V7-Midgardian%20Chronicle-D9A441.svg)]()
 [![Classic Adventure](https://img.shields.io/badge/V6-Classic%20Adventure-D4A64A.svg)]()
 [![Arcane Nexus](https://img.shields.io/badge/V5-Arcane%20Nexus-00D9F5.svg)]()
 [![Eternal Dominion](https://img.shields.io/badge/V4-Eternal%20Dominion-D4AD65.svg)]()
@@ -10,7 +11,7 @@
 [![Eclipse Realm](https://img.shields.io/badge/V2-Eclipse%20Realm-9D80E8.svg)]()
 [![Classic](https://img.shields.io/badge/V1-Classic%20FluxCP-gray.svg)]()
 
-A next-generation, high-performance Ragnarok Online web portal built on **Flux Control Panel (FluxCP)**. Features 6 distinct community themes: a nostalgic Pre-Renewal town portal (Classic Adventure), a bento cyber-magic command center (Arcane Nexus), dark medieval kingdom architecture (Eternal Dominion), light anime-fantasy aesthetics (Celestial Chronicle), dark gothic MMORPG portal (Eclipse Realm), a neutral two-step installation wizard, transparent vector logos, guaranteed fallbacks, dynamic CMS controls, and real-time rAthena telemetry.
+A next-generation, high-performance Ragnarok Online web portal built on **Flux Control Panel (FluxCP)**. Features 7 distinct community themes: an illustrated Pre-Renewal kingdom chronicle (Midgardian Chronicle V7), a nostalgic Pre-Renewal town portal (Classic Adventure V6), a bento cyber-magic command center (Arcane Nexus V5), dark medieval kingdom architecture (Eternal Dominion V4), light anime-fantasy aesthetics (Celestial Chronicle V3), dark gothic MMORPG portal (Eclipse Realm V2), and classic table-based administration (V1), with dynamic CMS controls, intelligent multi-tier view template fallbacks, and real-time rAthena telemetry.
 
 ---
 
@@ -18,14 +19,16 @@ A next-generation, high-performance Ragnarok Online web portal built on **Flux C
 
 - [Theme Gallery & Layout Styles](#theme-gallery--layout-styles)
 - [Key Features & Architectural Enhancements](#key-features--architectural-enhancements)
-  - [1. Classic Adventure V6 (Pre-Renewal Town Portal)](#1-classic-adventure-v6-pre-renewal-town-portal)
-  - [2. Transparent Logo System (Navigation & Footer)](#2-transparent-logo-system-navigation--footer)
-  - [3. Intelligent Floating Navigation & Logged-In User Experience](#3-intelligent-floating-navigation--logged-in-user-experience)
-  - [4. Live rAthena Telemetry & Server Command Center](#4-live-rathena-telemetry--server-command-center)
-  - [5. Reusable UI Component Library & Bento Layouts](#5-reusable-ui-component-library--bento-layouts)
-  - [6. White-Label Homepage CMS & 6-Theme Switcher](#6-white-label-homepage-cms--6-theme-switcher)
-  - [7. Two-Step Setup Wizard with All Layout Presets](#7-two-step-setup-wizard-with-all-layout-presets)
-  - [8. Complete CMS Integration (Pages, News, Downloads, Tickets)](#8-complete-cms-integration-pages-news-downloads-tickets)
+  - [1. Midgardian Chronicle V7 (Illustrated Midgard Adventure)](#1-midgardian-chronicle-v7-illustrated-midgard-adventure)
+  - [2. Classic Adventure V6 (Pre-Renewal Town Portal)](#2-classic-adventure-v6-pre-renewal-town-portal)
+  - [3. Multi-Tier View Template Fallback Architecture](#3-multi-tier-view-template-fallback-architecture)
+  - [4. Transparent Logo System (Navigation & Footer)](#4-transparent-logo-system-navigation--footer)
+  - [5. Intelligent Floating Navigation & Logged-In User Experience](#5-intelligent-floating-navigation--logged-in-user-experience)
+  - [6. Live rAthena Telemetry & Server Command Center](#6-live-rathena-telemetry--server-command-center)
+  - [7. Reusable UI Component Library & Bento Layouts](#7-reusable-ui-component-library--bento-layouts)
+  - [8. White-Label Homepage CMS & 7-Theme Switcher](#8-white-label-homepage-cms--7-theme-switcher)
+  - [9. Two-Step Setup Wizard with All Layout Presets](#9-two-step-setup-wizard-with-all-layout-presets)
+  - [10. Complete CMS Integration (Pages, News, Downloads, Tickets)](#10-complete-cms-integration-pages-news-downloads-tickets)
 - [Color Palettes & Design Tokens](#color-palettes--design-tokens)
 - [Directory Structure](#directory-structure)
 - [Installation & Quick Start](#installation--quick-start)
@@ -37,26 +40,29 @@ A next-generation, high-performance Ragnarok Online web portal built on **Flux C
 
 ## Theme Gallery & Layout Styles
 
-The platform includes **6 switchable themes**, each with distinct typography, layout structure, color schemes, and interactive elements:
+The platform includes **7 switchable themes**, each with distinct typography, layout structure, color schemes, and interactive elements:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ 1. CLASSIC ADVENTURE (V6)  │ Nostalgic Pre-Renewal town portal, warm oak    │
+│ 1. MIDGARDIAN CHRONICLE(V7)│ Illustrated Pre-Renewal kingdom chronicle,     │
+│                            │ "The Road to Midgard" party, town travel atlas.│
+├────────────────────────────┼────────────────────────────────────────────────┤
+│ 2. CLASSIC ADVENTURE (V6)  │ Nostalgic Pre-Renewal town portal, warm oak    │
 │                            │ wood, parchment notice board, Prontera skies.  │
 ├────────────────────────────┼────────────────────────────────────────────────┤
-│ 2. ARCANE NEXUS (V5)       │ Cyber-magic anime fantasy, floating capsule    │
+│ 3. ARCANE NEXUS (V5)       │ Cyber-magic anime fantasy, floating capsule    │
 │                            │ dock, bento grid, holographic telemetry.       │
 ├────────────────────────────┼────────────────────────────────────────────────┤
-│ 3. ETERNAL DOMINION (V4)   │ Dark medieval kingdom, royal gold & crimson,   │
+│ 4. ETERNAL DOMINION (V4)   │ Dark medieval kingdom, royal gold & crimson,   │
 │                            │ fortress citadel hero, rising ember particles. │
 ├────────────────────────────┼────────────────────────────────────────────────┤
-│ 4. CELESTIAL CHRONICLE (V3)│ Light anime-fantasy, skyward floating islands, │
+│ 5. CELESTIAL CHRONICLE (V3)│ Light anime-fantasy, skyward floating islands, │
 │                            │ azure & gold filigree, ethereal atmosphere.    │
 ├────────────────────────────┼────────────────────────────────────────────────┤
-│ 5. ECLIPSE REALM (V2)      │ Dark gothic MMORPG, obsidian stone, mystic     │
+│ 6. ECLIPSE REALM (V2)      │ Dark gothic MMORPG, obsidian stone, mystic     │
 │                            │ violet aura, compact portal sidebar.           │
 ├────────────────────────────┼────────────────────────────────────────────────┤
-│ 6. CLASSIC FLUXCP (V1)     │ Retro table-based layout, lightweight, zero-js  │
+│ 7. CLASSIC FLUXCP (V1)     │ Retro table-based layout, lightweight, zero-js  │
 │                            │ legacy administrator view.                     │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
@@ -65,7 +71,20 @@ The platform includes **6 switchable themes**, each with distinct typography, la
 
 ## Key Features & Architectural Enhancements
 
-### 1. Classic Adventure V6 (Pre-Renewal Town Portal)
+### 1. Midgardian Chronicle V7 (Illustrated Midgard Adventure)
+- **Illustrated Storybook Midgard Aesthetic:** Warm parchment (`#F5E8C8`), ivory (`#FFF9E8`), warm sky blue (`#83C7ED`), soft meadow green (`#9BCB78`), medieval brown (`#704A2E`), and warm gold (`#D9A441`). Handcrafted borders and parchment cards.
+- **"The Road to Midgard" Panoramic Hero Scene:**
+  - **45% Atmospheric Text / 55% Living Character Party Grid:** Floating typography with clean drop shadows and subtle frosted backing that never obstructs the panoramic rolling hills, town silhouette, or castle spires.
+  - **Dominant Frontline Vanguard:** Lord Knight stands front and center, scaled 35–40% taller than the rest of the adventuring party, equipped with a transcendent level 99 golden halo, gentle idle breathing (`@keyframes mcLeaderBreathe`), and soft cobblestone shadow.
+  - **Full Transcendent Party Formation:** Accompanied by High Wizard (arcane float), High Priest (holy devotion float), Sniper (scout sway), Assassin Cross (shadow crouch), Paladin (grand cross guard), Champion (asura guard), and a hopping Poring mascot near wooden supply crates.
+  - **Floating Sunlight Motes & Level-Up Radiance:** Ground golden radiance, rotating level-up runes ring, and drifting sunlight particles.
+- **Horizontal Adventurer's Status Board:** Positioned directly below the hero banner, featuring real-time realm status, live active adventurers in Midgard, experience rates, and level cap indicators.
+- **Kingdom Town Travel Atlas:** Interactive district travel cards for Prontera, Payon, Geffen, Morroc, Alberta, and Izlude.
+- **The Latest Chronicles (Town Gazette):** Proclamations and merchant trade bulletins styled like royal notices with category badges.
+- **Heroes of Midgard Bento:** Live rankings with gold, silver, and bronze medallions for top characters and famed guilds.
+- **Modular Party Registry (`config/theme.php`):** Server owners can freely swap, scale, or configure character sprites without modifying template HTML.
+
+### 2. Classic Adventure V6 (Pre-Renewal Town Portal)
 - **Classic Nostalgic Visual Language:** Recreates the bright, cheerful, welcoming atmosphere of early Ragnarok Online (Prontera streets, training grounds, tavern notice boards, and classic item shops). Avoids dark, cyber, or esports aesthetics.
 - **Top Adventurer Information Bar:** Live server status indicator with active player counts, experience rates (`1000x BASE EXP • 1000x JOB EXP • PRE-RENEWAL`), Discord/Facebook outposts, and quick authentication.
 - **Warm Oak Wood & Parchment Navigation:** Polished wood grain navbar, transparent guild crest emblem (`adventure-logo.png`), dynamic navigation links from `cp_navigation`, and an account pill with credit balance.
@@ -79,6 +98,16 @@ The platform includes **6 switchable themes**, each with distinct typography, la
 - **Town Bento Grid:** Reusable content outposts representing *The Adventurer's Guild*, *Kafra Item Shop*, *Training Grounds*, *Battle Arena*, *Adventurer Tavern*, and *Hall of Fame*.
 - **Pre-Renewal Class Showcase:** Interactive showcase for Swordsman, Archer, Mage, Acolyte, Merchant, Thief, Monk, and Crusader with original classic sprites.
 - **Supply Depot (Downloads):** Classic game client download center supporting Full Client, Lite Patcher, Manual Patches, and an interactive 3-minute setup guide.
+
+### 3. Multi-Tier View Template Fallback Architecture
+- **Automatic Template Resolution:** Built directly into `lib/Flux/Template.php`, FluxCP resolves views across a 5-tier inheritance hierarchy:
+  1. `themes/<current_theme>/<module>/<action>.php`
+  2. `themes/<parent_theme>/<module>/<action>.php`
+  3. `addons/<addon>/themes/<theme>/<module>/<action>.php`
+  4. Configured themes in `ThemeName` array
+  5. Ultimate terminal fallback: `themes/default/<module>/<action>.php`
+- **Zero Missing View Notices:** Resolves PHP notices such as `Notice: The requested view template (ranking/death) is not found in the current theme` by safely casting `Flux_Config` objects to arrays and guaranteeing fallback to `default` views whenever a custom theme chooses not to override a specific secondary module.
+- **Native Custom Ranking Templates:** Both `adventure` and `chronicle` provide dedicated, beautifully styled ranking templates for `character`, `guild`, `zeny`, `death`, `alchemist`, `blacksmith`, `homunculus`, and `mvp`.
 
 ### 2. Transparent Logo System (Navigation & Footer)
 - **True 32-Bit Alpha Channels:** Every theme includes an optimized 32-bit transparent PNG logo (`adventure-logo.png`, `nexus-logo.png`, `dominion-logo.png`, `celestial-logo.png`, `logo.png`) with zero solid or black background boxes.
@@ -115,9 +144,9 @@ The platform includes **6 switchable themes**, each with distinct typography, la
   - Flash message notification banners (Success, Danger, Notice).
   - Modal confirmation dialogs for critical actions.
 
-### 6. White-Label Homepage CMS & 6-Theme Switcher
+### 8. White-Label Homepage CMS & 7-Theme Switcher
 Accessible at `?module=homepage` for administrators:
-- **6-Theme Switcher Cards:** Select between **Classic Adventure**, **Arcane Nexus**, **Eternal Dominion**, **Celestial Chronicle**, **Eclipse Realm**, or **Classic FluxCP** with instant live preview.
+- **7-Theme Switcher Cards:** Select between **Midgardian Chronicle (V7)**, **Classic Adventure (V6)**, **Arcane Nexus (V5)**, **Eternal Dominion (V4)**, **Celestial Chronicle (V3)**, **Eclipse Realm (V2)**, or **Classic FluxCP (V1)** with instant live preview.
 - **Server Identity:** Update server brand name, slogan, logo URL, and footer disclaimer in real time.
 - **Section Visibility Toggles:** Toggle Hero, Live Stats Strip, News Grid, Rankings, Download Widget, or Discord callout.
 - **Feature Cards Editor:** Customize 6 modular cards with custom headlines, icons, descriptions, and destination links.
@@ -208,7 +237,7 @@ htdocs/fluxcp-freynix/
 │   │   └── Template.php         # Theme rendering engine
 │   └── Flux.php                 # Core framework bootstrap
 ├── modules/
-│   ├── homepage/                # Homepage CMS & 6-Theme Switcher
+│   ├── homepage/                # Homepage CMS & 7-Theme Switcher
 │   ├── install/                 # Two-Step setup & Re-Install wizard
 │   ├── news/                    # Announcement manager & reader
 │   ├── pages/                   # Codex document manager
@@ -216,6 +245,15 @@ htdocs/fluxcp-freynix/
 │   ├── servicedesk/             # ITIL support ticket system
 │   └── ranking/                 # Character, Guild, and MVP ladders
 └── themes/
+    ├── chronicle/               # Midgardian Chronicle (Theme V7)
+    │   ├── config/theme.php     # Character party & town atlas registry
+    │   ├── css/chronicle.css    # Parchment & ivory kingdom design system
+    │   ├── css/hero.css         # "The Road to Midgard" living party scene
+    │   ├── img/chronicle-logo.png # Transparent 32-bit PNG title emblem
+    │   ├── img/chronicle-seal.png # Transparent 32-bit PNG guild seal
+    │   ├── img/hero/road-to-midgard.jpg # Panoramic adventure scene
+    │   ├── main/navbar.php      # Kingdom topbar & seal header
+    │   └── footer.php           # Kingdom footer & community links
     ├── adventure/               # Classic Adventure (Theme V6)
     │   ├── css/adventure.css    # Classic Pre-Renewal design system
     │   ├── img/adventure-logo.png# Transparent 32-bit PNG guild crest
@@ -269,7 +307,7 @@ htdocs/fluxcp-freynix/
   - Review database schema migrations.
   - Click **"Continue to Server & Theme Setup &rarr;"**.
 - **Step 2 (Server & Theme Setup):**
-  - Select your preferred layout from the 6 visual cards (**Classic Adventure**, **Arcane Nexus**, **Eternal Dominion**, **Celestial Chronicle**, **Eclipse Realm**, or **Classic FluxCP**).
+  - Select your preferred layout from the 7 visual cards (**Midgardian Chronicle**, **Classic Adventure**, **Arcane Nexus**, **Eternal Dominion**, **Celestial Chronicle**, **Eclipse Realm**, or **Classic FluxCP**).
   - Enter your **Server Name**, **Slogan**, **EXP / Drop Rates**, **Level Caps**, and **Client Download Mirrors**.
   - Click **"Save Configuration & Launch Website"**.
   - The wizard finalizes setup and redirects directly to your live, fully-styled MMORPG portal.
@@ -282,6 +320,7 @@ htdocs/fluxcp-freynix/
 1. Log in with an administrator account (`group_level >= 20` or configured `AdminMenuGroupLevel`).
 2. In the navigation bar, click the user pill and select **Staff Panel &rarr; Homepage & Theme CMS** (`?module=homepage`).
 3. Under **Theme & Layout Selection**, select your preferred layout card:
+   - **Midgardian Chronicle (V7)**
    - **Classic Adventure (V6)**
    - **Arcane Nexus (V5)**
    - **Eternal Dominion (V4)**
