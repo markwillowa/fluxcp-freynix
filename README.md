@@ -137,6 +137,7 @@ Accessible at `?module=install`:
   - Submitting configuration binds settings and transitions seamlessly to the live website without redirect loops.
 
 ### 8. Complete CMS Integration (Pages, News, Downloads, Tickets)
+- **Automatic Template Inheritance & Fallback Engine:** Solved missing view notices (`ranking/death`, `ranking/alchemist`, `ranking/blacksmith`, `ranking/zeny`, `ranking/mvp`, etc.). If a custom theme does not define a specific action template, `Flux_Template` safely evaluates configured themes and gracefully falls back to `themes/default/` without throwing missing view notices or broken layouts.
 - **Pages Module (`?module=pages`):** Custom CMS pages (Rules, FAQ, Guides, Donation info) rendered within the active theme layout.
 - **News Module (`?module=news`):** Rich announcements with HTML support, category badges, author tags, and pagination.
 - **Downloads Module (`?module=downloads`):** Multi-mirror distribution supporting Full Client, Lite Client, and patches.

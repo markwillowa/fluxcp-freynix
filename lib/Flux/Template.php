@@ -397,8 +397,17 @@ class Flux_Template {
 			include $this->headerPath;
 		}
 	
-		if (!empty($this->viewPath) && file_exists($this->viewPath)) {
-			include $this->viewPath;
+		$actualView = '';
+		if (!empty($this->viewPath)) {
+			if (file_exists($this->viewPath)) {
+				$actualView = $this->viewPath;
+			} elseif (file_exists(FLUX_ROOT . '/' . $this->viewPath)) {
+				$actualView = FLUX_ROOT . '/' . $this->viewPath;
+			}
+		}
+
+		if (!empty($actualView)) {
+			include $actualView;
 		} elseif (!empty($this->viewPath)) {
 			echo '<div style="padding: 20px; margin: 15px 0; background: #fff3cd; border: 1px solid #ffeeba; color: #856404; border-radius: 4px;">';
 			echo '<p><strong>Notice:</strong> The requested view template (<code>' . htmlspecialchars($this->moduleName . '/' . $this->actionName) . '</code>) is not found in the current theme.</p>';
@@ -608,16 +617,26 @@ class Flux_Template {
 
 		if (!file_exists($chk)) {
 			$configuredThemes = Flux::config('ThemeName');
-			if (is_array($configuredThemes)) {
-				foreach ($configuredThemes as $altTheme) {
-					if ($altTheme === $this->themeName) continue;
-					$altUri = $this->path("{$this->themePath}/{$altTheme}/{$path}", $included);
-					$altChk = FLUX_ROOT . '/' . preg_replace('/^(' . $base . ')/', '', $altUri);
-					if (file_exists($altChk)) {
-						$uri = $altUri;
-						$chk = $altChk;
-						break;
-					}
+			$altThemes = array();
+			if (is_object($configuredThemes) && method_exists($configuredThemes, 'toArray')) {
+				$altThemes = $configuredThemes->toArray();
+			} elseif (is_array($configuredThemes)) {
+				$altThemes = $configuredThemes;
+			} elseif (!empty($configuredThemes)) {
+				$altThemes = array((string)$configuredThemes);
+			}
+			if (!in_array('default', $altThemes)) {
+				$altThemes[] = 'default';
+			}
+
+			foreach ($altThemes as $altTheme) {
+				if (empty($altTheme) || $altTheme === $this->themeName) continue;
+				$altUri = $this->path("{$this->themePath}/{$altTheme}/{$path}", $included);
+				$altChk = FLUX_ROOT . '/' . preg_replace('/^(' . $base . ')/', '', $altUri);
+				if (file_exists($altChk)) {
+					$uri = $altUri;
+					$chk = $altChk;
+					break;
 				}
 			}
 		}
