@@ -2,7 +2,8 @@
 
 [![PHP Version](https://img.shields.io/badge/PHP-7.4%20|%208.0%20|%208.1%20|%208.2%20|%208.3-blue.svg)](https://php.net)
 [![rAthena](https://img.shields.io/badge/rAthena-Pre--Renewal%20|%20Renewal-orange.svg)](https://rathena.org)
-[![Themes](https://img.shields.io/badge/Themes-8%20Unique%20Layouts-brightgreen.svg)]()
+[![Themes](https://img.shields.io/badge/Themes-9%20Unique%20Layouts-brightgreen.svg)]()
+[![Elysian Midgard](https://img.shields.io/badge/V9-Elysian%20Midgard%20Cinematic-C59A3F.svg)]()
 [![Aetherium](https://img.shields.io/badge/V8-Aetherium%20Studio-B88A3B.svg)]()
 [![Midgardian Chronicle](https://img.shields.io/badge/V7-Midgardian%20Chronicle-D9A441.svg)]()
 [![Classic Adventure](https://img.shields.io/badge/V6-Classic%20Adventure-D4A64A.svg)]()
@@ -12,7 +13,7 @@
 [![Eclipse Realm](https://img.shields.io/badge/V2-Eclipse%20Realm-9D80E8.svg)]()
 [![Classic](https://img.shields.io/badge/V1-Classic%20FluxCP-gray.svg)]()
 
-A next-generation, high-performance Ragnarok Online web portal built on **Flux Control Panel (FluxCP)**. Features 8 distinct community themes: a studio-grade digital home and command platform (Aetherium V8), an illustrated Pre-Renewal kingdom chronicle (Midgardian Chronicle V7), a nostalgic Pre-Renewal town portal (Classic Adventure V6), a bento cyber-magic command center (Arcane Nexus V5), dark medieval kingdom architecture (Eternal Dominion V4), light anime-fantasy aesthetics (Celestial Chronicle V3), dark gothic MMORPG portal (Eclipse Realm V2), and classic table-based administration (V1), with dynamic CMS controls, intelligent multi-tier view template fallbacks, and real-time rAthena telemetry.
+A next-generation, high-performance Ragnarok Online web portal built on **Flux Control Panel (FluxCP)**. Features 9 distinct community themes: a flagship cinematic MMORPG portal (Elysian Midgard V9), a studio-grade digital home and command platform (Aetherium V8), an illustrated Pre-Renewal kingdom chronicle (Midgardian Chronicle V7), a nostalgic Pre-Renewal town portal (Classic Adventure V6), a bento cyber-magic command center (Arcane Nexus V5), dark medieval kingdom architecture (Eternal Dominion V4), light anime-fantasy aesthetics (Celestial Chronicle V3), dark gothic MMORPG portal (Eclipse Realm V2), and classic table-based administration (V1), with dynamic CMS controls, intelligent multi-tier view template fallbacks, and real-time rAthena telemetry.
 
 ---
 
@@ -20,9 +21,10 @@ A next-generation, high-performance Ragnarok Online web portal built on **Flux C
 
 - [Theme Gallery & Layout Styles](#theme-gallery--layout-styles)
 - [Key Features & Architectural Enhancements](#key-features--architectural-enhancements)
-  - [1. Aetherium V8 (Studio-Grade Premium MMORPG Platform)](#1-aetherium-v8-studio-grade-premium-mmorpg-platform)
-  - [2. Midgardian Chronicle V7 (Illustrated Midgard Adventure)](#2-midgardian-chronicle-v7-illustrated-midgard-adventure)
-  - [3. Classic Adventure V6 (Pre-Renewal Town Portal)](#3-classic-adventure-v6-pre-renewal-town-portal)
+  - [1. Elysian Midgard V9 (Flagship Cinematic MMORPG Portal)](#1-elysian-midgard-v9-flagship-cinematic-mmorpg-portal)
+  - [2. Aetherium V8 (Studio-Grade Premium MMORPG Platform)](#2-aetherium-v8-studio-grade-premium-mmorpg-platform)
+  - [3. Midgardian Chronicle V7 (Illustrated Midgard Adventure)](#3-midgardian-chronicle-v7-illustrated-midgard-adventure)
+  - [4. Classic Adventure V6 (Pre-Renewal Town Portal)](#4-classic-adventure-v6-pre-renewal-town-portal)
   - [3. Multi-Tier View Template Fallback Architecture](#3-multi-tier-view-template-fallback-architecture)
   - [4. Transparent Logo System (Navigation & Footer)](#4-transparent-logo-system-navigation--footer)
   - [5. Intelligent Floating Navigation & Logged-In User Experience](#5-intelligent-floating-navigation--logged-in-user-experience)
@@ -42,32 +44,35 @@ A next-generation, high-performance Ragnarok Online web portal built on **Flux C
 
 ## Theme Gallery & Layout Styles
 
-The platform includes **8 switchable themes**, each with distinct typography, layout structure, color schemes, and interactive elements:
+The platform includes **9 switchable themes**, each with distinct typography, layout structure, color schemes, and interactive elements:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ 1. AETHERIUM (V8)          │ Studio-grade editorial digital platform,        │
+│ 1. ELYSIAN MIDGARD (V9)    │ Flagship cinematic MMORPG portal, 95vh hero,   │
+│                            │ living party, world atlas, character cinema.   │
+├────────────────────────────┼────────────────────────────────────────────────┤
+│ 2. AETHERIUM (V8)          │ Studio-grade editorial digital platform,        │
 │                            │ overlook hero, character legacy, command center.│
 ├────────────────────────────┼────────────────────────────────────────────────┤
-│ 2. MIDGARDIAN CHRONICLE(V7)│ Illustrated Pre-Renewal kingdom chronicle,     │
+│ 3. MIDGARDIAN CHRONICLE(V7)│ Illustrated Pre-Renewal kingdom chronicle,     │
 │                            │ "The Road to Midgard" party, town travel atlas.│
 ├────────────────────────────┼────────────────────────────────────────────────┤
-│ 3. CLASSIC ADVENTURE (V6)  │ Nostalgic Pre-Renewal town portal, warm oak    │
+│ 4. CLASSIC ADVENTURE (V6)  │ Nostalgic Pre-Renewal town portal, warm oak    │
 │                            │ wood, parchment notice board, Prontera skies.  │
 ├────────────────────────────┼────────────────────────────────────────────────┤
-│ 4. ARCANE NEXUS (V5)       │ Cyber-magic anime fantasy, floating capsule    │
+│ 5. ARCANE NEXUS (V5)       │ Cyber-magic anime fantasy, floating capsule    │
 │                            │ dock, bento grid, holographic telemetry.       │
 ├────────────────────────────┼────────────────────────────────────────────────┤
-│ 5. ETERNAL DOMINION (V4)   │ Dark medieval kingdom, royal gold & crimson,   │
+│ 6. ETERNAL DOMINION (V4)   │ Dark medieval kingdom, royal gold & crimson,   │
 │                            │ fortress citadel hero, rising ember particles. │
 ├────────────────────────────┼────────────────────────────────────────────────┤
-│ 6. CELESTIAL CHRONICLE (V3)│ Light anime-fantasy, skyward floating islands, │
+│ 7. CELESTIAL CHRONICLE (V3)│ Light anime-fantasy, skyward floating islands, │
 │                            │ azure & gold filigree, ethereal atmosphere.    │
 ├────────────────────────────┼────────────────────────────────────────────────┤
-│ 7. ECLIPSE REALM (V2)      │ Dark gothic MMORPG, obsidian stone, mystic     │
+│ 8. ECLIPSE REALM (V2)      │ Dark gothic MMORPG, obsidian stone, mystic     │
 │                            │ violet aura, compact portal sidebar.           │
 ├────────────────────────────┼────────────────────────────────────────────────┤
-│ 8. CLASSIC FLUXCP (V1)     │ Retro table-based layout, lightweight, zero-js  │
+│ 9. CLASSIC FLUXCP (V1)     │ Retro table-based layout, lightweight, zero-js  │
 │                            │ legacy administrator view.                     │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
@@ -76,7 +81,24 @@ The platform includes **8 switchable themes**, each with distinct typography, la
 
 ## Key Features & Architectural Enhancements
 
-### 1. Aetherium V8 (Studio-Grade Premium MMORPG Platform)
+### 1. Elysian Midgard V9 (Flagship Cinematic MMORPG Portal)
+- **Alternating Visual Rhythm**: Continuously shifts visual atmospheres across 12 distinct sections (Bright Fantasy Sunrise &rarr; Warm Light Editorial &rarr; Deep Blue Astral Cinema &rarr; Antique Parchment Atlas &rarr; Dark Volcanic Arena &rarr; Dark Castle Embers &rarr; White Podium Rankings &rarr; Magazine News &rarr; Royal Blue Publisher Footer).
+- **Cinematic 95vh Hero Overlook**: Living Transcendent party (Lord Knight vanguard with sword and shield, High Wizard with raised staff, High Priest with holy aura, Sniper, Assassin Cross, Paladin, Champion, and hopping Poring mascot) with unsynchronized breathing animations, drifting sunlight motes, and floating clouds.
+- **Floating Environmental HUD**: Runic parchments integrated into the world displaying `Next War of Emperium`, `MVP Defeat Alert`, and `Guild Rank #1`.
+- **Character Cinema Showcase ("Choose Your Legacy")**: Rotating runic summoning circle, full-body artwork, pixel-art accents, and interactive job switcher across 8 Transcendent classes.
+- **Interactive World Atlas (11 Locations)**: Prontera, Payon, Geffen, Morroc, Alberta, Izlude, Aldebaran, Comodo, Lutie, Glast Heim, and Clock Tower with glowing map pins, coordinates, and smooth lore card transitions.
+- **Midgard Live Command Center**: Animated counter count-ups for active players, server uptime (99.98%), experience rates, and a live dispatch activity feed.
+- **The Hunt Begins (MVP Showcase)**: Dark ruins arena with real-time hunt status badges, respawn countdowns, monster avatars, and rare drop cards.
+- **The Dungeon Journey**: 5-stage horizontal progression road detailing leveling tiers, danger ratings, and dungeon bosses.
+- **Castle War (War of Emperium)**: Dramatic castle siege atmosphere with flying embers, siege window schedules, and reigning guild spotlight.
+- **Legends of Midgard (Podium Leaderboard)**: Olympic-style `#2`, `#1`, `#3` podium presentation for top heroes and guilds.
+- **Personalized Player Dashboard**: Dynamic greeting (`WELCOME BACK, ADVENTURER`) displaying the logged-in player's character name, class, level, zeny, and PvP standing.
+- **Staff Controls with Scroll Container**: Dedicated scrollable management list (`max-height: 200px; overflow-y: auto`) for Homepage CMS, Announcements, Codex, Navigation, and Downloads.
+- **Custom Desktop Cursor & Gold Scrollbar**: Subtle golden tracking dot and expanding hover ring + gold-gradient scrollbar.
+- **Zero Stray Mobile Elements**: Strict media query separation ensuring no mobile toggle buttons leak onto desktop viewports.
+- **100% White-Label & Community-Ready**: Free of hardcoded server names; completely driven by `config/theme.php` and Flux CMS.
+
+### 2. Aetherium V8 (Studio-Grade Premium MMORPG Platform)
 - **Professional Game Studio Aesthetic:** Built with a sophisticated neutral foundation—cream (`#F7F7F5`), pure white (`#FFFFFF`), deep charcoal (`#151515`), and luxurious muted gold (`#B88A3B` / `#D6B56C`). Features generous editorial whitespace, refined borders, and subtle elevation shadows instead of dark gradients or generic box clutter.
 - **Editorial Typography Pairing:** Classic serif headlines (`Cormorant Garamond` / `Cinzel`) paired with crisp, highly readable modern sans-serif body typography (`Inter` / `Manrope`).
 - **Cinematic Overlook Panoramic Hero ("ENTER A WORLD WORTH RETURNING TO"):**

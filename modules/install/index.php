@@ -150,7 +150,10 @@ if (!function_exists('installCustomCmsTables')) {
 			$chkNews = $server->connection->getStatement("SELECT COUNT(*) FROM {$db}.cp_cmsnews");
 			$chkNews->execute();
 			if ($chkNews->fetchColumn() == 0) {
-				if ($theme === 'aetherium') {
+				if ($theme === 'elysian') {
+					$welcomeTitle = 'Welcome to Elysian Midgard!';
+					$welcomeBody = '<p>Welcome to our flagship cinematic Pre-Renewal Ragnarok Online experience! The world remembers your name. Choose your legacy, explore the world atlas, and unite with your guild to conquer fortress castles.</p>';
+				} elseif ($theme === 'aetherium') {
 					$welcomeTitle = 'Welcome to Aetherium!';
 					$welcomeBody = '<p>Welcome to our studio-grade Pre-Renewal Ragnarok Online platform! Enter a world worth returning to, master your transcendent legacy, and command your guild in sovereign siege warfare.</p>';
 				} elseif ($theme === 'chronicle') {
@@ -682,15 +685,15 @@ if ($currentStep === 2) {
 // Handle Step 2: Save Server Details & Theme Setup
 if ($currentStep === 2 && $params->get('save_server_config')) {
 	$chosenTheme = trim((string)$params->get('chosen_theme'));
-	$validThemes = array('aetherium', 'chronicle', 'adventure', 'nexus', 'dominion', 'celestial', 'freynix', 'default');
+	$validThemes = array('elysian', 'aetherium', 'chronicle', 'adventure', 'nexus', 'dominion', 'celestial', 'freynix', 'default');
 	if (!in_array($chosenTheme, $validThemes)) {
-		$chosenTheme = 'aetherium';
+		$chosenTheme = 'elysian';
 	}
 
 	// Update ThemeName in config/application.php
 	$appConfigFile = FLUX_CONFIG_DIR . '/application.php';
 	if (file_exists($appConfigFile)) {
-		$allThemes = array('aetherium', 'chronicle', 'adventure', 'nexus', 'dominion', 'celestial', 'freynix', 'default', 'bootstrap');
+		$allThemes = array('elysian', 'aetherium', 'chronicle', 'adventure', 'nexus', 'dominion', 'celestial', 'freynix', 'default', 'bootstrap');
 		$orderedThemes = array_merge(array($chosenTheme), array_diff($allThemes, array($chosenTheme)));
 		$newThemeArray = "array('" . implode("', '", $orderedThemes) . "')";
 		$appContent = file_get_contents($appConfigFile);

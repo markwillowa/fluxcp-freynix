@@ -47,6 +47,16 @@
 			<td>
 				<?php $curTheme = Flux::config('ThemeName.0') ?: ($settings['active_theme'] ?? 'default'); ?>
 				<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin: 8px 0;">
+					<label style="border: 2px solid #C59A3F; padding: 10px; background: <?php echo ($curTheme === 'elysian') ? '#FFFDF5' : '#fff' ?>; display: block; cursor: pointer;">
+						<input type="radio" name="active_theme" value="elysian" <?php if ($curTheme === 'elysian') echo 'checked="checked"' ?> />
+						<strong style="color: #8C6818;">Elysian Midgard V9 (Flagship)</strong><br />
+						<small>Cinematic Living Hero &bull; Atlas</small>
+					</label>
+					<label style="border: 2px solid #B88A3B; padding: 10px; background: <?php echo ($curTheme === 'aetherium') ? '#FFFDF9' : '#fff' ?>; display: block; cursor: pointer;">
+						<input type="radio" name="active_theme" value="aetherium" <?php if ($curTheme === 'aetherium') echo 'checked="checked"' ?> />
+						<strong style="color: #B88A3B;">Aetherium V8 (Studio)</strong><br />
+						<small>Minimal Editorial Overlook Hero</small>
+					</label>
 					<label style="border: 1px solid #00D9F5; padding: 10px; background: <?php echo ($curTheme === 'nexus') ? '#e9ecef' : '#fff' ?>; display: block; cursor: pointer;">
 						<input type="radio" name="active_theme" value="nexus" <?php if ($curTheme === 'nexus') echo 'checked="checked"' ?> />
 						<strong style="color: #007799;">Arcane Nexus V5</strong><br />

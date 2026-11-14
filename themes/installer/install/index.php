@@ -391,9 +391,30 @@ $cms = $cmsSettings ?? array();
 			</p>
 
 			<div class="inst-grid-2">
-				<!-- Theme 0: Aetherium V8 (Flagship Studio-Grade Platform) -->
-				<label style="display: flex; gap: 16px; background: rgba(184, 138, 59, 0.15); border: 2px solid rgba(184, 138, 59, 0.85); padding: 20px; border-radius: var(--radius-lg); cursor: pointer; transition: all 0.2s; grid-column: span 2;">
-					<input type="radio" name="chosen_theme" value="aetherium" checked style="width: auto; margin-top: 4px;" />
+				<!-- Theme 0: Elysian Midgard V9 (Flagship Cinematic MMORPG Portal) -->
+				<label style="display: flex; gap: 16px; background: rgba(197, 154, 63, 0.18); border: 2px solid rgba(197, 154, 63, 0.95); padding: 20px; border-radius: var(--radius-lg); cursor: pointer; transition: all 0.2s; grid-column: span 2;">
+					<input type="radio" name="chosen_theme" value="elysian" checked style="width: auto; margin-top: 4px;" />
+					<div style="flex: 1;">
+						<div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+							<strong style="color: #F5DF9E; font-size: 1.22rem; font-family: 'Cinzel', serif;">
+								Elysian Midgard V9 (Flagship Cinematic MMORPG Portal)
+							</strong>
+							<span style="background: rgba(197, 154, 63, 0.35); border: 1px solid rgba(245, 223, 158, 0.9); color: #FFF; font-size: 0.72rem; font-weight: 800; padding: 2px 10px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.05em;">
+								Flagship V9 &bull; Cinematic Edition
+							</span>
+						</div>
+						<span style="color: #E8D5B0; font-size: 0.84rem; font-weight: 600; display: block; margin-top: 3px;">
+							"The World Remembers Your Name" &bull; 95vh Living Overlook Hero, Transcendent Character Cinema, 11-Location Interactive Atlas &amp; Castle Siege
+						</span>
+						<p style="color: var(--inst-text-muted); font-size: 0.86rem; margin-top: 8px; line-height: 1.5;">
+							A rich, cinematic, highly detailed MMORPG game publisher portal with alternating visual rhythms (Bright Fantasy &rarr; Light Parchment &rarr; Deep Blue Astral &rarr; Light Fantasy Atlas &rarr; Dark Castle Siege &rarr; Magazine News &rarr; Royal Blue Community). Features living character party animations, interactive world map camera, animated telemetry count-up counters, horizontal dungeon journey road, MVP hunt showcase, Olympic-style ranking podium, personalized logged-in player greeting, custom gold scrollbar, subtle custom cursor, and scrollable Staff Controls.
+						</p>
+					</div>
+				</label>
+
+				<!-- Theme 1: Aetherium V8 (Flagship Studio-Grade Platform) -->
+				<label style="display: flex; gap: 16px; background: rgba(184, 138, 59, 0.12); border: 2px solid rgba(184, 138, 59, 0.65); padding: 20px; border-radius: var(--radius-lg); cursor: pointer; transition: all 0.2s; grid-column: span 2;">
+					<input type="radio" name="chosen_theme" value="aetherium" style="width: auto; margin-top: 4px;" />
 					<div style="flex: 1;">
 						<div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
 							<strong style="color: #D6B56C; font-size: 1.18rem; font-family: 'Cinzel', serif;">
