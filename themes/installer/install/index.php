@@ -391,16 +391,37 @@ $cms = $cmsSettings ?? array();
 			</p>
 
 			<div class="inst-grid-2">
-				<!-- Theme 0: Midgardian Chronicle V7 (New & Flagship) -->
-				<label style="display: flex; gap: 16px; background: rgba(217, 164, 65, 0.12); border: 2px solid rgba(217, 164, 65, 0.75); padding: 20px; border-radius: var(--radius-lg); cursor: pointer; transition: all 0.2s; grid-column: span 2;">
-					<input type="radio" name="chosen_theme" value="chronicle" checked style="width: auto; margin-top: 4px;" />
+				<!-- Theme 0: Aetherium V8 (Flagship Studio-Grade Platform) -->
+				<label style="display: flex; gap: 16px; background: rgba(184, 138, 59, 0.15); border: 2px solid rgba(184, 138, 59, 0.85); padding: 20px; border-radius: var(--radius-lg); cursor: pointer; transition: all 0.2s; grid-column: span 2;">
+					<input type="radio" name="chosen_theme" value="aetherium" checked style="width: auto; margin-top: 4px;" />
+					<div style="flex: 1;">
+						<div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+							<strong style="color: #D6B56C; font-size: 1.18rem; font-family: 'Cinzel', serif;">
+								Aetherium V8 (Studio-Grade Premium MMORPG Platform)
+							</strong>
+							<span style="background: rgba(184, 138, 59, 0.32); border: 1px solid rgba(214, 181, 108, 0.85); color: #F5E8C8; font-size: 0.72rem; font-weight: 800; padding: 2px 10px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.05em;">
+								Flagship V8 &bull; Studio Edition
+							</span>
+						</div>
+						<span style="color: #E8D5B0; font-size: 0.84rem; font-weight: 600; display: block; margin-top: 3px;">
+							"Enter a World Worth Returning To" &bull; Panoramic Overlook Hero, Interactive Character Legacy &amp; Live Command Center
+						</span>
+						<p style="color: var(--inst-text-muted); font-size: 0.86rem; margin-top: 8px; line-height: 1.5;">
+							A sophisticated, editorial digital platform engineered like an official AAA game studio website. Features a cinematic overlook panoramic hero with floating typography, interactive Transcendent character legacy switcher, live server telemetry command center, editorial news dispatches, interactive World Atlas, and comprehensive Staff Controls.
+						</p>
+					</div>
+				</label>
+
+				<!-- Theme 1: Midgardian Chronicle V7 -->
+				<label style="display: flex; gap: 16px; background: rgba(217, 164, 65, 0.10); border: 2px solid rgba(217, 164, 65, 0.6); padding: 20px; border-radius: var(--radius-lg); cursor: pointer; transition: all 0.2s; grid-column: span 2;">
+					<input type="radio" name="chosen_theme" value="chronicle" style="width: auto; margin-top: 4px;" />
 					<div style="flex: 1;">
 						<div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
 							<strong style="color: #D9A441; font-size: 1.15rem;">
 								Midgardian Chronicle V7 (Illustrated Classic Midgard Adventure)
 							</strong>
 							<span style="background: rgba(217, 164, 65, 0.28); border: 1px solid rgba(217, 164, 65, 0.7); color: #F8DA84; font-size: 0.72rem; font-weight: 800; padding: 2px 10px; border-radius: 999px; text-transform: uppercase;">
-								Flagship V7 &bull; Pre-Renewal
+								Classic V7 &bull; Pre-Renewal
 							</span>
 						</div>
 						<span style="color: #F8E7C5; font-size: 0.82rem; font-weight: 600; display: block; margin-top: 3px;">

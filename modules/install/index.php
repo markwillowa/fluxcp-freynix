@@ -150,7 +150,10 @@ if (!function_exists('installCustomCmsTables')) {
 			$chkNews = $server->connection->getStatement("SELECT COUNT(*) FROM {$db}.cp_cmsnews");
 			$chkNews->execute();
 			if ($chkNews->fetchColumn() == 0) {
-				if ($theme === 'chronicle') {
+				if ($theme === 'aetherium') {
+					$welcomeTitle = 'Welcome to Aetherium!';
+					$welcomeBody = '<p>Welcome to our studio-grade Pre-Renewal Ragnarok Online platform! Enter a world worth returning to, master your transcendent legacy, and command your guild in sovereign siege warfare.</p>';
+				} elseif ($theme === 'chronicle') {
 					$welcomeTitle = 'Welcome to Midgardian Chronicle!';
 					$welcomeBody = '<p>Welcome to our classic Pre-Renewal Rune-Midgarts realm! Gather your party, explore the towns of Midgard, and etch your story into the kingdom chronicle.</p>';
 				} elseif ($theme === 'adventure') {
@@ -679,15 +682,15 @@ if ($currentStep === 2) {
 // Handle Step 2: Save Server Details & Theme Setup
 if ($currentStep === 2 && $params->get('save_server_config')) {
 	$chosenTheme = trim((string)$params->get('chosen_theme'));
-	$validThemes = array('chronicle', 'adventure', 'nexus', 'dominion', 'celestial', 'freynix', 'default');
+	$validThemes = array('aetherium', 'chronicle', 'adventure', 'nexus', 'dominion', 'celestial', 'freynix', 'default');
 	if (!in_array($chosenTheme, $validThemes)) {
-		$chosenTheme = 'chronicle';
+		$chosenTheme = 'aetherium';
 	}
 
 	// Update ThemeName in config/application.php
 	$appConfigFile = FLUX_CONFIG_DIR . '/application.php';
 	if (file_exists($appConfigFile)) {
-		$allThemes = array('chronicle', 'adventure', 'nexus', 'dominion', 'celestial', 'freynix', 'default', 'bootstrap');
+		$allThemes = array('aetherium', 'chronicle', 'adventure', 'nexus', 'dominion', 'celestial', 'freynix', 'default', 'bootstrap');
 		$orderedThemes = array_merge(array($chosenTheme), array_diff($allThemes, array($chosenTheme)));
 		$newThemeArray = "array('" . implode("', '", $orderedThemes) . "')";
 		$appContent = file_get_contents($appConfigFile);

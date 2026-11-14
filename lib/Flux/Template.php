@@ -592,7 +592,7 @@ class Flux_Template {
 		$uri  = $this->path("{$this->themePath}/{$this->themeName}/{$path}", $included);
 
 		// normalized basePath.
-		$base = preg_replace('/(\/+)$/', '', $this->basePath ) . '/'; 
+		$base = preg_replace('/(\/+)$/', '', (string)$this->basePath ) . '/'; 
 		$base = preg_quote( $base, '/' );
 		$chk  = FLUX_ROOT .'/'. preg_replace('/^('.$base.')/', '', $uri );
 

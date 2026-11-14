@@ -2,7 +2,8 @@
 
 [![PHP Version](https://img.shields.io/badge/PHP-7.4%20|%208.0%20|%208.1%20|%208.2%20|%208.3-blue.svg)](https://php.net)
 [![rAthena](https://img.shields.io/badge/rAthena-Pre--Renewal%20|%20Renewal-orange.svg)](https://rathena.org)
-[![Themes](https://img.shields.io/badge/Themes-7%20Unique%20Layouts-brightgreen.svg)]()
+[![Themes](https://img.shields.io/badge/Themes-8%20Unique%20Layouts-brightgreen.svg)]()
+[![Aetherium](https://img.shields.io/badge/V8-Aetherium%20Studio-B88A3B.svg)]()
 [![Midgardian Chronicle](https://img.shields.io/badge/V7-Midgardian%20Chronicle-D9A441.svg)]()
 [![Classic Adventure](https://img.shields.io/badge/V6-Classic%20Adventure-D4A64A.svg)]()
 [![Arcane Nexus](https://img.shields.io/badge/V5-Arcane%20Nexus-00D9F5.svg)]()
@@ -11,7 +12,7 @@
 [![Eclipse Realm](https://img.shields.io/badge/V2-Eclipse%20Realm-9D80E8.svg)]()
 [![Classic](https://img.shields.io/badge/V1-Classic%20FluxCP-gray.svg)]()
 
-A next-generation, high-performance Ragnarok Online web portal built on **Flux Control Panel (FluxCP)**. Features 7 distinct community themes: an illustrated Pre-Renewal kingdom chronicle (Midgardian Chronicle V7), a nostalgic Pre-Renewal town portal (Classic Adventure V6), a bento cyber-magic command center (Arcane Nexus V5), dark medieval kingdom architecture (Eternal Dominion V4), light anime-fantasy aesthetics (Celestial Chronicle V3), dark gothic MMORPG portal (Eclipse Realm V2), and classic table-based administration (V1), with dynamic CMS controls, intelligent multi-tier view template fallbacks, and real-time rAthena telemetry.
+A next-generation, high-performance Ragnarok Online web portal built on **Flux Control Panel (FluxCP)**. Features 8 distinct community themes: a studio-grade digital home and command platform (Aetherium V8), an illustrated Pre-Renewal kingdom chronicle (Midgardian Chronicle V7), a nostalgic Pre-Renewal town portal (Classic Adventure V6), a bento cyber-magic command center (Arcane Nexus V5), dark medieval kingdom architecture (Eternal Dominion V4), light anime-fantasy aesthetics (Celestial Chronicle V3), dark gothic MMORPG portal (Eclipse Realm V2), and classic table-based administration (V1), with dynamic CMS controls, intelligent multi-tier view template fallbacks, and real-time rAthena telemetry.
 
 ---
 
@@ -19,8 +20,9 @@ A next-generation, high-performance Ragnarok Online web portal built on **Flux C
 
 - [Theme Gallery & Layout Styles](#theme-gallery--layout-styles)
 - [Key Features & Architectural Enhancements](#key-features--architectural-enhancements)
-  - [1. Midgardian Chronicle V7 (Illustrated Midgard Adventure)](#1-midgardian-chronicle-v7-illustrated-midgard-adventure)
-  - [2. Classic Adventure V6 (Pre-Renewal Town Portal)](#2-classic-adventure-v6-pre-renewal-town-portal)
+  - [1. Aetherium V8 (Studio-Grade Premium MMORPG Platform)](#1-aetherium-v8-studio-grade-premium-mmorpg-platform)
+  - [2. Midgardian Chronicle V7 (Illustrated Midgard Adventure)](#2-midgardian-chronicle-v7-illustrated-midgard-adventure)
+  - [3. Classic Adventure V6 (Pre-Renewal Town Portal)](#3-classic-adventure-v6-pre-renewal-town-portal)
   - [3. Multi-Tier View Template Fallback Architecture](#3-multi-tier-view-template-fallback-architecture)
   - [4. Transparent Logo System (Navigation & Footer)](#4-transparent-logo-system-navigation--footer)
   - [5. Intelligent Floating Navigation & Logged-In User Experience](#5-intelligent-floating-navigation--logged-in-user-experience)
@@ -40,29 +42,32 @@ A next-generation, high-performance Ragnarok Online web portal built on **Flux C
 
 ## Theme Gallery & Layout Styles
 
-The platform includes **7 switchable themes**, each with distinct typography, layout structure, color schemes, and interactive elements:
+The platform includes **8 switchable themes**, each with distinct typography, layout structure, color schemes, and interactive elements:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ 1. MIDGARDIAN CHRONICLE(V7)│ Illustrated Pre-Renewal kingdom chronicle,     │
+│ 1. AETHERIUM (V8)          │ Studio-grade editorial digital platform,        │
+│                            │ overlook hero, character legacy, command center.│
+├────────────────────────────┼────────────────────────────────────────────────┤
+│ 2. MIDGARDIAN CHRONICLE(V7)│ Illustrated Pre-Renewal kingdom chronicle,     │
 │                            │ "The Road to Midgard" party, town travel atlas.│
 ├────────────────────────────┼────────────────────────────────────────────────┤
-│ 2. CLASSIC ADVENTURE (V6)  │ Nostalgic Pre-Renewal town portal, warm oak    │
+│ 3. CLASSIC ADVENTURE (V6)  │ Nostalgic Pre-Renewal town portal, warm oak    │
 │                            │ wood, parchment notice board, Prontera skies.  │
 ├────────────────────────────┼────────────────────────────────────────────────┤
-│ 3. ARCANE NEXUS (V5)       │ Cyber-magic anime fantasy, floating capsule    │
+│ 4. ARCANE NEXUS (V5)       │ Cyber-magic anime fantasy, floating capsule    │
 │                            │ dock, bento grid, holographic telemetry.       │
 ├────────────────────────────┼────────────────────────────────────────────────┤
-│ 4. ETERNAL DOMINION (V4)   │ Dark medieval kingdom, royal gold & crimson,   │
+│ 5. ETERNAL DOMINION (V4)   │ Dark medieval kingdom, royal gold & crimson,   │
 │                            │ fortress citadel hero, rising ember particles. │
 ├────────────────────────────┼────────────────────────────────────────────────┤
-│ 5. CELESTIAL CHRONICLE (V3)│ Light anime-fantasy, skyward floating islands, │
+│ 6. CELESTIAL CHRONICLE (V3)│ Light anime-fantasy, skyward floating islands, │
 │                            │ azure & gold filigree, ethereal atmosphere.    │
 ├────────────────────────────┼────────────────────────────────────────────────┤
-│ 6. ECLIPSE REALM (V2)      │ Dark gothic MMORPG, obsidian stone, mystic     │
+│ 7. ECLIPSE REALM (V2)      │ Dark gothic MMORPG, obsidian stone, mystic     │
 │                            │ violet aura, compact portal sidebar.           │
 ├────────────────────────────┼────────────────────────────────────────────────┤
-│ 7. CLASSIC FLUXCP (V1)     │ Retro table-based layout, lightweight, zero-js  │
+│ 8. CLASSIC FLUXCP (V1)     │ Retro table-based layout, lightweight, zero-js  │
 │                            │ legacy administrator view.                     │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
@@ -71,7 +76,25 @@ The platform includes **7 switchable themes**, each with distinct typography, la
 
 ## Key Features & Architectural Enhancements
 
-### 1. Midgardian Chronicle V7 (Illustrated Midgard Adventure)
+### 1. Aetherium V8 (Studio-Grade Premium MMORPG Platform)
+- **Professional Game Studio Aesthetic:** Built with a sophisticated neutral foundation—cream (`#F7F7F5`), pure white (`#FFFFFF`), deep charcoal (`#151515`), and luxurious muted gold (`#B88A3B` / `#D6B56C`). Features generous editorial whitespace, refined borders, and subtle elevation shadows instead of dark gradients or generic box clutter.
+- **Editorial Typography Pairing:** Classic serif headlines (`Cormorant Garamond` / `Cinzel`) paired with crisp, highly readable modern sans-serif body typography (`Inter` / `Manrope`).
+- **Cinematic Overlook Panoramic Hero ("ENTER A WORLD WORTH RETURNING TO"):**
+  - **Floating Editorial Typography:** Headlines and narrative copy float directly above the panoramic overlook with multi-layered diffused drop shadows—zero opaque card boxes or restrictive panels obscuring the fantasy vista.
+  - **Live Realm Status Pill:** Integrated at the top of the hero copy displaying real-time server connectivity, online adventurer counts, Pre-Renewal mode badge, and level caps.
+  - **Dominant Transcendent Overlook Vanguard:** A towering Transcendent Lord Knight positioned majestically on the stone overlook facing the open kingdom, animated with gentle idle breathing (`@keyframes aeLeaderBreathe`), transcendent golden level-up radiance, and atmospheric drifting dust particles.
+  - **Studio Action Directives:** High-contrast primary CTA button (`BEGIN YOUR ODYSSEY`) alongside secondary discovery link (`EXPLORE THE REALM`).
+- **Interactive Character Legacy Showcase ("CHOOSE YOUR LEGACY"):**
+  - Horizontal studio class selector allowing instant inspection of classic Transcendent jobs: Lord Knight, High Wizard, High Priest, Sniper, Assassin Cross, Paladin, Champion, and Whitesmith.
+  - Dynamic client-side lore cards updating archetype role, title, epithet, character quote, gameplay bio, and animated sprites in real time.
+- **Server Command Center ("THE WORLD, LIVE"):** Real-time server telemetry counters (active adventurers, base/job exp rates, drop rates, WoE status) paired with a live player activity feed tracking recent logins and achievements.
+- **Sequential Storytelling ("YOUR ADVENTURE. YOUR PATH"):** Curated milestone roadmaps from Novice origins (01) to Transcendent mastery (05).
+- **Interactive World Atlas ("DISCOVER MIDGARD"):** Visual region cards for Prontera, Payon, Geffen, Morroc, Alberta, and Glast Heim with level recommendations and lore summaries.
+- **War of Emperium Citadel ("THE WAR NEVER ENDS"):** Castle ownership status, siege schedule countdowns, and top guild honorifics.
+- **Adventurer Support & Supply Depot:** Comprehensive client downloads with mirror links, system requirements matrix, and a 3-step setup guide.
+- **Comprehensive Staff Controls:** Built into both desktop user pill dropdown and mobile slide drawer for administrators (`group_level >= 20`).
+
+### 2. Midgardian Chronicle V7 (Illustrated Midgard Adventure)
 - **Illustrated Storybook Midgard Aesthetic:** Warm parchment (`#F5E8C8`), ivory (`#FFF9E8`), warm sky blue (`#83C7ED`), soft meadow green (`#9BCB78`), medieval brown (`#704A2E`), and warm gold (`#D9A441`). Handcrafted borders and parchment cards.
 - **"The Road to Midgard" Panoramic Hero Scene:**
   - **45% Atmospheric Text / 55% Living Character Party Grid:** Floating typography with clean drop shadows and subtle frosted backing that never obstructs the panoramic rolling hills, town silhouette, or castle spires.
@@ -84,7 +107,7 @@ The platform includes **7 switchable themes**, each with distinct typography, la
 - **Heroes of Midgard Bento:** Live rankings with gold, silver, and bronze medallions for top characters and famed guilds.
 - **Modular Party Registry (`config/theme.php`):** Server owners can freely swap, scale, or configure character sprites without modifying template HTML.
 
-### 2. Classic Adventure V6 (Pre-Renewal Town Portal)
+### 3. Classic Adventure V6 (Pre-Renewal Town Portal)
 - **Classic Nostalgic Visual Language:** Recreates the bright, cheerful, welcoming atmosphere of early Ragnarok Online (Prontera streets, training grounds, tavern notice boards, and classic item shops). Avoids dark, cyber, or esports aesthetics.
 - **Top Adventurer Information Bar:** Live server status indicator with active player counts, experience rates (`1000x BASE EXP • 1000x JOB EXP • PRE-RENEWAL`), Discord/Facebook outposts, and quick authentication.
 - **Warm Oak Wood & Parchment Navigation:** Polished wood grain navbar, transparent guild crest emblem (`adventure-logo.png`), dynamic navigation links from `cp_navigation`, and an account pill with credit balance.
@@ -99,7 +122,7 @@ The platform includes **7 switchable themes**, each with distinct typography, la
 - **Pre-Renewal Class Showcase:** Interactive showcase for Swordsman, Archer, Mage, Acolyte, Merchant, Thief, Monk, and Crusader with original classic sprites.
 - **Supply Depot (Downloads):** Classic game client download center supporting Full Client, Lite Patcher, Manual Patches, and an interactive 3-minute setup guide.
 
-### 3. Multi-Tier View Template Fallback Architecture
+### 4. Multi-Tier View Template Fallback Architecture
 - **Automatic Template Resolution:** Built directly into `lib/Flux/Template.php`, FluxCP resolves views across a 5-tier inheritance hierarchy:
   1. `themes/<current_theme>/<module>/<action>.php`
   2. `themes/<parent_theme>/<module>/<action>.php`
@@ -107,15 +130,15 @@ The platform includes **7 switchable themes**, each with distinct typography, la
   4. Configured themes in `ThemeName` array
   5. Ultimate terminal fallback: `themes/default/<module>/<action>.php`
 - **Zero Missing View Notices:** Resolves PHP notices such as `Notice: The requested view template (ranking/death) is not found in the current theme` by safely casting `Flux_Config` objects to arrays and guaranteeing fallback to `default` views whenever a custom theme chooses not to override a specific secondary module.
-- **Native Custom Ranking Templates:** Both `adventure` and `chronicle` provide dedicated, beautifully styled ranking templates for `character`, `guild`, `zeny`, `death`, `alchemist`, `blacksmith`, `homunculus`, and `mvp`.
+- **Native Custom Ranking Templates:** Dedicated, beautifully styled ranking templates for `character`, `guild`, `zeny`, `death`, `alchemist`, `blacksmith`, `homunculus`, and `mvp`.
 
-### 2. Transparent Logo System (Navigation & Footer)
-- **True 32-Bit Alpha Channels:** Every theme includes an optimized 32-bit transparent PNG logo (`adventure-logo.png`, `nexus-logo.png`, `dominion-logo.png`, `celestial-logo.png`, `logo.png`) with zero solid or black background boxes.
+### 5. Transparent Logo System (Navigation & Footer)
+- **True 32-Bit Alpha Channels:** Every theme includes an optimized 32-bit transparent PNG logo (`aetherium-logo.png`, `adventure-logo.png`, `nexus-logo.png`, `dominion-logo.png`, `celestial-logo.png`, `logo.png`) with zero solid or black background boxes.
 - **Dual Placement Parity:** All themes display the brand emblem in both the **Top Navigation Bar / Floating Dock** and the **Global Footer** (as well as mobile slide drawers).
 - **Guaranteed CMS Fallback:** The CMS engine (`lib/Flux/CMS.php`) and theme templates guard against empty or whitespace database values (`trim((string)$customLogo)`). If an administrator leaves the custom logo URL blank, templates automatically and safely fall back to the built-in theme logo asset, completely preventing broken `<img src="" alt="...">` tags.
 - **Ambient Glows:** Applied via CSS `filter: drop-shadow(...)` to create natural lighting integration matching each theme's primary accent color.
 
-### 3. Intelligent Floating Navigation & Logged-In User Experience
+### 6. Intelligent Floating Navigation & Logged-In User Experience
 - **Floating Glassmorphic & Wooden Docks:** Modern navigation suspended above hero art with smooth scroll backdrop blurs or warm polished oak textures.
 - **Logged-In Account Hub:**
   - Displays user avatar initial, username, and active account ID.
@@ -126,7 +149,7 @@ The platform includes **7 switchable themes**, each with distinct typography, la
   - Instant access to **Homepage CMS**, **Manage Announcements**, **Manage Codex Pages**, **Manage Navigation**, **Manage Downloads**, **Service Desk Tickets**, and **Flux Core Administration**.
 - **Off-Canvas Mobile Drawer (`<= 1080px`):** Smooth slide-out touch drawer containing complete navigation hierarchies, server monitors, account actions, and mobile logo headers.
 
-### 4. Live rAthena Telemetry & Server Command Center
+### 7. Live rAthena Telemetry & Server Command Center
 - **Real-Time Data (Never Invented):**
   - Online player counts retrieved directly from `char.online > 0`.
   - Base and Job level caps retrieved from server configuration.
@@ -135,24 +158,24 @@ The platform includes **7 switchable themes**, each with distinct typography, la
   - War of Emperium castle ownership and schedule countdowns.
 - **Live Status Beacons:** Animated pulsing status indicators displaying `ONLINE` or `MAINTENANCE` states.
 
-### 5. Reusable UI Component Library & Bento Layouts
+### 8. Reusable UI Component Library & Bento Layouts
 - **Bento-Style Modular Grids:** Asymmetric card layouts (Hero, Holo-Dispatches, Client Launcher, Apex Rankings, Operative Portal, Transmission Network).
 - **Unified UI Component Set:**
-  - Buttons (`btn-adv-gold`, `btn-adv-green`, `btn-adv-wood`, `btn-nexus-cyan`, `btn-dominion-crimson`).
+  - Buttons (`btn-ae-gold`, `btn-adv-gold`, `btn-adv-green`, `btn-adv-wood`, `btn-nexus-cyan`, `btn-dominion-crimson`).
   - Glassmorphic panels with subtle glowing borders.
   - Responsive, touch-scrollable data tables for rankings and item shops.
   - Flash message notification banners (Success, Danger, Notice).
   - Modal confirmation dialogs for critical actions.
 
-### 8. White-Label Homepage CMS & 7-Theme Switcher
+### 9. White-Label Homepage CMS & 8-Theme Switcher
 Accessible at `?module=homepage` for administrators:
-- **7-Theme Switcher Cards:** Select between **Midgardian Chronicle (V7)**, **Classic Adventure (V6)**, **Arcane Nexus (V5)**, **Eternal Dominion (V4)**, **Celestial Chronicle (V3)**, **Eclipse Realm (V2)**, or **Classic FluxCP (V1)** with instant live preview.
+- **8-Theme Switcher Cards:** Select between **Aetherium (V8)**, **Midgardian Chronicle (V7)**, **Classic Adventure (V6)**, **Arcane Nexus (V5)**, **Eternal Dominion (V4)**, **Celestial Chronicle (V3)**, **Eclipse Realm (V2)**, or **Classic FluxCP (V1)** with instant live preview.
 - **Server Identity:** Update server brand name, slogan, logo URL, and footer disclaimer in real time.
 - **Section Visibility Toggles:** Toggle Hero, Live Stats Strip, News Grid, Rankings, Download Widget, or Discord callout.
 - **Feature Cards Editor:** Customize 6 modular cards with custom headlines, icons, descriptions, and destination links.
 - **Social Gateways:** Set Discord invite URLs and community links.
 
-### 7. Two-Step Setup Wizard with All Layout Presets
+### 10. Two-Step Setup Wizard with All Layout Presets
 Accessible at `?module=install`:
 - **Step 1: System Requirements & DB Sync:**
   - Validates PHP 7.4 - 8.3+, required extensions (`curl`, `gd`, `pdo`, `pdo_mysql`, `mysqli`, `mbstring`, `xml`, `openssl`).
@@ -175,6 +198,27 @@ Accessible at `?module=install`:
 ---
 
 ## Color Palettes & Design Tokens
+
+### Aetherium (V8)
+| Token | Hex / Value | Description |
+|:---|:---|:---|
+| Neutral Cream | `#F7F7F5` | Sophisticated studio canvas foundation |
+| Pure White | `#FFFFFF` | Editorial card surfaces, modals & containers |
+| Deep Charcoal | `#151515` | High-contrast editorial typography & borders |
+| Muted Grey | `#737373` | Subtitles, meta telemetry & secondary text |
+| Studio Gold | `#B88A3B` | Primary luxury accent, buttons, badges & active tabs |
+| Soft Champagne | `#D6B56C` | Secondary gold accent, subtle hover glows |
+| Deep Slate | `#263238` | Dark contrast elements & telemetry cards |
+
+### Midgardian Chronicle (V7)
+| Token | Hex / Value | Description |
+|:---|:---|:---|
+| Parchment | `#F5E8C8` | Handcrafted storybook panels & scrolls |
+| Ivory Canvas | `#FFF9E8` | Primary warm content surfaces |
+| Sky Blue | `#83C7ED` | Sunny horizon & atmospheric gradients |
+| Soft Grass Green | `#9BCB78` | Meadow paths & registration buttons |
+| Medieval Brown | `#704A2E` | Handcrafted frames & high-contrast titles |
+| Warm Gold | `#D9A441` | Transcendent auras, medals & primary CTA |
 
 ### Classic Adventure (V6)
 | Token | Hex / Value | Description |
@@ -237,7 +281,7 @@ htdocs/fluxcp-freynix/
 │   │   └── Template.php         # Theme rendering engine
 │   └── Flux.php                 # Core framework bootstrap
 ├── modules/
-│   ├── homepage/                # Homepage CMS & 7-Theme Switcher
+│   ├── homepage/                # Homepage CMS & 8-Theme Switcher
 │   ├── install/                 # Two-Step setup & Re-Install wizard
 │   ├── news/                    # Announcement manager & reader
 │   ├── pages/                   # Codex document manager
@@ -245,6 +289,15 @@ htdocs/fluxcp-freynix/
 │   ├── servicedesk/             # ITIL support ticket system
 │   └── ranking/                 # Character, Guild, and MVP ladders
 └── themes/
+    ├── aetherium/               # Aetherium (Theme V8 - Studio Platform)
+    │   ├── config/theme.php     # Character legacy & world atlas registry
+    │   ├── css/aetherium.css    # Editorial studio design system
+    │   ├── css/hero.css         # Panoramic overlook hero & floating copy
+    │   ├── img/aetherium-logo.png# Transparent 32-bit studio logo
+    │   ├── img/hero/aetherium-overlook.jpg # Panoramic overlook artwork
+    │   ├── main/index.php       # Complete 10-section homepage
+    │   ├── main/navbar.php      # Minimal studio header & user pill
+    │   └── footer.php           # Studio footer & off-canvas drawer
     ├── chronicle/               # Midgardian Chronicle (Theme V7)
     │   ├── config/theme.php     # Character party & town atlas registry
     │   ├── css/chronicle.css    # Parchment & ivory kingdom design system
