@@ -17,30 +17,50 @@ if (!$package) {
 	$this->redirect($this->url('downloads', 'manage'));
 }
 
-$pkg_title = $package->title;
-$pkg_category = $package->category;
-$pkg_version = $package->version;
+// Support both $download and $package variable naming in theme templates
+$download = $package;
+$download->mirror1_url = $package->url_mirror1;
+$download->mirror2_url = $package->url_mirror2;
+$download->mirror3_url = $package->url_mirror3;
+$download->sort_order  = $package->display_order;
+$download->is_active   = ($package->status === 'published');
+
+$pkg_title     = $package->title;
+$pkg_category  = $package->category;
+$pkg_version   = $package->version;
 $pkg_file_size = $package->file_size;
-$pkg_desc = $package->description;
-$pkg_mirror1 = $package->url_mirror1;
-$pkg_mirror2 = $package->url_mirror2;
-$pkg_mirror3 = $package->url_mirror3;
-$pkg_order = (int)$package->display_order;
-$pkg_status = $package->status;
+$pkg_desc      = $package->description;
+$pkg_mirror1   = $package->url_mirror1;
+$pkg_mirror2   = $package->url_mirror2;
+$pkg_mirror3   = $package->url_mirror3;
+$pkg_order     = (int)$package->display_order;
+$pkg_status    = $package->status;
 
 $errorMessage = null;
 
 if (count($_POST)) {
-	$pkg_title = trim($params->get('title'));
-	$pkg_category = trim($params->get('category')) ?: 'Full Client';
-	$pkg_version = trim($params->get('version'));
-	$pkg_file_size = trim($params->get('file_size'));
-	$pkg_desc = trim($params->get('description'));
-	$pkg_mirror1 = trim($params->get('url_mirror1'));
-	$pkg_mirror2 = trim($params->get('url_mirror2'));
-	$pkg_mirror3 = trim($params->get('url_mirror3'));
-	$pkg_order = (int)$params->get('display_order');
-	$pkg_status = in_array($params->get('status'), array('published', 'draft')) ? $params->get('status') : 'published';
+	$pkg_title     = trim((string)($params->get('title') ?: $params->get('pkg_title')));
+	$pkg_category  = trim((string)($params->get('category') ?: $params->get('pkg_category'))) ?: 'Full Client';
+	$pkg_version   = trim((string)($params->get('version') ?: $params->get('pkg_version')));
+	$pkg_file_size = trim((string)($params->get('file_size') ?: $params->get('pkg_filesize')));
+	$pkg_desc      = trim((string)($params->get('description') ?: $params->get('pkg_desc')));
+	
+	// Support direct mirror URLs or mirror_url array
+	$mirrorArray   = isset($_POST['mirror_url']) && is_array($_POST['mirror_url']) ? array_values($_POST['mirror_url']) : array();
+	$pkg_mirror1   = trim((string)($params->get('url_mirror1') ?: ($params->get('pkg_mirror1') ?: ($mirrorArray[0] ?? ''))));
+	$pkg_mirror2   = trim((string)($params->get('url_mirror2') ?: ($params->get('pkg_mirror2') ?: ($mirrorArray[1] ?? ''))));
+	$pkg_mirror3   = trim((string)($params->get('url_mirror3') ?: ($params->get('pkg_mirror3') ?: ($mirrorArray[2] ?? ''))));
+	
+	$pkg_order     = (int)($params->get('display_order') ?? ($params->get('sort_order') ?? ($params->get('pkg_sort') ?? 0)));
+	
+	$rawStatus     = $params->get('status') ?: $params->get('pkg_status');
+	if ($rawStatus && in_array($rawStatus, array('published', 'draft'))) {
+		$pkg_status = $rawStatus;
+	} elseif ($params->get('pkg_active') !== null) {
+		$pkg_status = $params->get('pkg_active') ? 'published' : 'draft';
+	} else {
+		$pkg_status = 'published';
+	}
 
 	if ($pkg_title === '') {
 		$errorMessage = 'Please provide a title for the download package.';

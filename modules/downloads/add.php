@@ -6,16 +6,26 @@ require_once FLUX_LIB_DIR . '/Flux/Sanitizer.php';
 $title = 'Add Download Package';
 $downloadsTable = Flux::config('FluxTables.DownloadsTable') ?: 'cp_downloads';
 
-$pkg_title = trim($params->get('title'));
-$pkg_category = trim($params->get('category')) ?: 'Full Client';
-$pkg_version = trim($params->get('version'));
-$pkg_file_size = trim($params->get('file_size'));
-$pkg_desc = trim($params->get('description'));
-$pkg_mirror1 = trim($params->get('url_mirror1'));
-$pkg_mirror2 = trim($params->get('url_mirror2'));
-$pkg_mirror3 = trim($params->get('url_mirror3'));
-$pkg_order = (int)$params->get('display_order');
-$pkg_status = in_array($params->get('status'), array('published', 'draft')) ? $params->get('status') : 'published';
+$mirrorArray   = isset($_POST['mirror_url']) && is_array($_POST['mirror_url']) ? array_values($_POST['mirror_url']) : array();
+
+$pkg_title     = trim((string)($params->get('title') ?: $params->get('pkg_title')));
+$pkg_category  = trim((string)($params->get('category') ?: $params->get('pkg_category'))) ?: 'Full Client';
+$pkg_version   = trim((string)($params->get('version') ?: $params->get('pkg_version')));
+$pkg_file_size = trim((string)($params->get('file_size') ?: $params->get('pkg_filesize')));
+$pkg_desc      = trim((string)($params->get('description') ?: $params->get('pkg_desc')));
+$pkg_mirror1   = trim((string)($params->get('url_mirror1') ?: ($params->get('pkg_mirror1') ?: ($mirrorArray[0] ?? ''))));
+$pkg_mirror2   = trim((string)($params->get('url_mirror2') ?: ($params->get('pkg_mirror2') ?: ($mirrorArray[1] ?? ''))));
+$pkg_mirror3   = trim((string)($params->get('url_mirror3') ?: ($params->get('pkg_mirror3') ?: ($mirrorArray[2] ?? ''))));
+$pkg_order     = (int)($params->get('display_order') ?? ($params->get('sort_order') ?? ($params->get('pkg_sort') ?? 0)));
+
+$rawStatus     = $params->get('status') ?: $params->get('pkg_status');
+if ($rawStatus && in_array($rawStatus, array('published', 'draft'))) {
+	$pkg_status = $rawStatus;
+} elseif ($params->get('pkg_active') !== null) {
+	$pkg_status = $params->get('pkg_active') ? 'published' : 'draft';
+} else {
+	$pkg_status = 'published';
+}
 
 $errorMessage = null;
 
